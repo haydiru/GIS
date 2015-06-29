@@ -20841,3 +20841,2813 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1435560518.984
     'REQUEST_TIME' => 1435560518
 ]
+2015-06-29 09:40:30 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(206): yii\db\Connection->getSlavePdo()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(819): yii\db\Command->prepare(true)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#9 D:\xampp\htdocs\gisskripsi\frontend\views\site\index.php(20): yii\db\ActiveQuery->all()
+#10 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#11 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#12 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(frontend\controllers\SiteController))
+#13 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#14 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(73): yii\base\Controller->render('index')
+#15 [internal function]: frontend\controllers\SiteController->actionIndex()
+#16 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#17 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#18 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#19 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('', Array)
+#20 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(206): yii\db\Connection->getSlavePdo()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(819): yii\db\Command->prepare(true)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#7 D:\xampp\htdocs\gisskripsi\frontend\views\site\index.php(20): yii\db\ActiveQuery->all()
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#10 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(frontend\controllers\SiteController))
+#11 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#12 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(73): yii\base\Controller->render('index')
+#13 [internal function]: frontend\controllers\SiteController->actionIndex()
+#14 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#15 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#16 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#17 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('', Array)
+#18 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2015-06-29 09:40:28 [::1][-][-][info][application] $_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49413'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435563627.962
+    'REQUEST_TIME' => 1435563627
+]
+2015-06-29 17:46:19 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'variabel'' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(200): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChild()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'variabel'
+The SQL being executed was: SELECT DISTINCT `wilayah`.`tipe`, `topik`.`id`, `topik`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `variabel` ON variabel.id_topik=topik.id WHERE wilayah.tipe=1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(200): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChild()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1066
+    [2] => Not unique table/alias: 'variabel'
+)
+
+2015-06-29 17:46:18 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '1'
+    ]
+    'depdrop_all_params' => [
+        'tipewilayah-nama' => '1'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'c3p1NkdsSDYrTSZ3cV99XBVXGwVzBn8bNgkTZBNaF1oxLwxadlgqdw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49674'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435592778.421
+    'REQUEST_TIME' => 1435592778
+]
+2015-06-29 17:46:28 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'variabel'' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(200): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChild()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'variabel'
+The SQL being executed was: SELECT DISTINCT `wilayah`.`tipe`, `topik`.`id`, `topik`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `variabel` ON variabel.id_topik=topik.id WHERE wilayah.tipe=0' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(200): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChild()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1066
+    [2] => Not unique table/alias: 'variabel'
+)
+
+2015-06-29 17:46:27 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '0'
+    ]
+    'depdrop_all_params' => [
+        'tipewilayah-nama' => '0'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'c3p1NkdsSDYrTSZ3cV99XBVXGwVzBn8bNgkTZBNaF1oxLwxadlgqdw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49684'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435592786.994
+    'REQUEST_TIME' => 1435592786
+]
+2015-06-29 17:46:31 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'variabel'' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(200): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChild()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'variabel'
+The SQL being executed was: SELECT DISTINCT `wilayah`.`tipe`, `topik`.`id`, `topik`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `variabel` ON variabel.id_topik=topik.id WHERE wilayah.tipe=1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(200): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChild()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1066
+    [2] => Not unique table/alias: 'variabel'
+)
+
+2015-06-29 17:46:30 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '1'
+    ]
+    'depdrop_all_params' => [
+        'tipewilayah-nama' => '1'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'c3p1NkdsSDYrTSZ3cV99XBVXGwVzBn8bNgkTZBNaF1oxLwxadlgqdw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49687'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435592790.544
+    'REQUEST_TIME' => 1435592790
+]
+2015-06-29 17:46:32 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'variabel'' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(200): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChild()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'variabel'
+The SQL being executed was: SELECT DISTINCT `wilayah`.`tipe`, `topik`.`id`, `topik`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `variabel` ON variabel.id_topik=topik.id WHERE wilayah.tipe=2' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(200): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChild()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1066
+    [2] => Not unique table/alias: 'variabel'
+)
+
+2015-06-29 17:46:31 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '2'
+    ]
+    'depdrop_all_params' => [
+        'tipewilayah-nama' => '2'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'c3p1NkdsSDYrTSZ3cV99XBVXGwVzBn8bNgkTZBNaF1oxLwxadlgqdw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49690'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435592791.911
+    'REQUEST_TIME' => 1435592791
+]
+2015-06-29 17:55:47 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildWilayah()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-wilayah', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-wila...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildWilayah()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-wilayah', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-wila...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 17:55:46 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-wilayah'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'cWVMVFZCbTUpUh8VYHFYXxdIImdiKFoYNBYqBgJ0MlkzMDU4Z3YPdA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49828'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-wilayah'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-wilayah'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593346.113
+    'REQUEST_TIME' => 1435593346
+]
+2015-06-29 17:55:48 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: id_wilayah' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:240
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(240): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\xampp\htdocs...', 240, Array)
+#1 [internal function]: frontend\controllers\SiteController->actionChildWilayah()
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-wilayah', Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-wila...', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-06-29 17:55:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-wilayah'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '1'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '1'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '61'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'cWVMVFZCbTUpUh8VYHFYXxdIImdiKFoYNBYqBgJ0MlkzMDU4Z3YPdA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49830'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-wilayah'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-wilayah'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593347.28
+    'REQUEST_TIME' => 1435593347
+]
+2015-06-29 17:55:48 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: id_wilayah' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:240
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(240): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\xampp\htdocs...', 240, Array)
+#1 [internal function]: frontend\controllers\SiteController->actionChildWilayah()
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-wilayah', Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-wila...', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-06-29 17:55:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-wilayah'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '1'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '1'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '61'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'cWVMVFZCbTUpUh8VYHFYXxdIImdiKFoYNBYqBgJ0MlkzMDU4Z3YPdA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49831'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-wilayah'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-wilayah'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593347.262
+    'REQUEST_TIME' => 1435593347
+]
+2015-06-29 17:58:02 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 17:58:01 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'Q1BYYVMubXgbZwsgZR1YEiV9NlJnRFpVBiM.MwcYMhQBBSENYhoPOQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49846'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593481.055
+    'REQUEST_TIME' => 1435593481
+]
+2015-06-29 17:58:03 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: wilayah' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:243
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(243): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 243, Array)
+#1 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-06-29 17:58:02 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '1'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '1'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '61'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'Q1BYYVMubXgbZwsgZR1YEiV9NlJnRFpVBiM.MwcYMhQBBSENYhoPOQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49843'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593482.236
+    'REQUEST_TIME' => 1435593482
+]
+2015-06-29 17:58:03 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: wilayah' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:243
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(243): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 243, Array)
+#1 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-06-29 17:58:02 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '1'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '1'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '61'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'Q1BYYVMubXgbZwsgZR1YEiV9NlJnRFpVBiM.MwcYMhQBBSENYhoPOQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49845'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593482.336
+    'REQUEST_TIME' => 1435593482
+]
+2015-06-29 17:58:36 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 17:58:35 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'a1ZaT0tBTTgzYQkOfXJ4Ug17NHx/K3oVLiU8HR93ElQpAyMjenUveQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49863'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593515.492
+    'REQUEST_TIME' => 1435593515
+]
+2015-06-29 17:58:47 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 17:58:46 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'a1ZaT0tBTTgzYQkOfXJ4Ug17NHx/K3oVLiU8HR93ElQpAyMjenUveQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49875'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593526.742
+    'REQUEST_TIME' => 1435593526
+]
+2015-06-29 17:59:58 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 17:59:57 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'a1ZaT0tBTTgzYQkOfXJ4Ug17NHx/K3oVLiU8HR93ElQpAyMjenUveQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49897'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593597.801
+    'REQUEST_TIME' => 1435593597
+]
+2015-06-29 18:00:00 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+)
+
+2015-06-29 17:59:59 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => ''
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => ''
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '59'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'a1ZaT0tBTTgzYQkOfXJ4Ug17NHx/K3oVLiU8HR93ElQpAyMjenUveQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49902'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593599.034
+    'REQUEST_TIME' => 1435593599
+]
+2015-06-29 18:00:00 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+)
+
+2015-06-29 17:59:59 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => ''
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => ''
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '59'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'a1ZaT0tBTTgzYQkOfXJ4Ug17NHx/K3oVLiU8HR93ElQpAyMjenUveQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49907'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593599.051
+    'REQUEST_TIME' => 1435593599
+]
+2015-06-29 18:00:21 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 18:00:20 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'a1ZaT0tBTTgzYQkOfXJ4Ug17NHx/K3oVLiU8HR93ElQpAyMjenUveQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49912'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593620.688
+    'REQUEST_TIME' => 1435593620
+]
+2015-06-29 18:00:34 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 18:00:33 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'a1ZaT0tBTTgzYQkOfXJ4Ug17NHx/K3oVLiU8HR93ElQpAyMjenUveQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49923'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593633.378
+    'REQUEST_TIME' => 1435593633
+]
+2015-06-29 18:02:43 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 18:02:42 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'UDhXOHZsRUsIDwR5QF9wITYVOQtCBnJmFUsxaiJaGicSbS5UR1gnCg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49973'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593762.881
+    'REQUEST_TIME' => 1435593762
+]
+2015-06-29 18:02:45 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+)
+
+2015-06-29 18:02:44 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => ''
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => ''
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '59'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'UDhXOHZsRUsIDwR5QF9wITYVOQtCBnJmFUsxaiJaGicSbS5UR1gnCg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49977'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593764.097
+    'REQUEST_TIME' => 1435593764
+]
+2015-06-29 18:02:45 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+)
+
+2015-06-29 18:02:44 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => ''
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => ''
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '59'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'UDhXOHZsRUsIDwR5QF9wITYVOQtCBnJmFUsxaiJaGicSbS5UR1gnCg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49979'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593764.166
+    'REQUEST_TIME' => 1435593764
+]
+2015-06-29 18:02:51 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 18:02:50 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'UDhXOHZsRUsIDwR5QF9wITYVOQtCBnJmFUsxaiJaGicSbS5UR1gnCg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '49992'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593770.433
+    'REQUEST_TIME' => 1435593770
+]
+2015-06-29 18:03:07 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+The SQL being executed was: SELECT DISTINCT `variabel`.`id`, `variabel`.`nama` FROM `fakta` INNER JOIN `wilayah` ON fakta.id_wilayah=wilayah.id INNER JOIN `variabel` ON fakta.id_variabel=variabel.id INNER JOIN `topik` ON variabel.id_topik=topik.id WHERE topik.id=...' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT DISTINCT...')
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(234): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '..' at line 1
+)
+
+2015-06-29 18:03:06 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'UDhXOHZsRUsIDwR5QF9wITYVOQtCBnJmFUsxaiJaGicSbS5UR1gnCg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '50006'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593786.385
+    'REQUEST_TIME' => 1435593786
+]
+2015-06-29 18:05:56 [::1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'end() expects parameter 1 to be array, null given' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:226
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'end() expects p...', 'D:\xampp\htdocs...', 226, Array)
+#1 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(226): end(NULL)
+#2 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+2015-06-29 18:05:56 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+    'Wilayah' => [
+        'nama' => null
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'LV9nd1Z6TXV1aDQ2YEl4H0tyCURiEHpYaCwBJQJMEhlvCh4bZ04vNA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '50023'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593956.312
+    'REQUEST_TIME' => 1435593956
+]
+2015-06-29 18:05:57 [::1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'end() expects parameter 1 to be array, null given' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:226
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'end() expects p...', 'D:\xampp\htdocs...', 226, Array)
+#1 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(226): end(NULL)
+#2 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+2015-06-29 18:05:57 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '1'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '1'
+    ]
+    'Wilayah' => [
+        'nama' => null
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '61'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'LV9nd1Z6TXV1aDQ2YEl4H0tyCURiEHpYaCwBJQJMEhlvCh4bZ04vNA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '50024'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593957.502
+    'REQUEST_TIME' => 1435593957
+]
+2015-06-29 18:05:57 [::1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'end() expects parameter 1 to be array, null given' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:226
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'end() expects p...', 'D:\xampp\htdocs...', 226, Array)
+#1 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(226): end(NULL)
+#2 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+2015-06-29 18:05:57 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '1'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '1'
+    ]
+    'Wilayah' => [
+        'nama' => null
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '61'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'LV9nd1Z6TXV1aDQ2YEl4H0tyCURiEHpYaCwBJQJMEhlvCh4bZ04vNA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '50026'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435593957.52
+    'REQUEST_TIME' => 1435593957
+]
+2015-06-29 18:07:41 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: Wilayah' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:226
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(226): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\xampp\htdocs...', 226, Array)
+#1 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-06-29 18:07:41 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '...'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '...'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '65'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'NDhzQ2tGNndsDyACXXUDHVIVHXBfLAFacUsVET9waRt2bQovWnJUNg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '50048'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435594061.059
+    'REQUEST_TIME' => 1435594061
+]
+2015-06-29 18:07:42 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: Wilayah' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:226
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(226): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\xampp\htdocs...', 226, Array)
+#1 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-06-29 18:07:42 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '2'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '2'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '61'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'NDhzQ2tGNndsDyACXXUDHVIVHXBfLAFacUsVET9waRt2bQovWnJUNg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '50047'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435594062.24
+    'REQUEST_TIME' => 1435594062
+]
+2015-06-29 18:07:42 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: Wilayah' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:226
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php(226): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\xampp\htdocs...', 226, Array)
+#1 [internal function]: frontend\controllers\SiteController->actionChildVariabel()
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('child-variabel', Array)
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/child-vari...', Array)
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\gisskripsi\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2015-06-29 18:07:42 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/child-variabel'
+]
+
+$_POST = [
+    'depdrop_parents' => [
+        0 => '2'
+    ]
+    'depdrop_all_params' => [
+        'topik-nama' => '2'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'v9tdsbbft5cltau6upbfbgc1f0'
+    '_csrf' => '74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7SA635jf-n34j7-EsfRT6_lBUyl14bA\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '61'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_X_CSRF_TOKEN' => 'NDhzQ2tGNndsDyACXXUDHVIVHXBfLAFacUsVET9waRt2bQovWnJUNg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=v9tdsbbft5cltau6upbfbgc1f0; _csrf=74f7e84f86cafb9323ad21445591aa56063726493f8bf41990edef3a5c594ee8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7SA635jf-n34j7-EsfRT6_lBUyl14bA%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '50041'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fchild-variabel'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site%2Fchild-variabel'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1435594062.229
+    'REQUEST_TIME' => 1435594062
+]

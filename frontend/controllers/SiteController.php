@@ -190,10 +190,12 @@ class SiteController extends Controller
 		if (isset($_POST['depdrop_parents'])) {
 			$id = end($_POST['depdrop_parents']);
 			$query = new Query;
-			$query->select('wilayah.id, wilayah.nama, wilayah.tipe')
+			$query->select('topik.id, topik.nama')
 			->from('fakta')
-			->distinct('wilayah.id')
-			->join('LEFT OUTER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
+			->distinct('topik.id')
+			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
+			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
+			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
 			->where('wilayah.tipe='.$id);
 			$list = $query->all();
 			//$list = \common\models\Fakta::findBySql('SELECT DISTINCT id_variabel FROM fakta')->asArray()->all();
@@ -216,21 +218,30 @@ class SiteController extends Controller
 		}
 		return (['output' => '', 'selected'=>'']);
 	}
-	public function actionChildWilayah() {
+	public function actionChildVariabel() {
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		$out = [];
 		if (isset($_POST['depdrop_parents'])) {
 			$id = end($_POST['depdrop_parents']);
-			$list = \common\models\Fakta::find()->andWhere(['id_variabel'=>$id])->asArray()->all();
+			$id2 = $_POST['Wilayah']['nama'];
+			$query = new Query;
+			$query->select('variabel.id, variabel.nama')
+			->from('fakta')
+			->distinct('variabel.id')
+			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
+			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
+			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
+			->where('topik.id='.$id.'AND wilayah.tipe='.$id2);
+			$list = $query->all();
 			$selected  = null;
 			if ($id != null && count($list) > 0) {
 				$selected = '';
 				foreach ($list as $i => $account) {
 					//$namaVariabel=\frontend\models\Variabel::find()->andWhere(['kode'=>$account['kode_variabel']])->asArray()->all();
-					$wilayah = \common\models\Wilayah::findOne(['id' => $account['id_wilayah'],]);
-					$out[] = ['id' => $wilayah['id_parent'], 'name' => $wilayah['nama']];
+					//$wilayah = \common\models\Wilayah::findOne(['id' => $account['id_wilayah'],]);
+					$out[] = ['id' => $account['id'], 'name' => $account['nama']];
 					if ($i == 0) {
-						$selected = $wilayah['id_parent'];
+						$selected = $account['id'];
 					}
 				}
 				// Shows how you can preselect a value

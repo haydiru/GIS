@@ -37,16 +37,16 @@ echo $form->field($topik, 'nama')->widget(DepDrop::classname(), [
 'loadingText' => 'Loading child level 1 ...',
 ]
 ]);
-$wilayah=new \common\models\Wilayah();
+$variabel=new \common\models\Variabel();
 // Child level 2
-echo $form->field($wilayah, 'nama')->widget(DepDrop::classname(), [
+echo $form->field($variabel, 'nama')->widget(DepDrop::classname(), [
 //    'data'=> [9=>'Savings'],
 'options' => ['placeholder' => 'Select ...'],
 'type' => DepDrop::TYPE_SELECT2,
 'select2Options'=>['pluginOptions'=>['allowClear'=>true]],
 'pluginOptions'=>[
-'depends'=>['variabel-nama'],
-'url' => Url::to(['/site/child-wilayah']),
+'depends'=>['topik-nama'],
+'url' => Url::to(['/site/child-variabel']),
 'loadingText' => 'Loading Tahun ...',
 ]
 ]);
