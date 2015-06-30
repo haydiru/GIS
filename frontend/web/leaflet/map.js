@@ -11,6 +11,10 @@
  var namaProvinsi=new Array();
 
  var jp=new Array();
+ 
+ var tahun=new Array();
+ 
+ 
 
  //style untuk polygon
 
@@ -71,7 +75,6 @@
   {
 
    //panggil base map
-
    map = L.map('map').setView([-1.889306,114.697266], 5);
 
    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -90,12 +93,14 @@
   function callJumlahPenduduk()
 
   {
+  	var arVal = $('#topik-nama').val();
+	var arValWil = $('#tipewilayah-nama').val();
 
    //ajax untuk mendapatkan data jumlah penduduk
 //	var csrfToken = $('meta[name="csrf-token"]').attr("content");
    $.ajax({
 
-    url: 'http://localhost:81/skripsigis/datasql.php?id=1',
+    url: '?r=site/data&wil='+arValWil+'&var='+arVal,
 
     type : 'POST',
 
@@ -112,13 +117,15 @@
      for(var i=0;i<data.data.length;i++)
 
      {
+	if(data.data[i].tahun==1961){
+      idProvinsi[i]=data.data[i].id.substring(0, 2);
 
-      idProvinsi[i]=data.data[i].idprovinsi;
+      namaProvinsi[i]=data.data[i].nama;
 
-      namaProvinsi[i]=data.data[i].namaprovinsi;
-
-      jp[i]=data.data[i].jp;
-
+      jp[i]=data.data[i].nilai;
+	  
+	 // tahun[i]=data.data[i].tahun;
+}
      }
 
      //panggil function callProvMap()

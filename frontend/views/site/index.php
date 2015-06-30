@@ -36,7 +36,9 @@ echo $form->field($topik, 'nama')->widget(DepDrop::classname(), [
 'url' => Url::to(['/site/child']),
 'loadingText' => 'Loading child level 1 ...',
 ]
-]);
+])->label('Topik & Variabel');
+echo Html::button('<i class="glyphicon glyphicon-upload"></i> Generate', ['onclick'=>'initializez()']);
+/*
 $variabel=new \common\models\Variabel();
 // Child level 2
 echo $form->field($variabel, 'nama')->widget(DepDrop::classname(), [
@@ -50,8 +52,8 @@ echo $form->field($variabel, 'nama')->widget(DepDrop::classname(), [
 'loadingText' => 'Loading Tahun ...',
 ]
 ]);
-echo Html::submitButton('<i class="glyphicon glyphicon-upload"></i> Generate', ['onclick'=>'initializez()']);
-/*
+
+
 // Child level 3
 echo $form->field($account, 'lev3')->widget(DepDrop::classname(), [
 	'data'=> [12=>'Savings A/C 2'],

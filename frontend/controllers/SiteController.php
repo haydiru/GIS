@@ -171,14 +171,17 @@ class SiteController extends Controller
 		'model' => $model,
 		]);
 	}
-	public function actionData(){
+	public function actionData($wil,$var){
 		
 		//\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		Yii::$app->response->format = 'jsongis';
 		$query = new Query;
-		$query->select('idprovinsi, namaprovinsi, SUM(`jumlahpenduduk`) AS jp')
-		->from('penduduk_bak')
-		->groupBy('namaprovinsi');
+			$query->select('wilayah.id ,wilayah.nama,fakta.nilai,fakta.tahun')
+			->from('fakta')
+			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
+			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
+			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
+			->where('wilayah.tipe='.$wil.' AND variabel.id='.$var);
 		$rows = $query->all();
 		$command = $query->createCommand();
 		$rows = $command->queryAll();
@@ -188,14 +191,15 @@ class SiteController extends Controller
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		$out = [];
 		if (isset($_POST['depdrop_parents'])) {
-			$id = end($_POST['depdrop_parents']);
+		$id = end($_POST['depdrop_parents']);
 			$query = new Query;
-			$query->select('topik.id, topik.nama')
+			$query->select('topik.nama AS namaTopik,variabel.id, variabel.nama')
 			->from('fakta')
-			->distinct('topik.id')
+			->distinct('variabel.id')
 			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
 			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
 			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
+			->orderBy('topik.nama')
 			->where('wilayah.tipe='.$id);
 			$list = $query->all();
 			//$list = \common\models\Fakta::findBySql('SELECT DISTINCT id_variabel FROM fakta')->asArray()->all();
@@ -204,11 +208,11 @@ class SiteController extends Controller
 			$selected  = null;
 			if ($id != null && count($list) > 0) {
 				$selected = '';
-				foreach ($list as $i => $topik) {
+				foreach ($list as $i => $variabel) {$topik[$i]=$variabel['namaTopik'];
 					//$namaVariabel=\frontend\models\Variabel::find()->andWhere(['kode'=>$account['kode_variabel']])->asArray()->all();
-					$out[] = ['id' => $topik['id'], 'name' => $topik['nama']];
+					$out[$variabel['namaTopik']][] = ['id' => $variabel['id'], 'name' => $variabel['nama']];
 					if ($i == 0) {
-						$selected = $topik['id'];
+						$selected = $variabel['id'];
 					}
 				}
 				// Shows how you can preselect a value
