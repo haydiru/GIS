@@ -176,7 +176,7 @@ class SiteController extends Controller
 		//\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		Yii::$app->response->format = 'jsongis';
 		$query = new Query;
-			$query->select('wilayah.id ,wilayah.nama,fakta.nilai,fakta.tahun')
+			$query->select('wilayah.id ,wilayah.nama,fakta.nilai,fakta.tahun,variabel.satuan')
 			->from('fakta')
 			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
 			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')

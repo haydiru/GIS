@@ -20,10 +20,13 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
 		'leaflet/leaflet.css',
+		'leaflet/minimap/src/Control.MiniMap.css',
     ];
     public $js = [
 	'leaflet/leaflet-src.js',
 	'leaflet/map.js',
+	'leaflet/minimap/src/Control.MiniMap.js',
+	'leaflet/provider/leaflet-providers.js',
 	//'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
 	
     ];
