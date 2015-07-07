@@ -37,7 +37,7 @@ echo $form->field($topik, 'nama')->widget(DepDrop::classname(), [
 'loadingText' => 'Loading child level 1 ...',
 ]
 ])->label('Topik & Variabel');
-echo Html::button('<i class="glyphicon glyphicon-upload"></i> Generate', ['onclick'=>'initializez()']);
+echo Html::button('<i class="glyphicon glyphicon-upload"></i> Generate', ['onclick'=>'callJumlahPenduduk()']);
 /*
 $variabel=new \common\models\Variabel();
 // Child level 2

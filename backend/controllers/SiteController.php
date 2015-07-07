@@ -1,25 +1,25 @@
 <?php
-namespacebackend\controllers;
+namespace backend\controllers;
 
-useYii;
-useyii\filters\AccessControl;
-useyii\web\Controller;
-usecommon\models\LoginForm;
-useyii\filters\VerbFilter;
-usebackend\models\UploadForm;
-useyii\web\UploadedFile;
+use Yii;
+use yii\filters\AccessControl;
+use yii\web\Controller;
+use common\models\LoginForm;
+use yii\filters\VerbFilter;
+use backend\models\UploadForm;
+use yii\web\UploadedFile;
 
 /**
 * Site controller
 */
-classSiteControllerextendsController
+class SiteController extends Controller
 {
 	/**
 	* @inheritdoc
 	*/
-	publicfunctionbehaviors()
+	public function behaviors()
 	{
-		return[
+		return [
 		'access'=>[
 		'class'=>AccessControl::className(),
 		'rules'=>[
@@ -46,23 +46,23 @@ classSiteControllerextendsController
 	/**
 	* @inheritdoc
 	*/
-	publicfunctionactions()
+	public function actions()
 	{
-		return[
+		return [
 		'error'=>[
 		'class'=>'yii\web\ErrorAction',
 		],
 		];
 	}
 
-	publicfunctionactionIndex()
+	public function actionIndex()
 	{
-		return$this->render('index');
+		return $this->render('index');
 	}
 	
-	publicfunctionactionUpload()
+	public function actionUpload()
 	{
-		$model=newUploadForm();
+		$model=new UploadForm();
 
 		if(Yii::$app->request->isPost){
 			$model->file=UploadedFile::getInstance($model,'file');
@@ -72,16 +72,16 @@ classSiteControllerextendsController
 				
 				$objReader=\PHPExcel_IOFactory::createReader('Excel2007');
 				$objPHPExcel=$objReader->load('uploads/'.$model->file->baseName.'.'.$model->file->extension);
-				$fakta=new\common\models\Fakta();
-				$variabel=new\common\models\Variabel();
-				$topik=new\common\models\Topik();
-				$bulan=new\common\models\Bulan();
-				$wilayah=new\common\models\Wilayah();
-				$kategori=new\common\models\Kategori();
-				$itemKategori=new\common\models\ItemKategori();
+				$fakta=new \common\models\Fakta();
+				$variabel=new \common\models\Variabel();
+				$topik=new \common\models\Topik();
+				$bulan=new \common\models\Bulan();
+				$wilayah=new \common\models\Wilayah();
+				$kategori=new \common\models\Kategori();
+				$itemKategori=new \common\models\ItemKategori();
 				$highestColumm=\PHPExcel_Cell::columnIndexFromString($objPHPExcel->setActiveSheetIndex(0)->getHighestColumn());// e.g. "EL"
 				$highestRow=$objPHPExcel->setActiveSheetIndex(0)->getHighestRow();
-				$sumberData=new\common\models\SumberData;
+				$sumberData=new \common\models\SumberData;
 				$topik_=null;
 				$variabel_=null;
 				$tahun_=null;
@@ -103,7 +103,7 @@ classSiteControllerextendsController
 						$kategori->save();
 						$kategori_=$kategori::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1,3)->getValue(),])['id'];
 					}
-					else$kategori_=1;
+					else $kategori_=1;
 				}
 				
 				for($i=6;$i<=$highestRow;$i++){
@@ -122,29 +122,30 @@ classSiteControllerextendsController
 								}
 							}
 						}
-						elseif($j==1){
+						else if($j==1){
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
 								$tahun_=$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue();
 							}
 						}
-						elseif($j==2){
+						else if($j==2){
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
 								$bulan_=$bulan::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue(),])['id'];
-								if($bulan_==null){
+								if($bulan_== null){
 									$bulan_=$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue();
 									\Yii::$app->db->createCommand()->insert('bulan',[
 									'nama'=>$bulan_,
 									])->execute();
+									$bulan_=$bulan::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue(),])['id'];
 								}
 							}
-							else$bulan_=1;
+							else $bulan_=1;
 						}
-						elseif($j==3){
+						else if($j==3){
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
 								$satuan_=$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue();
 							}
 						}
-						elseif($j==4){
+						else if($j==4){
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
 								$variabel_=$variabel::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue(),])['id'];
 								if($variabel_==null){
@@ -160,7 +161,7 @@ classSiteControllerextendsController
 							}
 						}
 
-						elseif($j==5){
+						else if($j==5){
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
 								$itemKategori_=$itemKategori::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue(),])['id'];
 								if($itemKategori_==null){
@@ -172,9 +173,9 @@ classSiteControllerextendsController
 									$itemKategori_=$itemKategori::findOne(['nama'=>$variabel_,])['id'];
 								}
 							}
-							else$itemKategori_=1;
+							else $itemKategori_=1;
 						}
-						else{
+						else {
 							$idwilayah=$wilayah::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,5)->getValue(),])['id'];
 							\Yii::$app->db->createCommand()->insert('fakta',[
 							'tahun'=>$tahun_,
@@ -189,37 +190,37 @@ classSiteControllerextendsController
 					}
 				}//end of baris
 				unlink('uploads/'.$model->file->baseName.'.'.$model->file->extension);
-				return\Yii::$app->response->redirect('?r=fakta',301)->send();
+				return \Yii::$app->response->redirect('?r=fakta',301)->send();
 			}
 		}
 
-		return$this->render('import',['model'=>$model]);
+		return  $this->render('import',['model'=>$model]);
 	}
 
-	publicfunctionactionLogin()
+	public function actionLogin()
 	{
 		if(!\Yii::$app->user->isGuest){
-			return$this->goHome();
+			return $this->goHome();
 		}
 
-		$model=newLoginForm();
+		$model=new LoginForm();
 		if($model->load(Yii::$app->request->post())&&$model->login()){
-			return$this->goBack();
+			return $this->goBack();
 		}else{
-			return$this->render('login',[
+			return $this->render('login',[
 			'model'=>$model,
 			]);
 		}
 	}
 
-	publicfunctionactionLogout()
+	public function actionLogout()
 	{
 		Yii::$app->user->logout();
 
-		return$this->goHome();
+		return $this->goHome();
 	}
 	
-	publicfunctionactionDownload()
+	public function actionDownload()
 	{
 		
 		$objReader=\PHPExcel_IOFactory::createReader('Excel5');
@@ -233,7 +234,7 @@ classSiteControllerextendsController
 			if($id!=null&&count($list)>0){
 				$selected='';
 				$col=6;
-				foreach($listas$i=>$wil){
+				foreach($list as $i=>$wil){
 					$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col,5,$wil['nama']);
 					$col++;
 				}
@@ -266,7 +267,7 @@ classSiteControllerextendsController
 		}
 	}
 
-	publicfunctionactionChild(){
+	public function actionChild(){
 		\Yii::$app->response->format=\yii\web\Response::FORMAT_JSON;
 		$out=[];
 		if(isset($_POST['depdrop_parents'])){
@@ -275,23 +276,23 @@ classSiteControllerextendsController
 			$selected=null;
 			if($id!=null&&count($list)>0){
 				$selected='';
-				foreach($listas$i=>$account){
+				foreach($list as $i=>$account){
 					$out[]=['id'=>$account['id'],'name'=>$account['nama']];
 					if($i==0){
 						$selected=$account['id'];
 					}
 				}
 				// Shows how you can preselect a value
-				return(['output'=>$out,'selected'=>$selected]);
+				return (['output'=>$out,'selected'=>$selected]);
 				
 			}
 		}
-		return(['output'=>'','selected'=>'']);
+		return  (['output'=>'','selected'=>'']);
 	}
 	
-	publicfunctionbeforeAction($action){
+	public function beforeAction($action){
 		$this->enableCsrfValidation=false;// <-- here
-		returnparent::beforeAction($action);
+		return  parent::beforeAction($action);
 	}
 	
 

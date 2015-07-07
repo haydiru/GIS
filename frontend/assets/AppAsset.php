@@ -27,7 +27,6 @@ class AppAsset extends AssetBundle
 	'leaflet/map.js',
 	'leaflet/minimap/src/Control.MiniMap.js',
 	'leaflet/provider/leaflet-providers.js',
-	//'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
 	
     ];
     public $depends = [

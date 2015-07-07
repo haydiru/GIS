@@ -26,6 +26,24 @@ info.onAdd = function (map) {
     return this._div;
 };
 
+var legend = L.control({position: 'bottomleft'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
     this._div.innerHTML = '<h4>'+$('#topik-nama option:selected').text()+'</h4>' +  (props ?
@@ -50,30 +68,6 @@ var styleSelected ={
 	'dashArray': '',
 	'fillOpacity': 0.7
 }
-var styleHigh ={
-	'fillColor':'#ff0000',
-	'fillOpacity':0.6,
-	'color':'#000000',
-	'opacity':1,
-	'weight':2,
-	'dashArray':0,
-} 
-var styleMed ={
-	'fillColor':'#ffff00',
-	'fillOpacity':0.6,
-	'color':'#000000',
-	'opacity':1,
-	'weight':2,
-	'dashArray':0,
-}
-var styleLow ={
-	'fillColor':'#00ff00',
-	'fillOpacity':0.6,
-	'color':'#000000',
-	'opacity':1,
-	'weight':2,
-	'dashArray':0,
-}
 
 
 function initializez()
@@ -82,23 +76,6 @@ function initializez()
 
 	//panggil base map
 	map = L.map('map').setView([-1.889306,114.697266], 5);
-
-	var defaultLayer = L.tileLayer.provider('Esri.WorldTopoMap').addTo(map);        
-	var baseLayers = {    
-		'Thunderforest Landscape': L.tileLayer.provider('Thunderforest.Landscape'),    
-		'MapQuest Aerial': L.tileLayer.provider('MapQuestOpen.Aerial'),         
-		'Stamen Watercolor': L.tileLayer.provider('Stamen.Watercolor'),
-		'Esri WorldStreetMap': L.tileLayer.provider('Esri.WorldStreetMap'),
-		'Esri DeLorme': L.tileLayer.provider('Esri.DeLorme'),   
-		'Esri WorldImagery': L.tileLayer.provider('Esri.WorldImagery'),
-		'Esri WorldTerrain': L.tileLayer.provider('Esri.WorldTerrain'),
-		'Esri WorldShadedRelief': L.tileLayer.provider('Esri.WorldShadedRelief'),
-		'Esri WorldPhysical': L.tileLayer.provider('Esri.WorldPhysical'),
-		'Esri OceanBasemap': L.tileLayer.provider('Esri.OceanBasemap'),
-		'Esri NatGeoWorldMap': L.tileLayer.provider('Esri.NatGeoWorldMap'),
-		'Esri WorldGrayCanvas': L.tileLayer.provider('Esri.WorldGrayCanvas'),
-		'Acetate': L.tileLayer.provider('Acetate')
-	};
 	//overlay layer, bisa menampilkan data curah hujan, dll   
 	var overlayLayers = {   
 		//bisa ditambahkan sendiri overlay layernya, lihat dokumentasi plugin untuk layer yang tersedia
@@ -106,34 +83,13 @@ function initializez()
 	
 	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	var osmAttrib='Map data © OpenStreetMap contributors';
-	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib });
+	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib }).addTo(map);
 	//tampilkan control pemilihan layer pada peta   
 	//L.control.layers(overlayLayers,{collapsed: true}).addTo(map);
 
 	//panggil function callJumlahPenduduk
-var legend = L.control({position: 'bottomleft'});
-
-legend.onAdd = function (map) {
-
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-        labels = [];
-
-    // loop through our density intervals and generate a label with a colored square for each interval
-    for (var i = 0; i < grades.length; i++) {
-        div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
-
-    return div;
-};
-
 legend.addTo(map);
 info.addTo(map);
-	callJumlahPenduduk();  
-
-
 }
 function getColor(d) {
     return d > 1000 ? '#800026' :
@@ -180,11 +136,14 @@ function resetHighlight(e) {
 	});      
 	info.update();
 }
-
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
 
 function callJumlahPenduduk()
 
 {
+
 	var arVal = $('#topik-nama').val();
 	var arValWil = $('#tipewilayah-nama').val();
 
@@ -253,19 +212,9 @@ success: function(data)
 
 			layerprovinsi=L.geoJson(data,{style:styleProvinsi,onEachFeature:onEachFeature}).addTo(map);
 
-			
-
 			//event ketika polygon di klik
 
-			layerprovinsi.on('click', function(e) {
-
-				//layerprovinsi.setStyle(styleProvinsi);
-
-				map.setView(e.latlng);       
-
-				//e.layer.setStyle(styleSelected);     
-
-			});       
+      
 
 		}
 
@@ -303,7 +252,8 @@ function onEachFeature(feature, layer)
 	}
 	layer.on({
 mouseover: highlightFeature,
-mouseout: resetHighlight,          
+mouseout: resetHighlight,  
+click : zoomToFeature        
 	});
 
 	//menambahkan info window ketika polygon di klik
