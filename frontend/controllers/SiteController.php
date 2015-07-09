@@ -176,11 +176,13 @@ class SiteController extends Controller
 		//\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		Yii::$app->response->format = 'jsongis';
 		$query = new Query;
-			$query->select('wilayah.id ,wilayah.nama,fakta.nilai,fakta.tahun,variabel.satuan')
+			$query->select('wilayah.id ,wilayah.nama,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
 			->from('fakta')
+			->distinct('wilayah.id ,wilayah.nama,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
 			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
 			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
 			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
+			->join('INNER JOIN', 'bulan','fakta.id_bulan=bulan.id')
 			->where('wilayah.tipe='.$wil.' AND variabel.id='.$var);
 		$rows = $query->all();
 		$command = $query->createCommand();

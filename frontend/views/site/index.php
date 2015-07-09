@@ -71,7 +71,9 @@ echo $form->field($account, 'lev3')->widget(DepDrop::classname(), [
 */
 ActiveForm::end();
 ?>
+<div id="variables" class="menu-ui">Tahun : </div>
 <div id="map"></div>
+
 </div>
 
 </div>
