@@ -9,10 +9,23 @@ use yii\helpers\ArrayHelper;
 use kartik\widgets\ActiveForm;
 use kartik\widgets\Select2;
 $this->title = 'Import Data';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-index">
-
-
+<h1><?= Html::encode($this->title) ?></h1>
+<div class="panel panel-success">
+  <div class="panel-heading">Panel heading without title</div>
+  <div class="panel-body">
+<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+<span class="glyphicon glyphicon-chevron-down"></span>
+ 
+</button> Tamplate Excel 
+<div class="collapse" id="collapseExample">
+  <div class="well" style="width:60%">
+              <p>Silakan download tamplate untuk mengimport data ke database.</p>
+          <input type="submit" value="Download" class="btn btn-danger"> 
+  </div>
+</div>
 <?php 
  $form1=ActiveForm::begin([
     'method' => 'post',
@@ -44,16 +57,8 @@ echo $form1->field($variabel, 'nama')->widget(DepDrop::classname(), [
 ]);
 
 ?>
-<div class="box box-primary">
-        <div class="box-header with-border">
-          <h3 class="box-title">Template Import</h3>
-          <span class="label label-primary pull-right"><i class="fa fa-file-excel-o"></i></span>
-        </div><!-- /.box-header -->
-        <div class="box-body">
-          <p>Silakan download tamplate untuk mengimport data ke database.</p>
-          <input type="submit" value="Download" class="btn btn-danger"> 
-        </div><!-- /.box-body -->
-      </div>
+
+
 
 <?php
 ActiveForm::end();
@@ -67,19 +72,9 @@ echo '<div class="panel panel-success">';
 <?php
 echo '</div></div>';
 ActiveForm::end(); 
-$script = <<< JS
-$('#el').on('click', function(e) {
-    $.ajax({
-       url: '/site/download',
-       data: {id: '<id>', 'other': '<other>'},
-       success: function(data) {
-           // process data
-       }
-    });
-});
-JS;
-$this->registerJs($script);
+
 ?>
 
-
+</div>
+</div>
 </div>

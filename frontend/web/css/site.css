@@ -2,7 +2,8 @@ html,
 body {
     height: 100%;
 }
-#map{ height: 400px; } 
+#map{ height: 600px;
+width:100%; } 
 .wrap {
     min-height: 100%;
     height: auto;

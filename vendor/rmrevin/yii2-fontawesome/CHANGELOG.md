@@ -1,3 +1,11 @@
+2015-06-29 - 2.11.0
+-------------------
+* Added the ability to change the tag for icons.
+
+2015-06-23 - 2.10.3
+-------------------
+* Change `cnd` url to cloudflare.
+
 2015-06-19 - 2.10.2
 -------------------
 * `CDNAssetBundle` is now deprecated. Use `rmrevin\yii\fontawesome\cdn\AssetBundle`.
