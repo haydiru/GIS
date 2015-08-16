@@ -93,7 +93,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		</div>
 		<div class="col-md-2" style="padding-right:5px;">
 		<?php
-		echo Html::button('<i class="glyphicon glyphicon-play"></i> Generate', ['onclick'=>'callJumlahPenduduk()','class'=>'btn btn-success btn-sm','style'=>'margin-top:22px']);
+		echo Html::submitButton('<i class="glyphicon glyphicon-play"></i> Generate', ['onclick'=>'callJumlahPenduduk()','class'=>'btn btn-success btn-sm','style'=>'margin-top:22px']);
 		?>
 		</div>
 		
@@ -105,6 +105,8 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		
 		<div class="panel panel-success" >
 		<div class="panel-heading">Grafik</div>
+		<?= $this->render('_tabel', [
+		'tabel' => $tabel,]) ?>
   <div class="panel-body" ></div></div>
 </div>
 <div class="col-md-8" style="padding-left:0;">
@@ -115,7 +117,8 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
   
 <div id="map"></div>  
 
-		</div></div>
+		</div>
+		</div>
 		</div>
         </div>
         </div>

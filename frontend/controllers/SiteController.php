@@ -69,8 +69,34 @@ class SiteController extends Controller
 	}
 
 	public function actionIndex()
-	{
-		return $this->render('index');
+	{	
+	$rows=null;
+	if(isset($_POST['Wilayah']['nama'])){
+			$wil=$_POST['Wilayah']['nama'];
+			$idVar=$id=$_POST['Variabel']['nama'];
+			$l=strlen($idVar)-10;
+			$var=substr($idVar,10,$l);
+			$kat=$_POST['Kategori']['nama'];
+			$query = new Query;
+			$query->select('wilayah.nama as nama_wilayah ,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
+			->from('fakta')
+			->distinct('wilayah.id ,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
+			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
+			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
+			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
+			->join('INNER JOIN', 'bulan','fakta.id_bulan=bulan.id')
+			->join('INNER JOIN', 'kategori','fakta.id_kategori=kategori.id')
+			->where('wilayah.id_parent='.$wil.' AND fakta.id_variabel='.$var.' AND fakta.id_kategori='.$kat);
+		$rows = $query->all();
+		$command = $query->createCommand();
+		$rows = $command->queryAll();
+		return $this->render('index', [
+		'tabel' => $rows,
+		]);	
+	}
+		return $this->render('index', [
+		'tabel' => $rows,
+		]);
 	}
 
 	public function actionLogin()
@@ -171,19 +197,20 @@ class SiteController extends Controller
 		'model' => $model,
 		]);
 	}
-	public function actionData($wil,$var){
+	public function actionData($wil,$var,$kat){
 		
 		//\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		Yii::$app->response->format = 'jsongis';
 		$query = new Query;
-			$query->select('wilayah.id ,wilayah.nama,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
+			$query->select('wilayah.id ,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
 			->from('fakta')
-			->distinct('wilayah.id ,wilayah.nama,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
+			->distinct('wilayah.id ,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
 			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
 			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
 			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
 			->join('INNER JOIN', 'bulan','fakta.id_bulan=bulan.id')
-			->where('wilayah.tipe='.$wil.' AND variabel.id='.$var);
+			->join('INNER JOIN', 'kategori','fakta.id_kategori=kategori.id')
+			->where('wilayah.id_parent='.$wil.' AND fakta.id_variabel='.$var.' AND fakta.id_kategori='.$kat);
 		$rows = $query->all();
 		$command = $query->createCommand();
 		$rows = $command->queryAll();
@@ -192,7 +219,7 @@ class SiteController extends Controller
 	public function actionChildTopik() {
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		$out = [];
-		if (isset($_POST['depdrop_parents'])) {
+		if (isset($_POST['depdrop_parents'])&&end($_POST['depdrop_parents'])!=null) {
 		$id = end($_POST['depdrop_parents']);
 			$query = new Query;
 			$query->select('topik.id, topik.nama')
@@ -204,9 +231,6 @@ class SiteController extends Controller
 			->orderBy('topik.nama')
 			->where('wilayah.id_parent='.$id);
 			$list = $query->all();
-			//$list = \common\models\Fakta::findBySql('SELECT DISTINCT id_variabel FROM fakta')->asArray()->all();
-			//SELECT DISTINCT topik.id, topik.nama FROM fakta
-//RIGHT JOIN topik ON fakta.id_variabel=topik.id
 			$selected  = null;
 			if ($id != null && count($list) > 0) {
 				$selected = '';
@@ -228,7 +252,7 @@ class SiteController extends Controller
 	public function actionChildVariabel() {
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		$out = [];
-		if (isset($_POST['depdrop_parents'])) {
+		if (isset($_POST['depdrop_parents'])&&end($_POST['depdrop_parents'])!=null) {
 		$id = end($_POST['depdrop_parents']);
 		$l=strlen($id)-10;
 		$idTop=substr($id,10,$l);
@@ -268,7 +292,7 @@ class SiteController extends Controller
 		public function actionChildKategori() {
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		$out = [];
-		if (isset($_POST['depdrop_parents'])) {
+		if (isset($_POST['depdrop_parents'])&&end($_POST['depdrop_parents'])!=null) {
 		$id = end($_POST['depdrop_parents']);
 		$l=strlen($id)-10;
 		$idVar=substr($id,10,$l);
@@ -308,7 +332,7 @@ class SiteController extends Controller
 		public function actionChildWilayah() {
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		$out = [];
-		if (isset($_POST['depdrop_parents'])) {
+		if (isset($_POST['depdrop_parents'])&&end($_POST['depdrop_parents'])!=null) {
 			$id = end($_POST['depdrop_parents']);
 			$query = new Query;
 			$query->select('id,nama')

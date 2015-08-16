@@ -170,14 +170,15 @@ function callJumlahPenduduk()
 {
 
 
-	var arVal = $('#topik-nama').val();
-	var arValWil = $('#tipewilayah-nama').val();
-
+	var aVarn = $('#variabel-nama').val();
+	var aVar = aVarn.substring(10);
+	var aWil = $('#wilayah-nama').val();
+	var aKat = $('#kategori-nama').val();
 	//ajax untuk mendapatkan data jumlah penduduk
 	//	var csrfToken = $('meta[name="csrf-token"]').attr("content");
 	$.ajax({
 
-url: '?r=site/data&wil='+arValWil+'&var='+arVal,
+url: '?r=site/data&wil='+aWil+'&var='+aVar+'&kat='+aKat,
 
 		type : 'POST',
 
@@ -195,11 +196,10 @@ success: function(data)
 
 			{
 					idProvinsi[i]=data.data[i].id.substring(0, 2);
-			tahun[i]=data.data[i].tahun+' '+data.data[i].nama;
+				tahun[i]=data.data[i].tahun+' '+data.data[i].nama;
 					jp[idProvinsi[i]+tahun[i]]=data.data[i].nilai;
-
 					satuan[i]=data.data[i].satuan;
-					console.log('data tahun : '+tahun[i]+ ' kota : '+namaProvinsi[i]+' jumlah = '+jp[idProvinsi[i]+tahun[i]]);
+					//console.log('data tahun : '+tahun[i]+ ' kota : '+namaProvinsi[i]+' jumlah = '+jp[idProvinsi[i]+tahun[i]]);
 					// tahun[i]=data.data[i].tahun;
 			}
 			
