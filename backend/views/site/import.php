@@ -16,16 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="panel panel-success">
   <div class="panel-heading">Panel heading without title</div>
   <div class="panel-body">
-<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-<span class="glyphicon glyphicon-chevron-down"></span>
- 
-</button> Tamplate Excel 
-<div class="collapse" id="collapseExample">
-  <div class="well" style="width:60%">
-              <p>Silakan download tamplate untuk mengimport data ke database.</p>
-          <input type="submit" value="Download" class="btn btn-danger"> 
-  </div>
-</div>
+
 <?php 
  $form1=ActiveForm::begin([
     'method' => 'post',
@@ -58,7 +49,16 @@ echo $form1->field($variabel, 'nama')->widget(DepDrop::classname(), [
 
 ?>
 
-
+<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+<span class="glyphicon glyphicon-chevron-down"></span>
+ 
+</button> Tamplate Excel 
+<div class="collapse" id="collapseExample">
+  <div class="well" style="width:60%">
+              <p>Silakan download tamplate untuk mengimport data ke database.</p>
+          <input type="submit" value="Download" class="btn btn-danger"> 
+  </div>
+</div>
 
 <?php
 ActiveForm::end();

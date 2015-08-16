@@ -189,20 +189,20 @@ class SiteController extends Controller
 		$rows = $command->queryAll();
 		return $rows;
 	}
-	public function actionChild() {
+	public function actionChildTopik() {
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		$out = [];
 		if (isset($_POST['depdrop_parents'])) {
 		$id = end($_POST['depdrop_parents']);
 			$query = new Query;
-			$query->select('topik.nama AS namaTopik,variabel.id, variabel.nama')
+			$query->select('topik.id, topik.nama')
 			->from('fakta')
-			->distinct('variabel.id')
+			->distinct('topik.id')
 			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
 			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
 			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
 			->orderBy('topik.nama')
-			->where('wilayah.tipe='.$id);
+			->where('wilayah.id_parent='.$id);
 			$list = $query->all();
 			//$list = \common\models\Fakta::findBySql('SELECT DISTINCT id_variabel FROM fakta')->asArray()->all();
 			//SELECT DISTINCT topik.id, topik.nama FROM fakta
@@ -210,11 +210,12 @@ class SiteController extends Controller
 			$selected  = null;
 			if ($id != null && count($list) > 0) {
 				$selected = '';
-				foreach ($list as $i => $variabel) {$topik[$i]=$variabel['namaTopik'];
+				foreach ($list as $i => $topik) {
+					//$topik[$i]=$variabel['namaTopik'];
 					//$namaVariabel=\frontend\models\Variabel::find()->andWhere(['kode'=>$account['kode_variabel']])->asArray()->all();
-					$out[$variabel['namaTopik']][] = ['id' => $variabel['id'], 'name' => $variabel['nama']];
+					$out[] = ['id' => $id.$topik['id'], 'name' => $topik['nama']];
 					if ($i == 0) {
-						$selected = $variabel['id'];
+						$selected = $id.$topik['id'];
 					}
 				}
 				// Shows how you can preselect a value
@@ -228,8 +229,10 @@ class SiteController extends Controller
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		$out = [];
 		if (isset($_POST['depdrop_parents'])) {
-			$id = end($_POST['depdrop_parents']);
-			$id2 = $_POST['Wilayah']['nama'];
+		$id = end($_POST['depdrop_parents']);
+		$l=strlen($id)-10;
+		$idTop=substr($id,10,$l);
+		$idWil=substr($id,0,10);
 			$query = new Query;
 			$query->select('variabel.id, variabel.nama')
 			->from('fakta')
@@ -237,7 +240,80 @@ class SiteController extends Controller
 			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
 			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
 			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
-			->where('topik.id='.$id.'AND wilayah.tipe='.$id2);
+			->orderBy('variabel.nama')
+			->where('topik.id='.$idTop.' AND wilayah.id_parent='.$idWil);
+			$list = $query->all();
+			//$list = \common\models\Fakta::findBySql('SELECT DISTINCT id_variabel FROM fakta')->asArray()->all();
+			//SELECT DISTINCT topik.id, topik.nama FROM fakta
+//RIGHT JOIN topik ON fakta.id_variabel=topik.id
+			$selected  = null;
+			if ($id != null && count($list) > 0) {
+				$selected = '';
+				foreach ($list as $i => $variabel) {
+					//$topik[$i]=$variabel['namaTopik'];
+					//$namaVariabel=\frontend\models\Variabel::find()->andWhere(['kode'=>$account['kode_variabel']])->asArray()->all();
+					$out[] = ['id' => $idWil.$variabel['id'], 'name' => $variabel['nama']];
+					if ($i == 0) {
+						$selected = $idWil.$variabel['id'];
+					}
+				}
+				// Shows how you can preselect a value
+				return (['output' => $out, 'selected'=>$selected]);
+				
+			}
+		}
+		return (['output' => '', 'selected'=>'']);
+	}
+	
+		public function actionChildKategori() {
+		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+		$out = [];
+		if (isset($_POST['depdrop_parents'])) {
+		$id = end($_POST['depdrop_parents']);
+		$l=strlen($id)-10;
+		$idVar=substr($id,10,$l);
+		$idWil=substr($id,0,10);
+			$query = new Query;
+			$query->select('kategori.id, kategori.nama')
+			->from('fakta')
+			->distinct('kategori.id')
+			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
+			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
+			->join('INNER JOIN', 'kategori','fakta.id_kategori=kategori.id')
+			->orderBy('kategori.nama')
+			->where('variabel.id='.$idVar.' AND wilayah.id_parent='.$idWil);
+			$list = $query->all();
+			//$list = \common\models\Fakta::findBySql('SELECT DISTINCT id_variabel FROM fakta')->asArray()->all();
+			//SELECT DISTINCT topik.id, topik.nama FROM fakta
+//RIGHT JOIN topik ON fakta.id_variabel=topik.id
+			$selected  = null;
+			if ($id != null && count($list) > 0) {
+				$selected = '';
+				foreach ($list as $i => $variabel) {
+					//$topik[$i]=$variabel['namaTopik'];
+					//$namaVariabel=\frontend\models\Variabel::find()->andWhere(['kode'=>$account['kode_variabel']])->asArray()->all();
+					$out[] = ['id' => $variabel['id'], 'name' => $variabel['nama']];
+					if ($i == 0) {
+						$selected = $variabel['id'];
+					}
+				}
+				// Shows how you can preselect a value
+				return (['output' => $out, 'selected'=>$selected]);
+				
+			}
+		}
+		return (['output' => '', 'selected'=>'']);
+	}
+	
+		public function actionChildWilayah() {
+		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+		$out = [];
+		if (isset($_POST['depdrop_parents'])) {
+			$id = end($_POST['depdrop_parents']);
+			$query = new Query;
+			$query->select('id,nama')
+			->from('wilayah')
+			->where('tipe='.$id);
 			$list = $query->all();
 			$selected  = null;
 			if ($id != null && count($list) > 0) {
@@ -257,6 +333,7 @@ class SiteController extends Controller
 		}
 		return (['output' => '', 'selected'=>'']);
 	}
+	
 	public function beforeAction($action) {
 		$this->enableCsrfValidation = false; // <-- here
 		return parent::beforeAction($action);

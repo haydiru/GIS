@@ -29304,3 +29304,847 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1439474348.614
     'REQUEST_TIME' => 1439474348
 ]
+2015-08-16 08:21:17 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_bulan` FOREIGN KEY (`id_bulan`) REFERENCES `bulan` (`id`) ON DELETE CASCADE)' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:781
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(781): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(188): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_bulan` FOREIGN KEY (`id_bulan`) REFERENCES `bulan` (`id`) ON DELETE CASCADE)
+The SQL being executed was: INSERT INTO `fakta` (`tahun`, `nilai`, `id_bulan`, `id_wilayah`, `id_variabel`, `id_item_kategori`, `id_sumber_data`) VALUES (1961, 1629000, 1, '1100000000', 1, 1, 1)' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `fa...')
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(188): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1452
+    [2] => Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_bulan` FOREIGN KEY (`id_bulan`) REFERENCES `bulan` (`id`) ON DELETE CASCADE)
+)
+
+2015-08-16 08:21:11 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][info][application] $_GET = [
+    'r' => 'site/upload'
+]
+
+$_POST = [
+    '_csrf' => 'emtqX0hlMzVDBj5pMDFEcAMACDsGHEpBTQonNA4Dd0Y0AysMOyoDYw=='
+    'UploadForm' => [
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'file' => 'upload.xlsx'
+        ]
+        'type' => [
+            'file' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        ]
+        'tmp_name' => [
+            'file' => 'D:\\xampp\\tmp\\phpEA96.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 13145
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => '27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9mT6xTwEykbdNyyt7aMkFfDsNhASsO0V\";}'
+    'PHPSESSID' => 'il4vsh6p9dmsln8g96d4tbvc02'
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '13648'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryMsCBDJ4BYGiHkTgY'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229mT6xTwEykbdNyyt7aMkFfDsNhASsO0V%22%3B%7D; PHPSESSID=il4vsh6p9dmsln8g96d4tbvc02; _identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/backend/web/index.php'
+    'REMOTE_PORT' => '61734'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fupload'
+    'REQUEST_URI' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'SCRIPT_NAME' => '/gisskripsi/backend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1439706070.168
+    'REQUEST_TIME' => 1439706070
+]
+2015-08-16 09:51:54 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Object of class common\models\Kategori could not be converted to int' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\ColumnSchema.php:134
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\ColumnSchema.php(134): yii\base\ErrorHandler->handleError(8, 'Object of class...', 'D:\xampp\htdocs...', 134, Array)
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\ColumnSchema.php(104): yii\db\ColumnSchema->typecast(Object(common\models\Kategori))
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(205): yii\db\ColumnSchema->dbTypecast(Object(common\models\Kategori))
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(427): yii\db\mysql\QueryBuilder->insert('fakta', Array, Array)
+#4 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->insert('fakta', Array)
+#5 [internal function]: backend\controllers\SiteController->actionUpload()
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('upload', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/upload', Array)
+#10 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2015-08-16 09:51:51 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][info][application] $_GET = [
+    'r' => 'site/upload'
+]
+
+$_POST = [
+    '_csrf' => 'UGlhYXJUT0dpBDVXCgA4AikCAwU8LTYzZwgsCjQyCzQeASAyARt/EQ=='
+    'UploadForm' => [
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'file' => 'upload (7).xls'
+        ]
+        'type' => [
+            'file' => 'application/vnd.ms-excel'
+        ]
+        'tmp_name' => [
+            'file' => 'D:\\xampp\\tmp\\phpEDC1.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 29696
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => '27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9mT6xTwEykbdNyyt7aMkFfDsNhASsO0V\";}'
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'il4vsh6p9dmsln8g96d4tbvc02'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '30161'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryicX0HnsvxPHrmeiX'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229mT6xTwEykbdNyyt7aMkFfDsNhASsO0V%22%3B%7D; _identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=il4vsh6p9dmsln8g96d4tbvc02'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/backend/web/index.php'
+    'REMOTE_PORT' => '64186'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fupload'
+    'REQUEST_URI' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'SCRIPT_NAME' => '/gisskripsi/backend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1439711510.982
+    'REQUEST_TIME' => 1439711510
+]
+2015-08-16 09:53:33 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Object of class common\models\Kategori could not be converted to int' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\ColumnSchema.php:134
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\ColumnSchema.php(134): yii\base\ErrorHandler->handleError(8, 'Object of class...', 'D:\xampp\htdocs...', 134, Array)
+#1 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\ColumnSchema.php(104): yii\db\ColumnSchema->typecast(Object(common\models\Kategori))
+#2 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(205): yii\db\ColumnSchema->dbTypecast(Object(common\models\Kategori))
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(427): yii\db\mysql\QueryBuilder->insert('fakta', Array, Array)
+#4 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->insert('fakta', Array)
+#5 [internal function]: backend\controllers\SiteController->actionUpload()
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('upload', Array)
+#9 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/upload', Array)
+#10 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2015-08-16 09:53:31 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][info][application] $_GET = [
+    'r' => 'site/upload'
+]
+
+$_POST = [
+    '_csrf' => 'ZWJ0SU9IcmRcDyB/NxwFIRwJFi0BMQsQUgM5IgkuNhcrCjUaPAdCMg=='
+    'UploadForm' => [
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'file' => 'upload (7).xls'
+        ]
+        'type' => [
+            'file' => 'application/vnd.ms-excel'
+        ]
+        'tmp_name' => [
+            'file' => 'D:\\xampp\\tmp\\php77DC.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 29696
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => '27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9mT6xTwEykbdNyyt7aMkFfDsNhASsO0V\";}'
+    'PHPSESSID' => 'il4vsh6p9dmsln8g96d4tbvc02'
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '30161'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarygBvUGalhm3G8ZhCV'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229mT6xTwEykbdNyyt7aMkFfDsNhASsO0V%22%3B%7D; PHPSESSID=il4vsh6p9dmsln8g96d4tbvc02; _identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/backend/web/index.php'
+    'REMOTE_PORT' => '64211'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fupload'
+    'REQUEST_URI' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'SCRIPT_NAME' => '/gisskripsi/backend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1439711611.898
+    'REQUEST_TIME' => 1439711611
+]
+2015-08-16 09:55:06 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_bulan` FOREIGN KEY (`id_bulan`) REFERENCES `bulan` (`id`) ON DELETE CASCADE)' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:781
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(781): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_bulan` FOREIGN KEY (`id_bulan`) REFERENCES `bulan` (`id`) ON DELETE CASCADE)
+The SQL being executed was: INSERT INTO `fakta` (`tahun`, `nilai`, `id_bulan`, `id_wilayah`, `id_variabel`, `id_kategori`, `id_item_kategori`, `id_sumber_data`) VALUES (1961, 1629000, 0, '1100000000', 1, 0, 0, 1)' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `fa...')
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1452
+    [2] => Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_bulan` FOREIGN KEY (`id_bulan`) REFERENCES `bulan` (`id`) ON DELETE CASCADE)
+)
+
+2015-08-16 09:55:05 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][info][application] $_GET = [
+    'r' => 'site/upload'
+]
+
+$_POST = [
+    '_csrf' => 'ZWJ0SU9IcmRcDyB/NxwFIRwJFi0BMQsQUgM5IgkuNhcrCjUaPAdCMg=='
+    'UploadForm' => [
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'file' => 'upload (7).xls'
+        ]
+        'type' => [
+            'file' => 'application/vnd.ms-excel'
+        ]
+        'tmp_name' => [
+            'file' => 'D:\\xampp\\tmp\\phpE49C.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 29696
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => '27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9mT6xTwEykbdNyyt7aMkFfDsNhASsO0V\";}'
+    'PHPSESSID' => 'il4vsh6p9dmsln8g96d4tbvc02'
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '30161'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarygBvUGalhm3G8ZhCV'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229mT6xTwEykbdNyyt7aMkFfDsNhASsO0V%22%3B%7D; PHPSESSID=il4vsh6p9dmsln8g96d4tbvc02; _identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/backend/web/index.php'
+    'REMOTE_PORT' => '64224'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fupload'
+    'REQUEST_URI' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'SCRIPT_NAME' => '/gisskripsi/backend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1439711705.273
+    'REQUEST_TIME' => 1439711705
+]
+2015-08-16 09:56:53 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_bulan` FOREIGN KEY (`id_bulan`) REFERENCES `bulan` (`id`) ON DELETE CASCADE)' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:781
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(781): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_bulan` FOREIGN KEY (`id_bulan`) REFERENCES `bulan` (`id`) ON DELETE CASCADE)
+The SQL being executed was: INSERT INTO `fakta` (`tahun`, `nilai`, `id_bulan`, `id_wilayah`, `id_variabel`, `id_kategori`, `id_item_kategori`, `id_sumber_data`) VALUES (1961, 1629000, 0, '1100000000', 1, 0, 0, 1)' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `fa...')
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1452
+    [2] => Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_bulan` FOREIGN KEY (`id_bulan`) REFERENCES `bulan` (`id`) ON DELETE CASCADE)
+)
+
+2015-08-16 09:56:51 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][info][application] $_GET = [
+    'r' => 'site/upload'
+]
+
+$_POST = [
+    '_csrf' => 'ZWJ0SU9IcmRcDyB/NxwFIRwJFi0BMQsQUgM5IgkuNhcrCjUaPAdCMg=='
+    'UploadForm' => [
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'file' => 'upload (7).xls'
+        ]
+        'type' => [
+            'file' => 'application/vnd.ms-excel'
+        ]
+        'tmp_name' => [
+            'file' => 'D:\\xampp\\tmp\\php84A1.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 29696
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => '27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9mT6xTwEykbdNyyt7aMkFfDsNhASsO0V\";}'
+    'PHPSESSID' => 'il4vsh6p9dmsln8g96d4tbvc02'
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '30161'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarygBvUGalhm3G8ZhCV'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229mT6xTwEykbdNyyt7aMkFfDsNhASsO0V%22%3B%7D; PHPSESSID=il4vsh6p9dmsln8g96d4tbvc02; _identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/backend/web/index.php'
+    'REMOTE_PORT' => '64279'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fupload'
+    'REQUEST_URI' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'SCRIPT_NAME' => '/gisskripsi/backend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1439711811.775
+    'REQUEST_TIME' => 1439711811
+]
+2015-08-16 09:58:22 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_item_kategori` FOREIGN KEY (`id_item_kategori`) REFERENCES `item_kategori` (`id`) ON DELETE CASCADE)' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:781
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(781): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_item_kategori` FOREIGN KEY (`id_item_kategori`) REFERENCES `item_kategori` (`id`) ON DELETE CASCADE)
+The SQL being executed was: INSERT INTO `fakta` (`tahun`, `nilai`, `id_bulan`, `id_wilayah`, `id_variabel`, `id_kategori`, `id_item_kategori`, `id_sumber_data`) VALUES (1961, 1629000, 0, '1100000000', 1, 0, 0, 1)' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `fa...')
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1452
+    [2] => Cannot add or update a child row: a foreign key constraint fails (`database_gis`.`fakta`, CONSTRAINT `fakta_id_item_kategori` FOREIGN KEY (`id_item_kategori`) REFERENCES `item_kategori` (`id`) ON DELETE CASCADE)
+)
+
+2015-08-16 09:58:21 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][info][application] $_GET = [
+    'r' => 'site/upload'
+]
+
+$_POST = [
+    '_csrf' => 'ZWJ0SU9IcmRcDyB/NxwFIRwJFi0BMQsQUgM5IgkuNhcrCjUaPAdCMg=='
+    'UploadForm' => [
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'file' => 'upload (7).xls'
+        ]
+        'type' => [
+            'file' => 'application/vnd.ms-excel'
+        ]
+        'tmp_name' => [
+            'file' => 'D:\\xampp\\tmp\\phpE27D.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 29696
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => '27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9mT6xTwEykbdNyyt7aMkFfDsNhASsO0V\";}'
+    'PHPSESSID' => 'il4vsh6p9dmsln8g96d4tbvc02'
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '30161'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarygBvUGalhm3G8ZhCV'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229mT6xTwEykbdNyyt7aMkFfDsNhASsO0V%22%3B%7D; PHPSESSID=il4vsh6p9dmsln8g96d4tbvc02; _identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/backend/web/index.php'
+    'REMOTE_PORT' => '64313'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fupload'
+    'REQUEST_URI' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'SCRIPT_NAME' => '/gisskripsi/backend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1439711901.343
+    'REQUEST_TIME' => 1439711901
+]
+2015-08-16 09:59:08 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'kode_unik'' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php:781
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(781): PDOStatement->execute()
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'kode_unik'
+The SQL being executed was: INSERT INTO `fakta` (`tahun`, `nilai`, `id_bulan`, `id_wilayah`, `id_variabel`, `id_kategori`, `id_item_kategori`, `id_sumber_data`) VALUES (1961, 4965000, 0, '1200000000', 1, 0, 0, 1)' in D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\db\Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `fa...')
+#1 D:\xampp\htdocs\gisskripsi\backend\controllers\SiteController.php(179): yii\db\Command->execute()
+#2 [internal function]: backend\controllers\SiteController->actionUpload()
+#3 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\xampp\htdocs\gisskripsi\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\gisskripsi\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1062
+    [2] => Duplicate entry '' for key 'kode_unik'
+)
+
+2015-08-16 09:59:06 [::1][1][il4vsh6p9dmsln8g96d4tbvc02][info][application] $_GET = [
+    'r' => 'site/upload'
+]
+
+$_POST = [
+    '_csrf' => 'ZWJ0SU9IcmRcDyB/NxwFIRwJFi0BMQsQUgM5IgkuNhcrCjUaPAdCMg=='
+    'UploadForm' => [
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'UploadForm' => [
+        'name' => [
+            'file' => 'upload (7).xls'
+        ]
+        'type' => [
+            'file' => 'application/vnd.ms-excel'
+        ]
+        'tmp_name' => [
+            'file' => 'D:\\xampp\\tmp\\php93DC.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 29696
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => '27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9mT6xTwEykbdNyyt7aMkFfDsNhASsO0V\";}'
+    'PHPSESSID' => 'il4vsh6p9dmsln8g96d4tbvc02'
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '30161'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost:81'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarygBvUGalhm3G8ZhCV'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=27c9d758fea79b12d9012ad80e53badf561317bceaf342caf8c300b423faf972a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229mT6xTwEykbdNyyt7aMkFfDsNhASsO0V%22%3B%7D; PHPSESSID=il4vsh6p9dmsln8g96d4tbvc02; _identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/backend/web/index.php'
+    'REMOTE_PORT' => '64325'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fupload'
+    'REQUEST_URI' => '/gisskripsi/backend/web/index.php?r=site%2Fupload'
+    'SCRIPT_NAME' => '/gisskripsi/backend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1439711946.747
+    'REQUEST_TIME' => 1439711946
+]

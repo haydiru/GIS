@@ -19,15 +19,9 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-	<style type="text/css">
-	.navbar-saya {
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-	}
-	</style>
     <?php $this->head() ?>
 </head>
-<body onload="initializez()"style="height:100%">
+<body onload="initializez()">
     <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
@@ -35,7 +29,7 @@ AppAsset::register($this);
                 'brandLabel' => 'My Company',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse  navbar-fixed-top',
+                    'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
             $menuItems = [
@@ -61,11 +55,13 @@ AppAsset::register($this);
         ?>
 
 
-                <?= Breadcrumbs::widget([
+        <div class="container">
+        <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-		<?= Alert::widget() ?>
+        <?= Alert::widget() ?>
         <?= $content ?>
+        </div>
     </div>
 
     <footer class="footer">

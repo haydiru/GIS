@@ -70,7 +70,7 @@ class SiteController extends Controller
 			if($model->validate()){
 				$model->file->saveAs('uploads/'.$model->file->baseName.'.'.$model->file->extension);
 				
-				$objReader=\PHPExcel_IOFactory::createReader('Excel2007');
+				$objReader=\PHPExcel_IOFactory::createReader('Excel5');
 				$objPHPExcel=$objReader->load('uploads/'.$model->file->baseName.'.'.$model->file->extension);
 				$fakta=new \common\models\Fakta();
 				$variabel=new \common\models\Variabel();
@@ -94,18 +94,6 @@ class SiteController extends Controller
 					$sumberData->insert();
 					$sumberData_=$sumberData::findOne(['nama_cs'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1,1)->getValue(),])['id'];
 				}
-				$kategori_=$objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1,2)->getValue();
-				if($kategori_!==0){
-					$kategori_=$kategori::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1,3)->getValue(),])['id'];
-					if($kategori_==null){
-						$kategori->nama=$objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1,3)->getValue();
-						$kategori->keterangan='';
-						$kategori->save();
-						$kategori_=$kategori::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1,3)->getValue(),])['id'];
-					}
-					else $kategori_=1;
-				}
-				
 				for($i=6;$i<=$highestRow;$i++){
 					for($j=0;$j<$highestColumm;$j++){
 						if($j==0){
@@ -126,6 +114,7 @@ class SiteController extends Controller
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
 								$tahun_=$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue();
 							}
+							else {echo "harus ada tahun";}
 						}
 						else if($j==2){
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
@@ -138,12 +127,13 @@ class SiteController extends Controller
 									$bulan_=$bulan::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue(),])['id'];
 								}
 							}
-							else $bulan_=1;
+							else $bulan_=0;
 						}
 						else if($j==3){
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
 								$satuan_=$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue();
 							}
+							else $satuan_='tidak ada satuan';
 						}
 						else if($j==4){
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
@@ -163,17 +153,17 @@ class SiteController extends Controller
 
 						else if($j==5){
 							if($objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue()!==null){
-								$itemKategori_=$itemKategori::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue(),])['id'];
-								if($itemKategori_==null){
-									$itemKategori_=$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue();
-									\Yii::$app->db->createCommand()->insert('item_kategori',[
-									'nama'=>$itemKategori_,
-									'id_kategori'=>$kategori_,
+								$kategori_=$kategori::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue(),])['id'];
+								if($kategori_==null){
+									$kategori_=$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue();
+									\Yii::$app->db->createCommand()->insert('kategori',[
+									'nama'=>$kategori_,
+									'id_variabel'=>$variabel_,
 									])->execute();
-									$itemKategori_=$itemKategori::findOne(['nama'=>$variabel_,])['id'];
+									$kategori_=$kategori::findOne(['nama'=>$kategori_,])['id'];
 								}
 							}
-							else $itemKategori_=1;
+							else $kategori_=0;
 						}
 						else {
 							$idwilayah=$wilayah::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,5)->getValue(),])['id'];
@@ -183,7 +173,9 @@ class SiteController extends Controller
 							'id_bulan'=>$bulan_,
 							'id_wilayah'=>$idwilayah,
 							'id_variabel'=>$variabel_,
-							'id_item_kategori'=>$itemKategori_,
+							'id_kategori'=>$kategori_,
+							'kode_unik'=> $idwilayah.$variabel_.$kategori_.$tahun_.$bulan_,
+							'id_item_kategori'=>0,
 							'id_sumber_data'=>$sumberData_,
 							])->execute();
 						}
@@ -261,7 +253,7 @@ class SiteController extends Controller
 			header('Cache-Control: cache, must-revalidate');// HTTP/1.1
 			header('Pragma: public');// HTTP/1.0
 
-			$objWriter=\PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+			$objWriter=\PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
 			$objWriter->save('php://output');
 			exit;
 		}

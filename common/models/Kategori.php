@@ -9,9 +9,11 @@ use Yii;
  *
  * @property integer $id
  * @property string $nama
+ * @property integer $id_variabel
  * @property string $keterangan
  *
- * @property ItemKategori[] $itemKategoris
+ * @property Fakta[] $faktas
+ * @property Variabel $idVariabel
  */
 class Kategori extends \yii\db\ActiveRecord
 {
@@ -29,7 +31,8 @@ class Kategori extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama', 'keterangan'], 'required'],
+            [['nama'], 'required'],
+            [['id_variabel'], 'integer'],
             [['keterangan'], 'string'],
             [['nama'], 'string', 'max' => 64]
         ];
@@ -43,6 +46,7 @@ class Kategori extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nama' => 'Nama',
+            'id_variabel' => 'Id Variabel',
             'keterangan' => 'Keterangan',
         ];
     }
@@ -50,8 +54,16 @@ class Kategori extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getItemKategoris()
+    public function getFaktas()
     {
-        return $this->hasMany(ItemKategori::className(), ['id_kategori' => 'id']);
+        return $this->hasMany(Fakta::className(), ['id_kategori' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIdVariabel()
+    {
+        return $this->hasOne(Variabel::className(), ['id' => 'id_variabel']);
     }
 }
