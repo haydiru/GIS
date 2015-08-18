@@ -6,19 +6,16 @@ var layerprovinsi=0;
 var peta;
 
 //array untuk menampung idprovinsi, nama provinsi, dan jumlah penduduk
-	var jumlah=new Array();
-	var tahun=new Array();
-var idProvinsi=new Array();
-
-var namaProvinsi=new Array();
-
-var jp=new Array();
-
+var jumlah=new Array();
 var tahun=new Array();
-
+var idProvinsi=new Array();
+var namaProvinsi=new Array();
+var jp=new Array();
+var tahun=new Array();
+var bulan=new Array();
 var satuan=new Array();
 
-			var $select = $('<select></select>')
+	var $select = $('<select></select>')
     .appendTo($('#variables'))
     .on('change', function() {
         setVariable($(this).val());

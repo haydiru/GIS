@@ -23,7 +23,7 @@ class AppAsset extends AssetBundle
 		'leaflet/minimap/src/Control.MiniMap.css',
     ];
     public $js = [
-	'jquery-layout/jquery.layout.js',
+	'geostats-master/lib/geostats.js',
 	'leaflet/leaflet-src.js',
 	'leaflet/map.js',
 	'leaflet/minimap/src/Control.MiniMap.js',

@@ -93,7 +93,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		</div>
 		<div class="col-md-2" style="padding-right:5px;">
 		<?php
-		echo Html::submitButton('<i class="glyphicon glyphicon-play"></i> Generate', ['onclick'=>'callJumlahPenduduk()','class'=>'btn btn-success btn-sm','style'=>'margin-top:22px']);
+		echo Html::button('<i class="glyphicon glyphicon-play"></i> Generate', ['onclick'=>'calldata()','class'=>'btn btn-success btn-sm','style'=>'margin-top:22px']);
 		?>
 		</div>
 		
@@ -112,7 +112,18 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 <div class="col-md-8" style="padding-left:0;">
 
 <div class="panel panel-success" >
-<div class="panel-heading">Peta</div>
+<div class="panel-heading"><div class="row">
+		<div class="col-md-3" style="padding-right:5px;">Peta 
+		</div>
+		<div class="col-md-3" style="padding-right:5px;">
+<?= $this->render('_tahun') ?>
+</div>
+<div class="col-md-3" style="padding-right:5px;">Peta 
+		</div>
+		<div class="col-md-3" style="padding-right:5px;">Peta 
+		</div>
+</div>
+	</div>
   <div class="panel-body" >
   
 <div id="map"></div>  

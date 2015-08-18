@@ -202,12 +202,11 @@ class SiteController extends Controller
 		//\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		Yii::$app->response->format = 'jsongis';
 		$query = new Query;
-			$query->select('wilayah.id ,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
+			$query->select('fakta.id_wilayah, wilayah.nama as nama_wilayah, fakta.nilai, fakta.tahun, variabel.satuan, fakta.id_bulan, bulan.nama as nama_bulan')
 			->from('fakta')
 			->distinct('wilayah.id ,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
 			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
 			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
-			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
 			->join('INNER JOIN', 'bulan','fakta.id_bulan=bulan.id')
 			->join('INNER JOIN', 'kategori','fakta.id_kategori=kategori.id')
 			->where('wilayah.id_parent='.$wil.' AND fakta.id_variabel='.$var.' AND fakta.id_kategori='.$kat);
