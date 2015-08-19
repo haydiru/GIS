@@ -105,13 +105,14 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		
 		<div class="panel panel-success" >
 		<div class="panel-heading">Grafik</div>
-		<?= $this->render('_tabel', [
-		'tabel' => $tabel,]) ?>
-  <div class="panel-body" ></div></div>
+
+  <div class="panel-body" ><?= $this->render('_tabel', [
+		'tabel' => $tabel,]) ?></div>		
+		</div>
 </div>
 <div class="col-md-8" style="padding-left:0;">
 
-<div class="panel panel-success" >
+<div class="panel panel-success" style="margin-bottom: 5px;">
 <div class="panel-heading"><div class="row">
 		<div class="col-md-3" style="padding-right:5px;">Peta 
 		</div>
@@ -130,6 +131,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 
 		</div>
 		</div>
+		<?= $this->render('_statistik') ?>
 		</div>
         </div>
         </div>

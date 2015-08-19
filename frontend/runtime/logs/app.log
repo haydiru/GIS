@@ -34484,3 +34484,143 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1439737271.066
     'REQUEST_TIME' => 1439737271
 ]
+2015-08-19 12:57:24 [::1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: D:\xampp\htdocs\GIS-master\vendor\kartik-v\yii2-widget-select2/assets' in D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\web\AssetManager.php:452
+Stack trace:
+#0 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\web\AssetBundle.php(163): yii\web\AssetManager->publish('D:\xampp\htdocs...', Array)
+#1 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\web\AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\web\AssetManager.php(237): yii\web\AssetManager->loadBundle('kartik\select2\...', Array, true)
+#3 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\web\View.php(284): yii\web\AssetManager->getBundle('kartik\select2\...')
+#4 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\web\AssetBundle.php(119): yii\web\View->registerAssetBundle('kartik\select2\...')
+#5 D:\xampp\htdocs\GIS-master\vendor\kartik-v\yii2-widget-select2\Select2.php(232): yii\web\AssetBundle::register(Object(yii\web\View))
+#6 D:\xampp\htdocs\GIS-master\vendor\kartik-v\yii2-widget-select2\Select2.php(245): kartik\select2\Select2->registerAssetBundle()
+#7 D:\xampp\htdocs\GIS-master\vendor\kartik-v\yii2-widget-select2\Select2.php(135): kartik\select2\Select2->registerAssets()
+#8 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\Object.php(107): kartik\select2\Select2->init()
+#9 [internal function]: yii\base\Object->__construct(Array)
+#10 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\di\Container.php(372): ReflectionClass->newInstanceArgs(Array)
+#11 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\di\Container.php(151): yii\di\Container->build('kartik\widgets\...', Array, Array)
+#12 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('kartik\widgets\...', Array, Array)
+#13 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\Widget.php(97): yii\BaseYii::createObject(Array)
+#14 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\widgets\ActiveField.php(665): yii\base\Widget::widget(Array)
+#15 D:\xampp\htdocs\GIS-master\frontend\views\site\index.php(25): yii\widgets\ActiveField->widget('kartik\widgets\...', Array)
+#16 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#17 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#18 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(frontend\controllers\SiteController))
+#19 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#20 D:\xampp\htdocs\GIS-master\frontend\controllers\SiteController.php(99): yii\base\Controller->render('index', Array)
+#21 [internal function]: frontend\controllers\SiteController->actionIndex()
+#22 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#23 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#24 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#25 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('', Array)
+#26 D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 D:\xampp\htdocs\GIS-master\frontend\web\index.php(18): yii\base\Application->run()
+#28 {main}
+2015-08-19 12:57:24 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'yii\debug\ToolbarAsset' not found' in D:\xampp\htdocs\GIS-master\vendor\yiisoft\yii2-debug\Module.php:192
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-08-19 12:57:21 [::1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '4vo01ikore1d9hf4t0sssts212'
+    '_csrf' => '0ec14531d1dc8fb3d49205612eececc37100ad4679587a0c143d94873d03c265a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"zpLjS7qKEHxCfAjr-i8H67oCzzKYhSxn\";}'
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost:81/GIS-master/frontend/'
+    'HTTP_COOKIE' => 'PHPSESSID=4vo01ikore1d9hf4t0sssts212; _csrf=0ec14531d1dc8fb3d49205612eececc37100ad4679587a0c143d94873d03c265a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22zpLjS7qKEHxCfAjr-i8H67oCzzKYhSxn%22%3B%7D; _identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/GIS-master/frontend/web/index.php'
+    'REMOTE_PORT' => '50026'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/GIS-master/frontend/web/'
+    'SCRIPT_NAME' => '/GIS-master/frontend/web/index.php'
+    'PHP_SELF' => '/GIS-master/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1439981841.231
+    'REQUEST_TIME' => 1439981841
+]
+2015-08-19 13:38:58 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '_tahun' (T_STRING)' in D:\xampp\htdocs\gisskripsi\frontend\views\site\index.php:133
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-08-19 13:38:57 [::1][-][-][info][application] $_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => '2iq8nf0mtp3556v0jf6ouq3d96'
+    '_csrf' => '0bdeea65eca14864402e3b80b559aee2096584344a385c5a9ad67862f08247f7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"zmR-VJB9d8HbwItE1L11BWg0nF0FI1tu\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=2iq8nf0mtp3556v0jf6ouq3d96; _csrf=0bdeea65eca14864402e3b80b559aee2096584344a385c5a9ad67862f08247f7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22zmR-VJB9d8HbwItE1L11BWg0nF0FI1tu%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '50493'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1439984336.725
+    'REQUEST_TIME' => 1439984336
+]

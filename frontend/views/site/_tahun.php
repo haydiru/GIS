@@ -10,22 +10,22 @@
 ?>
 
 <script>
-var values = [2001,2005,2006,2015];
-
-
 function outputUpdate(vol) {
-
-  document.querySelector('#volume').value =tahun[vol];
-
+$('#judulTahun').html('Tahun: ');
+$('#tahunnya').html(tahun[vol]);
+setVariableTahun(tahun[vol]);
 }
 
 </script>
 
 <div class="row">
-		<div class="col-md-6"><label for=tahun>Tahun: </label> 
-		</div><div class="col-md-6" ><output for=fader id=volume></output>
+		<div class="col-md-4"><label for=tahun id="judulTahun" style="margin-botton:0"></label> 
+		</div>
+		<div class="col-md-4" ><div id="tahunInput"></div>
+		</div>
+		<div class="col-md-4" ><label for=tahun id="tahunnya" style="margin-botton:0"></label> 
 		</div>
 		</div>
 
-<div id="tahunInput"></div>
+
 
