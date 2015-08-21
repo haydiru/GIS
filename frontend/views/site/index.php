@@ -106,8 +106,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		<div class="panel panel-success" >
 		<div class="panel-heading">Grafik</div>
 
-  <div class="panel-body" ><?= $this->render('_tabel', [
-		'tabel' => $tabel,]) ?></div>		
+  <div class="panel-body" ><?= $this->render('_tabel') ?></div>		
 		</div>
 </div>
 <div class="col-md-8" style="padding-left:0;">

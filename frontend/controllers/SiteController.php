@@ -70,33 +70,8 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{	
-	$rows=null;
-	if(isset($_POST['Wilayah']['nama'])){
-			$wil=$_POST['Wilayah']['nama'];
-			$idVar=$id=$_POST['Variabel']['nama'];
-			$l=strlen($idVar)-10;
-			$var=substr($idVar,10,$l);
-			$kat=$_POST['Kategori']['nama'];
-			$query = new Query;
-			$query->select('wilayah.nama as nama_wilayah ,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
-			->from('fakta')
-			->distinct('wilayah.id ,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
-			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
-			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
-			->join('INNER JOIN', 'topik','variabel.id_topik=topik.id')
-			->join('INNER JOIN', 'bulan','fakta.id_bulan=bulan.id')
-			->join('INNER JOIN', 'kategori','fakta.id_kategori=kategori.id')
-			->where('wilayah.id_parent='.$wil.' AND fakta.id_variabel='.$var.' AND fakta.id_kategori='.$kat);
-		$rows = $query->all();
-		$command = $query->createCommand();
-		$rows = $command->queryAll();
-		return $this->render('index', [
-		'tabel' => $rows,
-		]);	
-	}
-		return $this->render('index', [
-		'tabel' => $rows,
-		]);
+
+		return $this->render('index');
 	}
 
 	public function actionLogin()
@@ -199,8 +174,8 @@ class SiteController extends Controller
 	}
 	public function actionData($wil,$var,$kat){
 		
-		//\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-		Yii::$app->response->format = 'jsongis';
+		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+		//Yii::$app->response->format = 'jsongis';
 		$query = new Query;
 			$query->select('fakta.id_wilayah, wilayah.nama as nama_wilayah, fakta.nilai, fakta.tahun, variabel.satuan, fakta.id_bulan, bulan.nama as nama_bulan')
 			->from('fakta')
@@ -213,8 +188,9 @@ class SiteController extends Controller
 		$rows = $query->all();
 		$command = $query->createCommand();
 		$rows = $command->queryAll();
-		return $rows;
+		return (['data'=>$rows]);
 	}
+		
 	public function actionChildTopik() {
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		$out = [];
@@ -361,11 +337,4 @@ class SiteController extends Controller
 		$this->enableCsrfValidation = false; // <-- here
 		return parent::beforeAction($action);
 	}
-
-	public function actionExcel() {
-		$objPHPExcel = \PHPExcel_IOFactory::load('alokasi kamar.xls');
-		$sheetData = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-		print_r($sheetData);
-	}
-
 }

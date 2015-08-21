@@ -75,7 +75,7 @@ function initializez()
 {
 
 	//panggil base map
-	map = L.map('map').setView([-1.889306,114.697266], 5);
+	map = L.map('map').setView([-1.889306,114.697266], 4);
 	//overlay layer, bisa menampilkan data curah hujan, dll   
 	var overlayLayers = {   
 		//bisa ditambahkan sendiri overlay layernya, lihat dokumentasi plugin untuk layer yang tersedia
@@ -99,7 +99,7 @@ function highlightFeature(e)
 	var layer=e.target;
 	layer.setStyle({
 		'dashArray':'3',
-		'color': '#0000ff',
+		'color': '#ffffff',
 	});
 
 	if (!L.Browser.ie && !L.Browser.opera) {
@@ -122,17 +122,14 @@ function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
 }
 
-
-
-
 function callProvMap()
 {
 
 	//ajax untuk memanggil polygon provinsi dari geoserver
-
+var aWil = $('#wilayah-nama').val();
 	$.ajax({
 
-url: 'http://localhost:81/skripsigis/proxy.php?id=1',
+url: '?r=geoserver-url/load-peta&idWil='+aWil,
 
 		type : 'POST',
 
@@ -140,11 +137,11 @@ url: 'http://localhost:81/skripsigis/proxy.php?id=1',
 
 success: function(data)   
 
-		{     peta=data;
-
+		{   
+			map.removeLayer(layerprovinsi);
 			//tampilkan polygon provinsi, setiap polygon mempunyai fitur yang ada pada function onEachFeature
 			layerprovinsi=L.geoJson(data,{style:styleProvinsi}).addTo(map);
-
+			map.fitBounds(layerprovinsi.getBounds());
 			//kasih warna
 		setVariableTahun(tahun[0]);
 		}
@@ -179,7 +176,7 @@ var kodeprovinsi=layer.feature.properties.PROV_NO+'00000000';
 layer.on({
 mouseover: highlightFeature,
 mouseout: resetHighlight,  
-click : zoomToFeature        
+dblclick : zoomToFeature       
 	});
 	//	layer.bindPopup("<b>"+layer.feature.properties.PROVINSI+"</b> "+jp[layer.feature.properties.PROV_NO+vVal]+" Jiwa");
     });

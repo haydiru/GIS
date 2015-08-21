@@ -26,7 +26,7 @@
 </div>
 <div class="col-xs-6 panel-cell-padded border-l">
 <div class="stat-value-sm" id="kov"></div>
-<p class="stat-title">Kovarian</p>
+<p class="stat-title">koef Variasi</p>
 </div>
 </div>
 </div>

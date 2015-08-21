@@ -102,19 +102,8 @@ drawTable();
 		
 	});
 	
-	//callProvMap();
+	callProvMap();
 }
 </script>
-<?php
-if($tabel!=null){
-foreach ($tabel as $baris) {
-echo '<tr>';
-echo '<td>'.$baris['nama_wilayah'].'</td>';
-echo '<td>'.$baris['tahun'].'</td>';
-echo '<td>'.$baris['nilai'].'</td>';
-echo '</tr>';
-}
-}
-?>
 </table>
 </div>
