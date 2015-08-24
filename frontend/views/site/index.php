@@ -7,6 +7,7 @@ use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use kartik\widgets\Select2;
 use yii\helpers\Html;
+
 $this->title = 'My Yii Application';
 ?>
 <div style="padding: 55px 5px 0 5px">
@@ -93,7 +94,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		</div>
 		<div class="col-md-2" style="padding-right:5px;">
 		<?php
-		echo Html::button('<i class="glyphicon glyphicon-play"></i> Generate', ['onclick'=>'calldata()','class'=>'btn btn-success btn-sm','style'=>'margin-top:22px']);
+		echo Html::button('<i class="glyphicon glyphicon-play"></i> Generate', ['onclick'=>'calldatabaru()','class'=>'btn btn-success btn-sm','style'=>'margin-top:22px']);
 		?>
 		</div>
 		
@@ -125,8 +126,9 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 </div>
 	</div>
   <div class="panel-body" >
-  
-<div id="map"></div>  
+  <div id="loadingmap" class="progress"></div>
+  <div id="map"></div>  
+
 
 		</div>
 		</div>
@@ -134,3 +136,4 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		</div>
         </div>
         </div>
+

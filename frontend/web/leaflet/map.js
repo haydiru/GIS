@@ -2,11 +2,12 @@
 var serie;
 var map;
 //variabel untuk menampung polygon provinsi
-var dataTabel = new Array();
+
 var layerprovinsi=0;
 var peta;
 
 //array untuk menampung idprovinsi, nama provinsi, dan jumlah penduduk
+var dataTabel = new Array();
 var jumlah=new Array();
 var tahun=new Array();
 var idProvinsi=new Array();
@@ -28,13 +29,11 @@ var legend = L.control({position: 'bottomleft'});
 	
 legend.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info legend'),labels = [];
-	
 	// create a div with a class "info"
     this.update();
     return this._div;
 };
 legend.update = function () {
-
     // loop through our density intervals and generate a label with a colored square for each interval
 	this._div.innerHTML='<h4>Legenda</h4>';
     for (var i = 0; i < grades.length; i++) {
@@ -48,7 +47,7 @@ var vVal;
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
     this._div.innerHTML = '<h4>'+$('#variabel-nama option:selected').text()+'</h4>' +  (props ?
-        '<b>' + props.PROVINSI + '</b><br />' + dataTabel[vVal][props.PROV_NO+"00000000"]
+        '<b>' + namaProvinsi[props.ID] + '</b><br />' + dataTabel[vVal][props.ID]
         : 'Hover over a state');
 };
 
@@ -99,7 +98,7 @@ function highlightFeature(e)
 	var layer=e.target;
 	layer.setStyle({
 		'dashArray':'3',
-		'color': '#ffffff',
+		'color': '#000000',
 	});
 
 	if (!L.Browser.ie && !L.Browser.opera) {
@@ -120,35 +119,30 @@ function resetHighlight(e) {
 
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
+	calldata(e.target.feature.properties.ID);
 }
 
-function callProvMap()
+function callProvMap(aWil)
 {
 
 	//ajax untuk memanggil polygon provinsi dari geoserver
-var aWil = $('#wilayah-nama').val();
+loadingt(20);
 	$.ajax({
-
 url: '?r=geoserver-url/load-peta&idWil='+aWil,
-
 		type : 'POST',
-
 		dataType : 'json',
-
-success: function(data)   
-
+success: function(data)
 		{   
+			loadingt(50);
 			map.removeLayer(layerprovinsi);
 			//tampilkan polygon provinsi, setiap polygon mempunyai fitur yang ada pada function onEachFeature
 			layerprovinsi=L.geoJson(data,{style:styleProvinsi}).addTo(map);
 			map.fitBounds(layerprovinsi.getBounds());
 			//kasih warna
+			loadingt(100);
 		setVariableTahun(tahun[0]);
 		}
-
 	});     
-
-
 }
 
 function setVariableTahun(valTahun) {
@@ -170,7 +164,7 @@ $('#kov').html('<b>'+serie.cov().toFixed(2)+'</b>');
 serie.getClassJenks(4);	
 grades = serie.ranges;
 layerprovinsi.eachLayer(function(layer) {
-var kodeprovinsi=layer.feature.properties.PROV_NO+'00000000';
+var kodeprovinsi=layer.feature.properties.ID;
 	layer.setStyle(style(dataTabel[vVal][kodeprovinsi]));
 
 layer.on({
@@ -194,8 +188,15 @@ function style(nilaiData) {
         fillOpacity: 0.7
     };
 }
+function calldatabaru(){
 
+	var aWil = $('#wilayah-nama').val();
+calldata(aWil);	
+}
 function getColor(d) {
-	var warna=['#FFEDA0','#FED976','#FEB24C','#FD8D3C','#FC4E2A','#E31A1C','#BD0026'];
+var warna=['#FFEDA0','#FED976','#FEB24C','#FD8D3C','#FC4E2A','#E31A1C','#BD0026'];
 return warna[d];
+}
+function loadingt(t){
+$('#loadingmap').html('<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="'+t+'" aria-valuemin="0" aria-valuemax="100" style="width: '+t+'%;"><span class="sr-only">'+45+'% Complete</span></div>');
 }

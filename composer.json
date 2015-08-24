@@ -28,7 +28,8 @@
         "2amigos/yii2-leaflet-extension": "~1.0",
         "phpoffice/phpexcel": "^1.8",
         "dmstr/yii2-adminlte-asset": "2.*",
-        "kartik-v/yii2-widget-sidenav": "*"
+        "kartik-v/yii2-widget-sidenav": "*",
+        "miloschuman/yii2-highcharts-widget": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

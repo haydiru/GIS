@@ -48,17 +48,15 @@
 
 }
 
-function calldata(){
-
+function calldata(aWil){
+	var aKat = $('#kategori-nama').val();
 	var aVarn = $('#variabel-nama').val();
 	var aVar = aVarn.substring(10);
-	var aWil = $('#wilayah-nama').val();
-	var aKat = $('#kategori-nama').val();
 	var ta = new Array();
 	var idP = new Array();
 	var nP = new Array();
 	var bu= new Array();
-	
+	loadingt(10);
 	$.ajax({
 url: '?r=site/data&wil='+aWil+'&var='+aVar+'&kat='+aKat,
 		type : 'POST',
@@ -68,6 +66,7 @@ success: function(data)
 
 			var j = 0;
 			data.data.forEach(function(entry) {
+				
 				idP[j]=entry.id_wilayah;
 				namaProvinsi[entry.id_wilayah]=entry.nama_wilayah;
 				ta[j]=entry.tahun;
@@ -102,7 +101,7 @@ drawTable();
 		
 	});
 	
-	callProvMap();
+	callProvMap(aWil);
 }
 </script>
 </table>
