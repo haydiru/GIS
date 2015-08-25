@@ -126,7 +126,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 </div>
 	</div>
   <div class="panel-body" >
-  <div id="loadingmap" class="progress"></div>
+  <div id="loadingmap"></div>
   <div id="map"></div>  
 
 

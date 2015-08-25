@@ -56,7 +56,7 @@ function calldata(aWil){
 	var idP = new Array();
 	var nP = new Array();
 	var bu= new Array();
-	loadingt(10);
+	loadingt(0);
 	$.ajax({
 url: '?r=site/data&wil='+aWil+'&var='+aVar+'&kat='+aKat,
 		type : 'POST',

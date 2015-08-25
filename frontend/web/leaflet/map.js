@@ -126,7 +126,7 @@ function callProvMap(aWil)
 {
 
 	//ajax untuk memanggil polygon provinsi dari geoserver
-loadingt(20);
+//loadingt(20);
 	$.ajax({
 url: '?r=geoserver-url/load-peta&idWil='+aWil,
 		type : 'POST',
@@ -139,7 +139,7 @@ success: function(data)
 			layerprovinsi=L.geoJson(data,{style:styleProvinsi}).addTo(map);
 			map.fitBounds(layerprovinsi.getBounds());
 			//kasih warna
-			loadingt(100);
+			//
 		setVariableTahun(tahun[0]);
 		}
 	});     
@@ -176,6 +176,7 @@ dblclick : zoomToFeature
     });
 
 	legend.update();
+	loadingt(100);
 }
 
 function style(nilaiData) {
@@ -198,5 +199,10 @@ var warna=['#FFEDA0','#FED976','#FEB24C','#FD8D3C','#FC4E2A','#E31A1C','#BD0026'
 return warna[d];
 }
 function loadingt(t){
-$('#loadingmap').html('<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="'+t+'" aria-valuemin="0" aria-valuemax="100" style="width: '+t+'%;"><span class="sr-only">'+45+'% Complete</span></div>');
-}
+	if(t==0){
+$('#loadingmap').html('<img src="logo/ajax-loader.gif" alt="Smiley face" height="42" width="42">');
+	}
+	else {
+		$('#loadingmap').html('');
+	}
+	}
