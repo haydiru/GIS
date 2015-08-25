@@ -125,10 +125,11 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		</div>
 </div>
 	</div>
-  <div class="panel-body" >
-  <div id="loadingmap"></div>
-  <div id="map"></div>  
-
+  <div class="panel-body" style="position:relative;">
+  <div id="map"></div>
+  <div id="loadingmap" style="width:100%;position:absolute;bottom:48%"></div>
+  <div id="legend" class="info legend" style="position:absolute;bottom:20px;left:20px;"></div>
+<?= $this->render('_legend') ?>
 
 		</div>
 		</div>

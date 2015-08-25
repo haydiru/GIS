@@ -1,7 +1,30 @@
 //variabel untuk menampung peta
 var serie;
 var map;
-//variabel untuk menampung polygon provinsi
+//warna
+var warnaa = new Array();
+var warnab = new Array();
+warnaa[0]=['#67000D','#A50F15','#CB181D','#EF3B2C','#FB6A4A','#FC9272','#FCBBA1','#FEE0D2','#FFF5F0'];//merah
+warnaa[1]=['#3F007D','#54278F','#6A51A3','#807DBA','#9E9AC8','#BCBDDC','#DADAEB','#EFEDF5','#FCFBFD'];//ungu
+warnaa[2]=['#08306B','#08519C','#2171B5','#4292C6','#6BAED6','#9ECAE1','#C6DBEF','#DEEBF7','#F7FBFF'];//biru
+warnaa[3]=['#00441B','#006D2C','#238B45','#41AB5D','#74C476','#A1D99B','#C7E9C0','#E5F5E0','#F7FCF5'];//hijau
+warnaa[4]=['#662506','#993404','#CC4C02','#EC7014','#FE9929','#FEC44F','#FEE391','#FFF7BC','#FFFFE5'];//orange
+warnaa[5]=['#7F0000','#B30000','#D7301F','#EF6548','#FC8D59','#FDBB84','#FDD49E','#FEE8C8','#FFF7EC'];//merah tua
+warnaa[6]=['#49006A','#7A0177','#AE017E','#DD3497','#F768A1','#FA9FB5','#FCC5C0','#FDE0DD','#FFF7F3'];//merah ungu
+warnaa[7]=['#081D58','#253494','#225EA8','#1D91C0','#41B6C4','#7FCDBB','#C7E9B4','#EDF8B1','#FFFFD9'];//hijau biru
+warnaa[8]=['#004529','#006837','#238443','#41AB5D','#78C679','#ADDD8E','#D9F0A3','#F7FCB9','#FFFFE5'];//hijau kuning
+
+
+warnab[0]=['#01665E','#35978F','#80CDC1','#C7EAE5','#F5F5F5','#F6E8C3','#DFC27D','#BF812D','#8C510A'];//biru coklat
+warnab[1]=['#4D9221','#7FBC41','#B8E186','#E6F5D0','#F7F7F7','#FDE0EF','#F1B6DA','#DE77AE','#C51B7D'];//hijau ungu
+warnab[2]=['#1B7837','#5AAE61','#A6DBA0','#D9F0D3','#F7F7F7','#E7D4E8','#C2A5CF','#9970AB','#762A83'];//hijau ungu tua
+warnab[3]=['#542788','#8073AC','#B2ABD2','#D8DAEB','#F7F7F7','#FEE0B6','#FDB863','#E08214','#B35806'];//ungu oranye 
+warnab[4]=['#2166AC','#4393C3','#92C5DE','#D1E5F0','#F7F7F7','#FDDBC7','#F4A582','#D6604D','#B2182B'];//biru merah 
+warnab[5]=['#4D4D4D','#999999','#E0E0E0','#FFFFFF','#FFFFFF','#FDDBC7','#F4A582','#EF8A62','#B2182B'];//hitam merah 
+warnab[6]=['#1A9850','#66BD63','#A6D96A','#D9EF8B','#FFFFBF','#FEE08B','#FDAE61','#F46D43','#D73027'];//hijau merah 
+warnab[7]=['#3288BD','#66C2A5','#ABDDA4','#E6F598','#FFFFBF','#FEE08B','#FDAE61','#F46D43','#D53E4F'];//hijau biru merah 
+
+
 
 var layerprovinsi=0;
 var peta;
@@ -25,21 +48,13 @@ info.onAdd = function (map) {
     return this._div;
 };
 var grades=new Array();
-var legend = L.control({position: 'bottomleft'});
-	
-legend.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info legend'),labels = [];
-	// create a div with a class "info"
-    this.update();
-    return this._div;
-};
-legend.update = function () {
-    // loop through our density intervals and generate a label with a colored square for each interval
-	this._div.innerHTML='<h4>Legenda</h4>';
-    for (var i = 0; i < grades.length; i++) {
-        this._div.innerHTML +='<i style="background:' + getColor(i) + '"></i> ' + grades[i] + '<br>';
+function legenda(){
+	$('#legend').html('');
+	$('#legend').append('<div class="row"><div class="col-md-6"><h4>Legenda</h4></div><div class="col-md-6"><a class="pull-right" style="cursor: pointer" data-toggle="modal" data-target="#myModal" onclick="warnalegenda()"><span class="glyphicon glyphicon-menu-hamburger" data-toggle="tooltip" data-placement="top" title="Ubah Legenda"></span></a></div></div>');
+	    for (var i = 0; i < grades.length; i++) {
+        $('#legend').append('<i style="background:' + getColor(i) + '"></i><span> ' + grades[i] + '</span><br>');
     }
-};
+}
 
 var vVal;
 
@@ -89,7 +104,6 @@ function initializez()
 	//panggil function callJumlahPenduduk
 
 info.addTo(map);
-	legend.addTo(map);
 }
 
 //highlight ketika mouse diarahkan 
@@ -133,7 +147,6 @@ url: '?r=geoserver-url/load-peta&idWil='+aWil,
 		dataType : 'json',
 success: function(data)
 		{   
-			loadingt(50);
 			map.removeLayer(layerprovinsi);
 			//tampilkan polygon provinsi, setiap polygon mempunyai fitur yang ada pada function onEachFeature
 			layerprovinsi=L.geoJson(data,{style:styleProvinsi}).addTo(map);
@@ -141,6 +154,7 @@ success: function(data)
 			//kasih warna
 			//
 		setVariableTahun(tahun[0]);
+			loadingt(100);
 		}
 	});     
 }
@@ -174,9 +188,9 @@ dblclick : zoomToFeature
 	});
 	//	layer.bindPopup("<b>"+layer.feature.properties.PROVINSI+"</b> "+jp[layer.feature.properties.PROV_NO+vVal]+" Jiwa");
     });
+	
+	legenda();
 
-	legend.update();
-	loadingt(100);
 }
 
 function style(nilaiData) {
@@ -200,7 +214,7 @@ return warna[d];
 }
 function loadingt(t){
 	if(t==0){
-$('#loadingmap').html('<img src="logo/ajax-loader.gif" alt="Smiley face" height="42" width="42">');
+$('#loadingmap').html('<img src="logo/ajax-loader.gif" style="margin-Left:46%">');
 	}
 	else {
 		$('#loadingmap').html('');
