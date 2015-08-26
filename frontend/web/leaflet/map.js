@@ -1,9 +1,23 @@
 //variabel untuk menampung peta
 var serie;
 var map;
+
+var jlhKelas = 4;
+var noWarna = 0;
+var metode = ['natural breaks','equal intervals','standard deviation','arithmetic progression','geometric progression','quantiles'];
+var noMetode = 0;
 //warna
 var warnaa = new Array();
 var warnab = new Array();
+var kelasWarna = new Array();
+kelasWarna[9]=[0,1,2,3,4,5,6,7,8,];
+kelasWarna[8]=[0,1,2,3,4,5,6,7];
+kelasWarna[7]=[1,2,3,4,5,6,7];
+kelasWarna[6]=[1,2,3,4,5,7];
+kelasWarna[5]=[1,2,4,5,7];
+kelasWarna[4]=[1,2,4,6];
+kelasWarna[3]=[1,2,6];
+
 warnaa[0]=['#67000D','#A50F15','#CB181D','#EF3B2C','#FB6A4A','#FC9272','#FCBBA1','#FEE0D2','#FFF5F0'];//merah
 warnaa[1]=['#3F007D','#54278F','#6A51A3','#807DBA','#9E9AC8','#BCBDDC','#DADAEB','#EFEDF5','#FCFBFD'];//ungu
 warnaa[2]=['#08306B','#08519C','#2171B5','#4292C6','#6BAED6','#9ECAE1','#C6DBEF','#DEEBF7','#F7FBFF'];//biru
@@ -86,8 +100,7 @@ var styleSelected ={
 
 
 function initializez()
-{
-
+{	
 	//panggil base map
 	map = L.map('map').setView([-1.889306,114.697266], 4);
 	//overlay layer, bisa menampilkan data curah hujan, dll   
@@ -175,7 +188,13 @@ $('#nilai-max').html('<b>'+serie.max()+'</b>');
 $('#varian').html('<b>'+serie.variance().toFixed(2)+'</b>');
 $('#s-d').html('<b>'+serie.stddev().toFixed(2)+'</b>');
 $('#kov').html('<b>'+serie.cov().toFixed(2)+'</b>');
-serie.getClassJenks(4);	
+//metode
+if(noMetode==0) serie.getClassJenks(jlhKelas);
+else if(noMetode==1) serie.getClassEqInterval(jlhKelas);
+else if(noMetode==2) serie.getClassStdDeviation(jlhKelas);
+else if(noMetode==3) serie.getClassArithmeticProgression(jlhKelas);
+else if(noMetode==4) serie.getClassGeometricProgression(jlhKelas);
+else serie.getClassQuantile(jlhKelas);
 grades = serie.ranges;
 layerprovinsi.eachLayer(function(layer) {
 var kodeprovinsi=layer.feature.properties.ID;
@@ -204,13 +223,12 @@ function style(nilaiData) {
     };
 }
 function calldatabaru(){
-
 	var aWil = $('#wilayah-nama').val();
 calldata(aWil);	
 }
-function getColor(d) {
-var warna=['#FFEDA0','#FED976','#FEB24C','#FD8D3C','#FC4E2A','#E31A1C','#BD0026'];
-return warna[d];
+function getColor(indexWarna) {
+	if(noWarna<9) return warnaa[noWarna][kelasWarna[jlhKelas][kelasWarna[jlhKelas].length-indexWarna-1]];
+	else return warnab[noWarna-9][kelasWarna[jlhKelas][indexWarna]];
 }
 function loadingt(t){
 	if(t==0){
