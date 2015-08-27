@@ -10,13 +10,13 @@ var noMetode = 0;
 var warnaa = new Array();
 var warnab = new Array();
 var kelasWarna = new Array();
-kelasWarna[9]=[0,1,2,3,4,5,6,7,8,];
-kelasWarna[8]=[0,1,2,3,4,5,6,7];
-kelasWarna[7]=[1,2,3,4,5,6,7];
-kelasWarna[6]=[1,2,3,4,5,7];
-kelasWarna[5]=[1,2,4,5,7];
-kelasWarna[4]=[1,2,4,6];
-kelasWarna[3]=[1,2,6];
+kelasWarna[9]=[8,7,6,5,4,3,2,1,0];
+kelasWarna[8]=[8,7,6,5,4,3,2,1];
+kelasWarna[7]=[7,6,5,4,3,2,1];
+kelasWarna[6]=[7,6,5,4,3,1];
+kelasWarna[5]=[7,6,4,3,1];
+kelasWarna[4]=[7,6,4,2];
+kelasWarna[3]=[7,4,2];
 
 warnaa[0]=['#67000D','#A50F15','#CB181D','#EF3B2C','#FB6A4A','#FC9272','#FCBBA1','#FEE0D2','#FFF5F0'];//merah
 warnaa[1]=['#3F007D','#54278F','#6A51A3','#807DBA','#9E9AC8','#BCBDDC','#DADAEB','#EFEDF5','#FCFBFD'];//ungu
@@ -64,7 +64,7 @@ info.onAdd = function (map) {
 var grades=new Array();
 function legenda(){
 	$('#legend').html('');
-	$('#legend').append('<div class="row"><div class="col-md-6"><h4>Legenda</h4></div><div class="col-md-6"><a class="pull-right" style="cursor: pointer" data-toggle="modal" data-target="#myModal" onclick="warnalegenda()"><span class="glyphicon glyphicon-menu-hamburger" data-toggle="tooltip" data-placement="top" title="Ubah Legenda"></span></a></div></div>');
+	$('#legend').append('<div class="row"><div class="col-md-6"><h4>Legenda</h4></div><div class="col-md-6"><a class="pull-right" style="cursor: pointer" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-menu-hamburger" data-toggle="tooltip" data-placement="top" title="Ubah Legenda"></span></a></div></div>');
 	    for (var i = 0; i < grades.length; i++) {
         $('#legend').append('<i style="background:' + getColor(i) + '"></i><span> ' + grades[i] + '</span><br>');
     }
@@ -115,7 +115,7 @@ function initializez()
 	//L.control.layers(overlayLayers,{collapsed: true}).addTo(map);
 
 	//panggil function callJumlahPenduduk
-
+warnalegenda();
 info.addTo(map);
 }
 
@@ -175,8 +175,10 @@ success: function(data)
 function setVariableTahun(valTahun) {
 	vVal=valTahun;
 			var jp=new Array();
+			var npr=new Array();
 			var i=0;
 			idProvinsi.forEach(function(untukSeries) {
+			npr[i]=namaProvinsi[untukSeries];
 			jp[i]=dataTabel[valTahun][untukSeries];
 			i++;
 			});
@@ -209,7 +211,7 @@ dblclick : zoomToFeature
     });
 	
 	legenda();
-
+grafikPeta(npr,jp);
 }
 
 function style(nilaiData) {
@@ -227,7 +229,7 @@ function calldatabaru(){
 calldata(aWil);	
 }
 function getColor(indexWarna) {
-	if(noWarna<9) return warnaa[noWarna][kelasWarna[jlhKelas][kelasWarna[jlhKelas].length-indexWarna-1]];
+	if(noWarna<9) return warnaa[noWarna][kelasWarna[jlhKelas][indexWarna]];
 	else return warnab[noWarna-9][kelasWarna[jlhKelas][indexWarna]];
 }
 function loadingt(t){

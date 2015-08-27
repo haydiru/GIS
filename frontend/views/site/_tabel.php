@@ -79,23 +79,10 @@ success: function(data)
 			});
 			idProvinsi=jQuery.unique(idP);
 			tahun=jQuery.unique(ta);
+			$('#judulTahun').html('Tahun: ');
+			$('#tahunnya').html(tahun[0]);
 			$('#tahunInput').html('<input type=range min=0 max='+(tahun.length-1)+' value=0 id=fader step=1 oninput="outputUpdate(value)">');
-			
-
-		//	data.data.forEach(function(dataTabelWilayah) {
-		//	var row = document.createElement("tr");
-		//	var cell = document.createElement("td");
-		//	var cell1 = document.createElement("td");
-		//	var cell2 = document.createElement("td");
-        //    cell.appendChild(document.createTextNode(entry.nama_wilayah));
-		//	cell1.appendChild(document.createTextNode(entry.tahun));
-		//	cell2.appendChild(document.createTextNode(entry.nilai));
-        //    row.appendChild(cell);
-		//	row.appendChild(cell1);
-		//	row.appendChild(cell2);
-		//	div1.appendChild(row);
-		//	console.log(entry.nama_wilayah);
-		//	});
+			$('#uplay').html('<span class="glyphicon glyphicon-play-circle" aria-hidden="true" onclick="tahunPlay()"></span>');
 drawTable();
 		}
 		

@@ -28,6 +28,7 @@ class AppAsset extends AssetBundle
 	'leaflet/map.js',
 	'leaflet/minimap/src/Control.MiniMap.js',
 	'leaflet/provider/leaflet-providers.js',
+	'chartjs/Chart.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

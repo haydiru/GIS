@@ -16,6 +16,22 @@ $('#tahunnya').html(tahun[vol]);
 setVariableTahun(tahun[vol]);
 }
 
+function tahunPlay(){
+var startTime = 0;
+var interval = setInterval(function(){
+    if(startTime == tahun.length ){
+        clearInterval(interval);
+        return;
+    }
+	else {
+		$('#tahunInput').html('<input type=range min=0 max='+(tahun.length-1)+' value='+startTime+' id=fader step=1 oninput="outputUpdate(value)">');
+		$('#tahunnya').html(tahun[startTime]);
+setVariableTahun(tahun[startTime]);
+		startTime++;
+	}
+}, 1000);
+
+}
 </script>
 
 <div class="row">
