@@ -36,22 +36,24 @@ function grafikPetaline(e){
 	var idWill= e.target.feature.properties.ID;
 	  layerPopup = L.popup()
    .setLatLng(e.latlng) 
-   .setContent('<div id="lineChart" style="width:300px; height:300px"></div>')
+   .setContent('<div id="lineChart" style="width:200px; height:200px"></div>')
    .openOn(map);
 
 	for(var i=0;i<tahun.length;i++)
 	{
 		isdata[i]=dataTabel[tahun[i]][idWill];
 	}
-	$('#lineChart').html('<canvas id="myChartline" style="width: 100% !important;height: 300px !important;"></canvas>');
+	$('#lineChart').html('<canvas id="myChartline" style="width: 100% !important;height: 100% !important;"></canvas>');
 	var barChartData = {
 		labels : tahun,
 		datasets : [
 			{
-				fillColor : "rgba(151,187,205,0.5)",
-				strokeColor : "rgba(151,187,205,0.8)",
-				highlightFill : "rgba(151,187,205,0.75)",
-				highlightStroke : "rgba(151,187,205,1)",
+				fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
 				data : isdata
 			}
 		]
@@ -61,9 +63,9 @@ function grafikPetaline(e){
 	var ctx = document.getElementById("myChartline").getContext("2d");
 		myNewChart = new Chart(ctx).Line(barChartData, {
 			//responsive : true,
-			// pointHitDetectionRadius : 2,
-			  bezierCurveTension : 0.25,
-			 animation: false,
+			 pointHitDetectionRadius : 3,
+			 pointDotRadius : 3,
+			 //animation: false,
 		});
 
 }

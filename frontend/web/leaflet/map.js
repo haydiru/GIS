@@ -106,9 +106,9 @@ function initializez()
 	var overlayLayers = {   
 		//bisa ditambahkan sendiri overlay layernya, lihat dokumentasi plugin untuk layer yang tersedia
 	};
-	
+	var skala = L.control.scale({position:'bottomright'}).addTo(map);
 	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-	var osmAttrib='Map data © OpenStreetMap contributors';
+	var osmAttrib='BPS RI';
 	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib }).addTo(map);
 	//tampilkan control pemilihan layer pada peta   
 	//L.control.layers(overlayLayers,{collapsed: true}).addTo(map);
@@ -212,7 +212,7 @@ layer.on({
 mouseover: highlightFeature,
 mouseout: resetHighlight,  
 dblclick : zoomToFeature,
-click :  grafikPetaline,     
+contextmenu : grafikPetaline,     
 	});
 //	layer.bindPopup('<div id="lineChart" style="width:300px; height:300px"></div>');
     });

@@ -26,6 +26,7 @@ class AppAsset extends AssetBundle
 	'geostats-master/lib/geostats.js',
 	'leaflet/leaflet-src.js',
 	'leaflet/map.js',
+	'leaflet/jquery.sparkline.min.js',
 	'leaflet/minimap/src/Control.MiniMap.js',
 	'leaflet/provider/leaflet-providers.js',
 	'chartjs/Chart.min.js',

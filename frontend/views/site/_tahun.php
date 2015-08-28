@@ -67,9 +67,9 @@ $('#loadingmap').html('<h1 style="margin-Left:6%"><b>'+tahun[startTime]+'</b></h
 		</div>
 		</div>
 		</div>
-		<div class="col-md-6" ><div id="tahunInput"></div>
+		<div class="col-md-5" ><div id="tahunInput"></div>
 		</div>
-		<div class="col-md-3" >
+		<div class="col-md-4" >
 		
 		<span class="glyphicon glyphicon-triangle-left" aria-hidden="true" onclick="tahunBack()"></span><span class="glyphicon glyphicon-triangle-right" aria-hidden="true" onclick="tahunNext()"></span>
 		<label for=tahun id="tahunnya" style="margin-bottom:0"></label>

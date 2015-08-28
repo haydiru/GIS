@@ -184,6 +184,7 @@ class SiteController extends Controller
 			->join('INNER JOIN', 'variabel','fakta.id_variabel=variabel.id')
 			->join('INNER JOIN', 'bulan','fakta.id_bulan=bulan.id')
 			->join('INNER JOIN', 'kategori','fakta.id_kategori=kategori.id')
+			->orderBy('fakta.tahun,fakta.id_bulan')
 			->where('wilayah.id_parent='.$wil.' AND fakta.id_variabel='.$var.' AND fakta.id_kategori='.$kat);
 		$rows = $query->all();
 		$command = $query->createCommand();

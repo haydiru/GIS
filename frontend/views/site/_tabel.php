@@ -7,10 +7,34 @@
 /* @var $this yii\web\View */
 /* @var $model common\models\Fakta */
 /* @var $form yii\widgets\ActiveForm */
-?><div class="table-responsive">
+?>
+<div class="table-responsive">
 <table class="table table-striped table-y-border" id="tabel-dinamis">
+</table>
+</div>
 <script>
     function drawTable() {
+			$('#tabel-dinamis').html('');
+			$('#tabel-dinamis').append('<thead id="tbhead"></thead>');
+			$('#tbhead').append('<tr id="barishead"></tr>');
+			$('#barishead').append('<th>Nama Wilayah</th>');			
+			for (var c = 0; c < tahun.length; c++) {
+			$('#barishead').append('<th>'+tahun[c]+'</th>');	
+			}
+			$('#tabel-dinamis').append('<tbody id="tbbody"></tbody>');
+        for (var r = 0; r < idProvinsi.length; r++) {
+			$('#tbhead').append('<tr id="barisbody'+r+'"></tr>');
+			$('#barisbody'+r).append('<th>'+namaProvinsi[idProvinsi[r]]+'</th>');
+             for (var c = 0; c < tahun.length; c++) {
+			$('#barisbody'+r).append('<th>'+dataTabel[tahun[c]][idProvinsi[r]]+'</th>'); 
+            }
+        }
+	
+}
+
+
+
+ function drawTable1() {
 			var div1 = document.getElementById('tabel-dinamis');
 			$('#tabel-dinamis').html('');
 			var heads = document.createElement("thead");
@@ -48,6 +72,8 @@
 
 }
 
+
+
 function calldata(aWil){
 	loadingt(0);
 	var aKat = $('#kategori-nama').val();
@@ -71,15 +97,18 @@ success: function(data)
 				
 				idP[j]=entry.id_wilayah;
 				namaProvinsi[entry.id_wilayah]=entry.nama_wilayah;
-				ta[j]=entry.tahun;
-				if(dataTabel[entry.tahun]==null){
-				dataTabel[entry.tahun] = new Array();
+				if(entry.id_bulan==0) ta[j]=entry.tahun;
+				else ta[j]=entry.nama_bulan+" "+entry.tahun;
+				
+				if(dataTabel[ta[j]]==null){
+				dataTabel[ta[j]] = new Array();
 				}
 				else ;
-				dataTabel[entry.tahun][entry.id_wilayah]= Number(entry.nilai);
+				dataTabel[ta[j]][entry.id_wilayah]= Number(entry.nilai);
 				j++;
 			});
 			idProvinsi=jQuery.unique(idP);
+			idProvinsi.sort();
 			tahun=jQuery.unique(ta);
 			$('#judulTahun').html('Tahun: ');
 			$('#tahunnya').html(tahun[indexTahun]);
@@ -98,5 +127,3 @@ drawTable();
 	}
 }
 </script>
-</table>
-</div>

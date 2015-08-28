@@ -114,15 +114,16 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 <div class="col-md-8" style="padding-left:0;">
 
 <div class="panel panel-success" style="margin-bottom: 5px;">
-<div class="panel-heading"><div class="row">
-		<div class="col-md-3" style="padding-right:5px;">Peta 
+<div class="panel-heading">
+<div class="row">
+		<div class="col-md-2" style="padding-right:5px;"><b>Peta </b>
 		</div>
-		<div class="col-md-6" style="padding-right:5px;">
+		<div class="col-md-8" style="padding-right:5px;">
 <?= $this->render('_tahun') ?> 
-</div>
-		<div class="col-md-3" style="padding-right:5px;">Peta 
+	</div>
+		<div class="col-md-2" style="padding-right:5px;">Peta 
 		</div>
-</div>
+	</div>
 	</div>
   <div class="panel-body" style="position:relative;">
   <div id="map"></div>
