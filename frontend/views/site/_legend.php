@@ -8,24 +8,10 @@
       <div class="modal-body">
         <p><b>Warna</b></p>
 		<div id="teswarna" class="row">
-		
-		<div class="col-md-6" style="padding-right:5px;"> 
-		<p>Squential</p>
-		<div id="warnaa" class="row">
-		</div>
-		</div>
-	
-		<div class="col-md-6" style="padding-right:5px;"> 
-		<p>Diverging</p>
-		<div  id="warnab" class="row">
-		</div>
-		</div>
-		
 		</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary">Simpan</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -58,7 +44,7 @@ var $select = $('<select></select>')
     .appendTo($('#metode'))
     .on('change', function() {
 		noMetode=$(this).val();
-        setVariableTahun(tahun[0]);
+        setVariableTahun(tahun[indexTahun]);
     });
 for (var i = 0; i < metode.length; i++) {
     $('<option></option>')
@@ -70,11 +56,11 @@ for (var i = 0; i < metode.length; i++) {
 
 $('#myForm input').on('change', function() {
   noWarna = $('input[name=warnaa]:checked', '#myForm').val();
-setVariableTahun(tahun[0]);  
+setVariableTahun(tahun[indexTahun]);  
 });
 $("#spin input").bind('keyup mouseup', function () {
  jlhKelas = $('input[name=jmkelas]', '#spin').val();  
- setVariableTahun(tahun[0]);
+ setVariableTahun(tahun[indexTahun]);
 });
 
 }

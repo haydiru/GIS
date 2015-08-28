@@ -49,6 +49,7 @@
 }
 
 function calldata(aWil){
+	loadingt(0);
 	var aKat = $('#kategori-nama').val();
 	var aVarn = $('#variabel-nama').val();
 	var aVar = aVarn.substring(10);
@@ -56,7 +57,8 @@ function calldata(aWil){
 	var idP = new Array();
 	var nP = new Array();
 	var bu= new Array();
-	loadingt(0);
+	indexTahun=0;
+		
 	$.ajax({
 url: '?r=site/data&wil='+aWil+'&var='+aVar+'&kat='+aKat,
 		type : 'POST',
@@ -80,15 +82,20 @@ success: function(data)
 			idProvinsi=jQuery.unique(idP);
 			tahun=jQuery.unique(ta);
 			$('#judulTahun').html('Tahun: ');
-			$('#tahunnya').html(tahun[0]);
+			$('#tahunnya').html(tahun[indexTahun]);
 			$('#tahunInput').html('<input type=range min=0 max='+(tahun.length-1)+' value=0 id=fader step=1 oninput="outputUpdate(value)">');
-			$('#uplay').html('<span class="glyphicon glyphicon-play-circle" aria-hidden="true" onclick="tahunPlay()"></span>');
+			$('#uplay').html('<a><span class="glyphicon glyphicon-expand" style="cursor: pointer; font-size: 25px; position:absolute; top:-3px;left:3px;" aria-hidden="true" onclick="tahunPlay()" data-toggle="tooltip" data-placement="top" title="Mulai Animasi"></span></a>');
 drawTable();
 		}
 		
 	});
-	
+	if(aWil!=kodewilayah){
 	callProvMap(aWil);
+	
+	}
+	else {setVariableTahun(tahun[indexTahun]);
+	loadingt(100);
+	}
 }
 </script>
 </table>

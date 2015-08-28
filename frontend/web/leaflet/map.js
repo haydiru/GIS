@@ -1,12 +1,13 @@
-//variabel untuk menampung peta
+var layerPopup; //popup
+var map; //variabel untuk menampung peta
+var kodewilayah;
 var serie;
-var map;
-
+var indexTahun=0;
 var jlhKelas = 4;
-var noWarna = 0;
 var metode = ['natural breaks','equal intervals','standard deviation','arithmetic progression','geometric progression','quantiles'];
 var noMetode = 0;
 //warna
+var noWarna = 0;
 var warnaa = new Array();
 var warnab = new Array();
 var kelasWarna = new Array();
@@ -43,19 +44,17 @@ warnab[7]=['#3288BD','#66C2A5','#ABDDA4','#E6F598','#FFFFBF','#FEE08B','#FDAE61'
 var layerprovinsi=0;
 var peta;
 
-//array untuk menampung idprovinsi, nama provinsi, dan jumlah penduduk
+//array untuk menampung idprovinsi, tahun, bulan, satuan nama provinsi, dan nilai
 var dataTabel = new Array();
 var jumlah=new Array();
 var tahun=new Array();
 var idProvinsi=new Array();
 var namaProvinsi=new Array();
-
 var tahun=new Array();
 var bulan=new Array();
 var satuan=new Array();
 
 var info = L.control();
-
 info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info');// create a div with a class "info"
     this.update();
@@ -159,15 +158,14 @@ url: '?r=geoserver-url/load-peta&idWil='+aWil,
 		type : 'POST',
 		dataType : 'json',
 success: function(data)
-		{   
-			map.removeLayer(layerprovinsi);
-			//tampilkan polygon provinsi, setiap polygon mempunyai fitur yang ada pada function onEachFeature
+		{   kodewilayah=aWil;
+			map.removeLayer(layerprovinsi); //hapus layer sebelumnya
+			//kasih layer geoJson
 			layerprovinsi=L.geoJson(data,{style:styleProvinsi}).addTo(map);
 			map.fitBounds(layerprovinsi.getBounds());
 			//kasih warna
-			//
-		setVariableTahun(tahun[0]);
-			loadingt(100);
+		setVariableTahun(tahun[indexTahun]);
+		loadingt(100);	
 		}
 	});     
 }
@@ -177,11 +175,18 @@ function setVariableTahun(valTahun) {
 			var jp=new Array();
 			var npr=new Array();
 			var i=0;
+//tampung data yang akan diwarnai
 			idProvinsi.forEach(function(untukSeries) {
 			npr[i]=namaProvinsi[untukSeries];
 			jp[i]=dataTabel[valTahun][untukSeries];
 			i++;
 			});
+			
+//menutup popup
+	if (layerPopup && map) {
+        map.closePopup(layerPopup);
+        layerPopup = null;
+    }
 	
 serie = new geostats(jp);
 $('#rata-rata').html('<b>'+serie.mean().toFixed(2)+'</b>');
@@ -197,6 +202,7 @@ else if(noMetode==2) serie.getClassStdDeviation(jlhKelas);
 else if(noMetode==3) serie.getClassArithmeticProgression(jlhKelas);
 else if(noMetode==4) serie.getClassGeometricProgression(jlhKelas);
 else serie.getClassQuantile(jlhKelas);
+
 grades = serie.ranges;
 layerprovinsi.eachLayer(function(layer) {
 var kodeprovinsi=layer.feature.properties.ID;
@@ -205,13 +211,14 @@ var kodeprovinsi=layer.feature.properties.ID;
 layer.on({
 mouseover: highlightFeature,
 mouseout: resetHighlight,  
-dblclick : zoomToFeature       
+dblclick : zoomToFeature,
+click :  grafikPetaline,     
 	});
-	//	layer.bindPopup("<b>"+layer.feature.properties.PROVINSI+"</b> "+jp[layer.feature.properties.PROV_NO+vVal]+" Jiwa");
+//	layer.bindPopup('<div id="lineChart" style="width:300px; height:300px"></div>');
     });
 	
-	legenda();
-grafikPeta(npr,jp);
+	legenda(); //tampilkan lagenda
+grafikPeta(npr,jp);//tampilkan grafik dibawah peta
 }
 
 function style(nilaiData) {
@@ -232,6 +239,7 @@ function getColor(indexWarna) {
 	if(noWarna<9) return warnaa[noWarna][kelasWarna[jlhKelas][indexWarna]];
 	else return warnab[noWarna-9][kelasWarna[jlhKelas][indexWarna]];
 }
+
 function loadingt(t){
 	if(t==0){
 $('#loadingmap').html('<img src="logo/ajax-loader.gif" style="margin-Left:46%">');
