@@ -85,7 +85,7 @@
 			options: {
 				maxZoom: 19,
 				attribution:
-					'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+					''
 			},
 			variants: {
 				Mapnik: {},
@@ -104,13 +104,13 @@
 				France: {
 					url: 'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
 					options: {
-						attribution: '&copy; Openstreetmap France | {attribution.OpenStreetMap}'
+						attribution: ''
 					}
 				},
 				HOT: {
 					url: 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
 					options: {
-						attribution: '{attribution.OpenStreetMap}, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+						attribution:''
 					}
 				}
 			}
@@ -118,21 +118,22 @@
 		OpenSeaMap: {
 			url: 'http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
 			options: {
-				attribution: 'Map data: &copy; <a href="http://www.openseamap.org">OpenSeaMap</a> contributors'
+				attribution: ''
 			}
 		},
 		OpenTopoMap: {
 			url: '//{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
 			options: {
 				maxZoom: 16,
-				attribution: 'Map data: {attribution.OpenStreetMap}, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+				attribution:''
 			}
 		},
 		Thunderforest: {
 			url: '//{s}.tile.thunderforest.com/{variant}/{z}/{x}/{y}.png',
 			options: {
 				attribution:
-					'&copy; <a href="http://www.opencyclemap.org">OpenCycleMap</a>, {attribution.OpenStreetMap}',
+					''
+					,
 				variant: 'cycle'
 			},
 			variants: {
@@ -158,7 +159,7 @@
 			options: {
 				maxZoom: 20,
 				variant: 'roads',
-				attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data {attribution.OpenStreetMap}'
+				attribution: ''
 			},
 			variants: {
 				Roads: 'roads',
@@ -180,7 +181,7 @@
 			url: 'http://{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png',
 			options: {
 				variant: 'full',
-				attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data {attribution.OpenStreetMap}'
+				attribution: ''
 			},
 			variants: {
 				Full: 'full',
@@ -198,8 +199,7 @@
 				type: 'map',
 				ext: 'jpg',
 				attribution:
-					'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; ' +
-					'Map data {attribution.OpenStreetMap}',
+					'',
 				subdomains: '1234'
 			},
 			variants: {
@@ -207,10 +207,8 @@
 				Aerial: {
 					options: {
 						type: 'sat',
-						attribution:
-							'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; ' +
-							'Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
-					}
+						attribution:''
+							}
 				},
 				HybridOverlay: {
 					options: {
@@ -224,19 +222,15 @@
 		MapBox: {
 			url: '//api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
 			options: {
-				attribution:
-					'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; ' +
-					'Map data {attribution.OpenStreetMap}',
+				attribution:'',
 				subdomains: 'abcd'
 			}
 		},
 		Stamen: {
 			url: '//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.png',
 			options: {
-				attribution:
-					'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ' +
-					'<a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; ' +
-					'Map data {attribution.OpenStreetMap}',
+				attribution:''
+					,
 				subdomains: 'abcd',
 				minZoom: 0,
 				maxZoom: 20,
@@ -293,14 +287,12 @@
 			url: '//server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}',
 			options: {
 				variant: 'World_Street_Map',
-				attribution: 'Tiles &copy; Esri'
+				attribution: ''
 			},
 			variants: {
 				WorldStreetMap: {
 					options: {
-						attribution:
-							'{attribution.Esri} &mdash; ' +
-							'Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+						attribution:''
 					}
 				},
 				DeLorme: {
@@ -308,67 +300,61 @@
 						variant: 'Specialty/DeLorme_World_Base_Map',
 						minZoom: 1,
 						maxZoom: 11,
-						attribution: '{attribution.Esri} &mdash; Copyright: &copy;2012 DeLorme'
+						attribution:''
 					}
 				},
 				WorldTopoMap: {
 					options: {
 						variant: 'World_Topo_Map',
-						attribution:
-							'{attribution.Esri} &mdash; ' +
-							'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
-					}
+						attribution:''
+						}
 				},
 				WorldImagery: {
 					options: {
 						variant: 'World_Imagery',
-						attribution:
-							'{attribution.Esri} &mdash; ' +
-							'Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+						attribution:''
 					}
 				},
 				WorldTerrain: {
 					options: {
 						variant: 'World_Terrain_Base',
 						maxZoom: 13,
-						attribution:
-							'{attribution.Esri} &mdash; ' +
-							'Source: USGS, Esri, TANA, DeLorme, and NPS'
+						attribution:''
 					}
 				},
 				WorldShadedRelief: {
 					options: {
 						variant: 'World_Shaded_Relief',
 						maxZoom: 13,
-						attribution: '{attribution.Esri} &mdash; Source: Esri'
+						attribution:''
 					}
 				},
 				WorldPhysical: {
 					options: {
 						variant: 'World_Physical_Map',
 						maxZoom: 8,
-						attribution: '{attribution.Esri} &mdash; Source: US National Park Service'
+						attribution: ''
 					}
 				},
 				OceanBasemap: {
 					options: {
 						variant: 'Ocean_Basemap',
 						maxZoom: 13,
-						attribution: '{attribution.Esri} &mdash; Sources: GEBCO, NOAA, CHS, OSU, UNH, CSUMB, National Geographic, DeLorme, NAVTEQ, and Esri'
+						attribution: ''
 					}
 				},
 				NatGeoWorldMap: {
 					options: {
 						variant: 'NatGeo_World_Map',
 						maxZoom: 16,
-						attribution: '{attribution.Esri} &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC'
+						attribution: ''
 					}
 				},
 				WorldGrayCanvas: {
 					options: {
 						variant: 'Canvas/World_Light_Gray_Base',
 						maxZoom: 16,
-						attribution: '{attribution.Esri} &mdash; Esri, DeLorme, NAVTEQ'
+						attribution: ''
 					}
 				}
 			}
@@ -377,7 +363,7 @@
 			url: 'http://{s}.tile.openweathermap.org/map/{variant}/{z}/{x}/{y}.png',
 			options: {
 				maxZoom: 19,
-				attribution: 'Map data &copy; <a href="http://openweathermap.org">OpenWeatherMap</a>',
+				attribution: '',
 				opacity: 0.5
 			},
 			variants: {
@@ -410,7 +396,7 @@
 				'app_id={app_id}&app_code={app_code}',
 			options: {
 				attribution:
-					'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
+					'',
 				subdomains: '1234',
 				mapID: 'newest',
 				'app_id': '<insert your app_id here>',
@@ -471,7 +457,7 @@
 			url: 'http://a{s}.acetate.geoiq.com/tiles/{variant}/{z}/{x}/{y}.png',
 			options: {
 				attribution:
-					'&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
+					'',
 				subdomains: '0123',
 				minZoom: 2,
 				maxZoom: 18,
@@ -494,20 +480,21 @@
 				maxZoom: 16,
 				subdomains: ['t1', 't2', 't3', 't4'],
 				attribution:
-					'{attribution.OpenStreetMap}, vizualization CC-By-SA 2.0 <a href="http://freemap.sk">Freemap.sk</a>'
+					''
 			}
 		},
 		MtbMap: {
 			url: 'http://tile.mtbmap.cz/mtbmap_tiles/{z}/{x}/{y}.png',
 			options: {
 				attribution:
-					'{attribution.OpenStreetMap} &amp; USGS'
+					''
 			}
 		},
 		CartoDB: {
 			url: 'http://{s}.basemaps.cartocdn.com/{variant}/{z}/{x}/{y}.png',
 			options: {
-				attribution: '{attribution.OpenStreetMap} &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+				attribution:''
+				,
 				subdomains: 'abcd',
 				maxZoom: 19,
 				variant: 'light_all'
@@ -523,7 +510,8 @@
 			url: 'http://{s}.tiles.wmflabs.org/{variant}/{z}/{x}/{y}.png',
 			options: {
 				maxZoom: 19,
-				attribution: '{attribution.OpenStreetMap}',
+				attribution: ''
+				,
 				variant: 'hikebike'
 			},
 			variants: {
@@ -540,7 +528,8 @@
 			url: '//maps{s}.wien.gv.at/basemap/{variant}/normal/google3857/{z}/{y}/{x}.{format}',
 			options: {
 				maxZoom: 19,
-				attribution: 'Datenquelle: <a href="www.basemap.at">basemap.at</a>',
+				attribution: ''
+				,
 				subdomains: ['', '1', '2', '3', '4'],
 				format: 'png',
 				bounds: [[46.358770, 8.782379], [49.037872, 17.189532]],
@@ -568,8 +557,8 @@
 			url: '//map1.vis.earthdata.nasa.gov/wmts-webmerc/{variant}/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}',
 			options: {
 				attribution:
-					'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System ' +
-					'(<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
+					''
+					,
 				bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
 				minZoom: 1,
 				maxZoom: 9,

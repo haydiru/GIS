@@ -6,6 +6,9 @@ var indexTahun=0;
 var jlhKelas = 4;
 var metode = ['natural breaks','equal intervals','standard deviation','arithmetic progression','geometric progression','quantiles'];
 var noMetode = 0;
+//untuk posisi back dan forward
+var lokasi = new Array();
+var posisi = -1;
 //warna
 var noWarna = 0;
 var warnaa = new Array();
@@ -63,7 +66,7 @@ info.onAdd = function (map) {
 var grades=new Array();
 function legenda(){
 	$('#legend').html('');
-	$('#legend').append('<div class="row"><div class="col-md-6"><h4>Legenda</h4></div><div class="col-md-6"><a class="pull-right" style="cursor: pointer" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-menu-hamburger" data-toggle="tooltip" data-placement="top" title="Ubah Legenda"></span></a></div></div>');
+	$('#legend').append('<div class="row"><div class="col-md-6"><h4>Legenda</h4></div><div class="col-md-6"><a class="pull-right" style="cursor: pointer" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-list" data-toggle="tooltip" data-placement="top" title="Ubah Legenda"></span></a></div></div>');
 	    for (var i = 0; i < grades.length; i++) {
         $('#legend').append('<i style="background:' + getColor(i) + '"></i><span> ' + grades[i] + '</span><br>');
     }
@@ -106,13 +109,30 @@ function initializez()
 	var overlayLayers = {   
 		//bisa ditambahkan sendiri overlay layernya, lihat dokumentasi plugin untuk layer yang tersedia
 	};
+	
+	   var defaultLayer = L.tileLayer.provider('Esri.WorldTopoMap').addTo(map);         
+   var baseLayers = {     
+     'Thunderforest Landscape': L.tileLayer.provider('Thunderforest.Landscape'),     
+     'MapQuest Aerial': L.tileLayer.provider('MapQuestOpen.Aerial'),          
+     'Stamen Watercolor': L.tileLayer.provider('Stamen.Watercolor'),
+     'Esri WorldStreetMap': L.tileLayer.provider('Esri.WorldStreetMap'),
+     'Esri DeLorme': L.tileLayer.provider('Esri.DeLorme'),    
+     'Esri WorldImagery': L.tileLayer.provider('Esri.WorldImagery'),
+     'Esri WorldTerrain': L.tileLayer.provider('Esri.WorldTerrain'),
+     'Esri WorldShadedRelief': L.tileLayer.provider('Esri.WorldShadedRelief'),
+     'Esri WorldPhysical': L.tileLayer.provider('Esri.WorldPhysical'),
+     'Esri OceanBasemap': L.tileLayer.provider('Esri.OceanBasemap'),
+     'Esri NatGeoWorldMap': L.tileLayer.provider('Esri.NatGeoWorldMap'),
+     'Esri WorldGrayCanvas': L.tileLayer.provider('Esri.WorldGrayCanvas'),
+     'Acetate': L.tileLayer.provider('Acetate')
+   };
+	L.control.layers(baseLayers,overlayLayers,{collapsed: true}).addTo(map);
 	var skala = L.control.scale({position:'bottomright'}).addTo(map);
 	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	var osmAttrib='BPS RI';
 	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib }).addTo(map);
 	//tampilkan control pemilihan layer pada peta   
-	//L.control.layers(overlayLayers,{collapsed: true}).addTo(map);
-
+//var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map); 
 	//panggil function callJumlahPenduduk
 warnalegenda();
 info.addTo(map);
@@ -123,8 +143,9 @@ function highlightFeature(e)
 {
 	var layer=e.target;
 	layer.setStyle({
-		'dashArray':'3',
-		'color': '#000000',
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.9,
 	});
 
 	if (!L.Browser.ie && !L.Browser.opera) {
@@ -137,8 +158,9 @@ function highlightFeature(e)
 function resetHighlight(e) {
 	var layer=e.target;
 	layer.setStyle({
-		'dashArray':'0',
-		'color': 'white',
+		color: 'white',
+        dashArray: '',
+         fillOpacity: 0.9,
 	});      
 	info.update();
 }
@@ -158,7 +180,10 @@ url: '?r=geoserver-url/load-peta&idWil='+aWil,
 		type : 'POST',
 		dataType : 'json',
 success: function(data)
-		{   kodewilayah=aWil;
+		{   
+		kodewilayah=aWil;
+		lokasi[(posisi+1)] = aWil;
+		posisi++;
 			map.removeLayer(layerprovinsi); //hapus layer sebelumnya
 			//kasih layer geoJson
 			layerprovinsi=L.geoJson(data,{style:styleProvinsi}).addTo(map);
@@ -227,8 +252,8 @@ function style(nilaiData) {
         weight: 2,
         opacity: 1,
         color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
+        dashArray: '',
+        fillOpacity: 0.9,
     };
 }
 function calldatabaru(){
@@ -247,4 +272,18 @@ $('#loadingmap').html('<img src="logo/ajax-loader.gif" style="margin-Left:46%">'
 	else {
 		$('#loadingmap').html('');
 	}
+	}
+	
+function zoomdefault(){
+	map.fitBounds(layerprovinsi.getBounds());	
+	}
+	
+	function petaBack(){
+	calldata(lokasi[posisi-1]);
+posisi=posisi-2;	
+	}
+	
+		function petaNext(){
+			console.log(lokasi[(posisi+1)]);
+	calldata(lokasi[(posisi+1)]);
 	}

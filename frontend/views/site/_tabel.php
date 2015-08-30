@@ -36,6 +36,9 @@
 
 <script>
     function drawTable() {
+		$('#untukHome').html('<span class="glyphicon glyphicon-home" style="cursor: pointer" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Zoom Default" onclick="zoomdefault()"></span>');
+		$('#untukBack').html('<span class="glyphicon glyphicon-arrow-left" style="cursor: pointer" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Ke Peta Level Sebelumnya" onclick="petaBack()"></span>');
+		$('#untukForward').html('<span class="glyphicon glyphicon-arrow-right" style="cursor: pointer" aria-hidden="true"data-toggle="tooltip" data-placement="top" title="Ke Peta Selanjutnya (forward)" onclick="petaNext()"></span>');
 		$('#untukTabel').html('<span class="glyphicon glyphicon-list-alt" style="cursor: pointer" aria-hidden="true" data-toggle="modal" data-target="#myModalTabel" data-toggle="tooltip" data-placement="top" title="Tampilkan Data"></span>');
 			$('#tabel-dinamis').html('');
 			$('#tabel-dinamis').append('<thead id="tbhead"></thead>');
