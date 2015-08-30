@@ -8,12 +8,35 @@
 /* @var $model common\models\Fakta */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<div class="table-responsive">
-<table class="table table-striped table-y-border" id="tabel-dinamis">
+
+
+<div class="modal fade" id="myModalTabel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+	  
+      <div class="table-responsive">
+<table class="table table-hover" id="tabel-dinamis">
 </table>
 </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script>
     function drawTable() {
+		$('#untukTabel').html('<span class="glyphicon glyphicon-list-alt" style="cursor: pointer" aria-hidden="true" data-toggle="modal" data-target="#myModalTabel" data-toggle="tooltip" data-placement="top" title="Tampilkan Data"></span>');
 			$('#tabel-dinamis').html('');
 			$('#tabel-dinamis').append('<thead id="tbhead"></thead>');
 			$('#tbhead').append('<tr id="barishead"></tr>');
@@ -24,52 +47,12 @@
 			$('#tabel-dinamis').append('<tbody id="tbbody"></tbody>');
         for (var r = 0; r < idProvinsi.length; r++) {
 			$('#tbhead').append('<tr id="barisbody'+r+'"></tr>');
-			$('#barisbody'+r).append('<th>'+namaProvinsi[idProvinsi[r]]+'</th>');
+			$('#barisbody'+r).append('<th style="font-weight: normal">'+namaProvinsi[idProvinsi[r]]+'</th>');
              for (var c = 0; c < tahun.length; c++) {
-			$('#barisbody'+r).append('<th>'+dataTabel[tahun[c]][idProvinsi[r]]+'</th>'); 
+			$('#barisbody'+r).append('<th style="font-weight: normal">'+dataTabel[tahun[c]][idProvinsi[r]]+'</th>'); 
             }
         }
 	
-}
-
-
-
- function drawTable1() {
-			var div1 = document.getElementById('tabel-dinamis');
-			$('#tabel-dinamis').html('');
-			var heads = document.createElement("thead");
-			var row = document.createElement("tr");
-			var col = document.createElement("th");
-			col.appendChild(document.createTextNode('Nama Wilayah'));
-			row.appendChild(col);
-			console.log(tahun);
-			for (var c = 0; c < tahun.length; c++) {
-				var col0 = document.createElement("th");
-				col0.appendChild(document.createTextNode(tahun[c]));
-				row.appendChild(col0);
-
-			}
-			heads.appendChild(row);
-			div1.appendChild(heads);
-			var tbod = document.createElement("tbody");
-        for (var r = 0; r < idProvinsi.length; r++) {
-			var row1 = document.createElement("tr");
-			var col1 = document.createElement("th");
-			col1.appendChild(document.createTextNode(namaProvinsi[idProvinsi[r]]));
-			row1.appendChild(col1);
-             for (var c = 0; c < tahun.length; c++) {
-			var col2 = document.createElement("th");	 
-			col2.appendChild(document.createTextNode(dataTabel[tahun[c]][idProvinsi[r]]));
-			
-			row1.appendChild(col2);
-            }           
-            
-	tbod.appendChild(row1);
-        }
-    
-     div1.appendChild(tbod);
-
-
 }
 
 
@@ -111,10 +94,12 @@ success: function(data)
 			idProvinsi.sort();
 			tahun=jQuery.unique(ta);
 			$('#judulTahun').html('Tahun: ');
-			$('#tahunnya').html(tahun[indexTahun]);
+			$('#tahunControl').html('<span class="glyphicon glyphicon-triangle-left" style="cursor: pointer" aria-hidden="true" onclick="tahunBack()" data-toggle="tooltip" data-placement="top" title="Tahun Sebelum"></span><span class="glyphicon glyphicon-triangle-right" style="cursor: pointer" aria-hidden="true" onclick="tahunNext()" data-toggle="tooltip" data-placement="top" title="Tahun Selanjutnya"></span><label for=tahun id="tahunnya" style="margin-bottom:0"></label>');
 			$('#tahunInput').html('<input type=range min=0 max='+(tahun.length-1)+' value=0 id=fader step=1 oninput="outputUpdate(value)">');
 			$('#uplay').html('<a><span class="glyphicon glyphicon-expand" style="cursor: pointer; font-size: 25px; position:absolute; top:-3px;left:3px;" aria-hidden="true" onclick="tahunPlay()" data-toggle="tooltip" data-placement="top" title="Mulai Animasi"></span></a>');
-drawTable();
+			$('#tahunnya').html(tahun[indexTahun]);
+			drawTable();
+
 		}
 		
 	});

@@ -108,7 +108,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		<div class="panel-heading">Grafik</div>
 
   <div class="panel-body" >
-  <?= $this->render('_tabel') ?></div>		
+</div>		
 		</div>
 </div>
 <div class="col-md-8" style="padding-left:0;">
@@ -121,7 +121,8 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		<div class="col-md-8" style="padding-right:5px;">
 <?= $this->render('_tahun') ?> 
 	</div>
-		<div class="col-md-2" style="padding-right:5px;">Peta 
+		<div class="col-md-2" style="padding-right:5px;" id="untukTabel"> 
+		
 		</div>
 	</div>
 	</div>
@@ -138,4 +139,5 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		</div>
         </div>
         </div>
+		<?= $this->render('_tabel') ?> 
 
