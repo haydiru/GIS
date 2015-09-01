@@ -37,8 +37,6 @@
 <script>
     function drawTable() {
 		$('#untukHome').html('<span class="glyphicon glyphicon-home" style="cursor: pointer" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Zoom Default" onclick="zoomdefault()"></span>');
-		$('#untukBack').html('<span class="glyphicon glyphicon-arrow-left" style="cursor: pointer" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Ke Peta Level Sebelumnya" onclick="petaBack()"></span>');
-		$('#untukForward').html('<span class="glyphicon glyphicon-arrow-right" style="cursor: pointer" aria-hidden="true"data-toggle="tooltip" data-placement="top" title="Ke Peta Selanjutnya (forward)" onclick="petaNext()"></span>');
 		$('#untukTabel').html('<span class="glyphicon glyphicon-list-alt" style="cursor: pointer" aria-hidden="true" data-toggle="modal" data-target="#myModalTabel" data-toggle="tooltip" data-placement="top" title="Tampilkan Data"></span>');
 			$('#tabel-dinamis').html('');
 			$('#tabel-dinamis').append('<thead id="tbhead"></thead>');
@@ -61,6 +59,8 @@
 
 
 function calldata(aWil){
+	
+	
 	loadingt(0);
 	var aKat = $('#kategori-nama').val();
 	var aVarn = $('#variabel-nama').val();
@@ -77,7 +77,8 @@ url: '?r=site/data&wil='+aWil+'&var='+aVar+'&kat='+aKat,
 		dataType : 'json',
 success: function(data)   
 		{
-
+idProvinsi.splice(0, idProvinsi.length);
+	tahun.splice(0, tahun.length);
 			var j = 0;
 			data.data.forEach(function(entry) {
 				
@@ -93,9 +94,15 @@ success: function(data)
 				dataTabel[ta[j]][entry.id_wilayah]= Number(entry.nilai);
 				j++;
 			});
-			idProvinsi=jQuery.unique(idP);
+			//hapus duplikasi id Provinsi
+		$.each(idP, function(i, el){
+			if($.inArray(el, idProvinsi) === -1) idProvinsi.push(el);
+		});
 			idProvinsi.sort();
-			tahun=jQuery.unique(ta);
+			//hapus duplikasi tahun
+			$.each(ta, function(i, el){
+			if($.inArray(el, tahun) === -1) tahun.push(el);
+		});
 			$('#judulTahun').html('Tahun: ');
 			$('#tahunControl').html('<span class="glyphicon glyphicon-triangle-left" style="cursor: pointer" aria-hidden="true" onclick="tahunBack()" data-toggle="tooltip" data-placement="top" title="Tahun Sebelum"></span><span class="glyphicon glyphicon-triangle-right" style="cursor: pointer" aria-hidden="true" onclick="tahunNext()" data-toggle="tooltip" data-placement="top" title="Tahun Selanjutnya"></span><label for=tahun id="tahunnya" style="margin-bottom:0"></label>');
 			$('#tahunInput').html('<input type=range min=0 max='+(tahun.length-1)+' value=0 id=fader step=1 oninput="outputUpdate(value)">');

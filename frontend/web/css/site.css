@@ -117,8 +117,17 @@ a.desc:after {
     margin: 0 0 5px;
     color: #777;
 }
+
+#lineChart {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ccc; 
+    transition: width 2s;
+}
   
-  
+  #lineChart.clicked {
+    width: 700px;
+}
  
 
 

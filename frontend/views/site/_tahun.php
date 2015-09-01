@@ -43,7 +43,7 @@ var interval = setInterval(function(){
     if(startTime == tahun.length ){
         clearInterval(interval);
 	$('#loadingmap').html('');
-        return;
+        clearInterval(interval);
     }
 	else {
 		$('#tahunInput').html('<input type=range min=0 max='+(tahun.length-1)+' value='+startTime+' id=fader step=1 oninput="outputUpdate(value)">');

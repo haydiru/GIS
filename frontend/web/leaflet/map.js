@@ -53,7 +53,6 @@ var jumlah=new Array();
 var tahun=new Array();
 var idProvinsi=new Array();
 var namaProvinsi=new Array();
-var tahun=new Array();
 var bulan=new Array();
 var satuan=new Array();
 
@@ -109,6 +108,9 @@ function initializez()
 	var overlayLayers = {   
 		//bisa ditambahkan sendiri overlay layernya, lihat dokumentasi plugin untuk layer yang tersedia
 	};
+		var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib='BPS RI';
+	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib }).addTo(map);
 	
 	   var defaultLayer = L.tileLayer.provider('Esri.WorldTopoMap').addTo(map);         
    var baseLayers = {     
@@ -128,9 +130,7 @@ function initializez()
    };
 	L.control.layers(baseLayers,overlayLayers,{collapsed: true}).addTo(map);
 	var skala = L.control.scale({position:'bottomright'}).addTo(map);
-	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-	var osmAttrib='BPS RI';
-	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib }).addTo(map);
+
 	//tampilkan control pemilihan layer pada peta   
 //var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map); 
 	//panggil function callJumlahPenduduk
@@ -182,8 +182,13 @@ url: '?r=geoserver-url/load-peta&idWil='+aWil,
 success: function(data)
 		{   
 		kodewilayah=aWil;
-		lokasi[(posisi+1)] = aWil;
+		if(aWil!=lokasi[posisi])
+		{lokasi[(posisi+1)] = aWil;
 		posisi++;
+		if(posisi>0) $('#untukBack').html('<span class="glyphicon glyphicon-arrow-left" style="cursor: pointer" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Ke Peta Level Sebelumnya" onclick="petaBack()"></span>');
+		if(posisi==(lokasi.length-1)) $('#untukForward').html('<span class="glyphicon glyphicon-arrow-right" style="color: #d9d9d9;" aria-hidden="true"></span>');
+		else $('#untukForward').html('<span class="glyphicon glyphicon-arrow-right" style="cursor: pointer" aria-hidden="true"data-toggle="tooltip" data-placement="top" title="Ke Peta Selanjutnya (forward)" onclick="petaNext()"></span>');
+		}
 			map.removeLayer(layerprovinsi); //hapus layer sebelumnya
 			//kasih layer geoJson
 			layerprovinsi=L.geoJson(data,{style:styleProvinsi}).addTo(map);
@@ -275,15 +280,19 @@ $('#loadingmap').html('<img src="logo/ajax-loader.gif" style="margin-Left:46%">'
 	}
 	
 function zoomdefault(){
-	map.fitBounds(layerprovinsi.getBounds());	
+	if(layerprovinsi!=0) map.fitBounds(layerprovinsi.getBounds());	
+	else map.setView(new L.LatLng(-1.889306,114.697266), 4);
 	}
 	
 	function petaBack(){
 	calldata(lokasi[posisi-1]);
-posisi=posisi-2;	
+	posisi=posisi-2;
+	if(posisi==-1){$('#untukBack').html('<span class="glyphicon glyphicon-arrow-left" style="color: #d9d9d9;" aria-hidden="true"></span>');}
 	}
 	
 		function petaNext(){
 			console.log(lokasi[(posisi+1)]);
 	calldata(lokasi[(posisi+1)]);
+	
+	
 	}

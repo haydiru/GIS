@@ -123,10 +123,18 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 	</div>
 		<div class="col-md-2" style="padding-right:5px;"> 
 		<div class="row">
-		<div class="col-md-2" style="padding-right:5px;" id="untukHome"> </div>
-		<div class="col-md-2" style="padding-right:5px;" id="untukBack"> </div>
-		<div class="col-md-2" style="padding-right:5px;" id="untukForward"> </div>
-		<div class="col-md-2" style="padding-right:5px;" id="untukTabel"> </div>
+		<div class="col-md-2" style="padding-right:5px;" id="untukHome">
+		<span class="glyphicon glyphicon-home" style="cursor: pointer" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Ke Posisi Semula" onclick="zoomdefault()"></span>
+		</div>
+		<div class="col-md-2" style="padding-right:5px;" id="untukBack">
+<span class="glyphicon glyphicon-arrow-left" style="color: #d9d9d9;" aria-hidden="true"></span>
+		</div>
+		<div class="col-md-2" style="padding-right:5px;" id="untukForward">
+<span class="glyphicon glyphicon-arrow-right" style="color: #d9d9d9;" aria-hidden="true"></span>
+		</div>
+		<div class="col-md-2" style="padding-right:5px;" id="untukTabel">
+<span class="glyphicon glyphicon-list-alt" style="color: #d9d9d9;" aria-hidden="true"></span>
+		</div>
 		<div class="col-md-2" style="padding-right:5px;" id="untukTabel"> </div>
 		<div class="col-md-2" style="padding-right:5px;" id="untukTabel"> </div>
 		</div>

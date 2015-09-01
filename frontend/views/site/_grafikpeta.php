@@ -34,9 +34,9 @@ function grafikPeta(namawilayah,isdata){
 function grafikPetaline(e){
 	var isdata=new Array();
 	var idWill= e.target.feature.properties.ID;
-	  layerPopup = L.popup()
+	  layerPopup = L.popup({maxWidth:700})
    .setLatLng(e.latlng) 
-   .setContent('<div id="lineChart" style="width:200px; height:200px"></div>')
+   .setContent('<button onclick="maxzoom('+idWill+')">Click me</button><div id="lineChart"></div>')
    .openOn(map);
 
 	for(var i=0;i<tahun.length;i++)
@@ -68,6 +68,12 @@ function grafikPetaline(e){
 			 //animation: false,
 		});
 
+}
+function maxzoom(idWill){
+
+	$('.leaflet-popup-content').css('width','700px');
+	$('#lineChart').css('width','700px');
+$('#lineChart').html('<canvas id="myChartline" style="width: 100% !important;height: 100% !important;"></canvas>');
 }
 
 	</script>

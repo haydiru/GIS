@@ -166,7 +166,8 @@ class SiteController extends Controller
 							else $kategori_=0;
 						}
 						else {
-							$idwilayah=$wilayah::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,5)->getValue(),])['id'];
+							$idParent = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(3,1)->getValue();
+							$idwilayah=$wilayah::findOne(['nama'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,5)->getValue(),'id_parent'=>$idParent,])['id'];
 							\Yii::$app->db->createCommand()->insert('fakta',[
 							'tahun'=>$tahun_,
 							'nilai'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue(),
@@ -224,6 +225,7 @@ class SiteController extends Controller
 			$list=\common\models\Wilayah::find()->andWhere(['id_parent'=>$id])->asArray()->all();
 			$selected=null;
 			if($id!=null&&count($list)>0){
+				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(3,1,$id);
 				$selected='';
 				$col=6;
 				foreach($list as $i=>$wil){
