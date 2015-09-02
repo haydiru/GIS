@@ -119,15 +119,11 @@ a.desc:after {
 }
 
 #lineChart {
-    width: 300px;
-    height: 300px;
-    border: 1px solid #ccc; 
+    width: 200px;
+    height: 200px;
+	margin-bottom:10px;
 }
-  
-  #lineChart.clicked {
-    width: 700px;
-}
- 
+
 
 
 

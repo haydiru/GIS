@@ -43,7 +43,8 @@ warnab[6]=['#1A9850','#66BD63','#A6D96A','#D9EF8B','#FFFFBF','#FEE08B','#FDAE61'
 warnab[7]=['#3288BD','#66C2A5','#ABDDA4','#E6F598','#FFFFBF','#FEE08B','#FDAE61','#F46D43','#D53E4F'];//hijau biru merah 
 
 
-
+var aVar; //tampung kode variabel
+var aKat; //tampung kode Kategori
 var layerprovinsi=0;
 var peta;
 var judul;//judul peta
@@ -56,15 +57,20 @@ var namaProvinsi=new Array();
 var bulan=new Array();
 var satuan=new Array();
 
-
-
+// add compas
+var compas = L.control({position: 'topleft'});
+compas.onAdd = function (map) {
+	var div = L.DomUtil.create('div', 'compas');
+	div.innerHTML ='<img src="logo/compass2.png" width="25px">';
+	return div;
+}
+// menampilkan info wilayah ketika di hover
 var info = L.control();
 info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info');
     this.update();
     return this._div;
 };
-// menampilkan info wilayah ketika di hover
 info.update = function (props) {
     this._div.innerHTML =(props ?
         '<b>' + namaProvinsi[props.ID] + '</b><br />' + dataTabel[vVal][props.ID]
@@ -109,10 +115,9 @@ function initializez()
 {	
 	//panggil base map
 	map = L.map('map').setView([-1.889306,114.697266], 4);
-	//overlay layer, bisa menampilkan data curah hujan, dll   
-	var overlayLayers = {   
-		//bisa ditambahkan sendiri overlay layernya, lihat dokumentasi plugin untuk layer yang tersedia
-	};
+	
+	
+	
 		var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	var osmAttrib='BPS RI';
 	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib }).addTo(map);
@@ -133,14 +138,12 @@ function initializez()
      'Esri WorldGrayCanvas': L.tileLayer.provider('Esri.WorldGrayCanvas'),
      'Acetate': L.tileLayer.provider('Acetate')
    };
-	L.control.layers(baseLayers,overlayLayers,{collapsed: true}).addTo(map);
+	L.control.layers(baseLayers,{collapsed: true}).addTo(map);
 	var skala = L.control.scale({position:'bottomright'}).addTo(map);
-
-	//tampilkan control pemilihan layer pada peta   
-//var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map); 
-	//panggil function callJumlahPenduduk
-warnalegenda();
+compas.addTo(map);
 info.addTo(map);
+warnalegenda();
+
 }
 
 //highlight ketika mouse diarahkan 
@@ -268,6 +271,9 @@ function style(nilaiData) {
 }
 function calldatabaru(){
 	var aWil = $('#wilayah-nama').val();
+		aKat = $('#kategori-nama').val();
+	var aVarn = $('#variabel-nama').val();
+	aVar = aVarn.substring(10);
 calldata(aWil);	
 }
 function getColor(indexWarna) {

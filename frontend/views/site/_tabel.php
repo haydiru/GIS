@@ -62,9 +62,6 @@ function calldata(aWil){
 	
 	
 	loadingt(0);
-	var aKat = $('#kategori-nama').val();
-	var aVarn = $('#variabel-nama').val();
-	var aVar = aVarn.substring(10);
 	var ta = new Array();
 	var idP = new Array();
 	var nP = new Array();

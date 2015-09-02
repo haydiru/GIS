@@ -38,10 +38,26 @@ function grafikPetaline(e){
 	
 	layerPopup = L.popup({maxWidth:700})
    .setLatLng(e.latlng) 
-   .setContent('<button onclick="maxzoom('+idWill+')">Max</button><button onclick="minimize('+idWill+')">Min</button><div id="lineChart"></div>')
+   .setContent('<span id="maxi" class="glyphicon glyphicon-resize-full"  style="cursor: pointer" aria-hidden="true" onclick="maxzoom('+idWill+')"></span><span id="minimize" class="glyphicon glyphicon-resize-small"  style="cursor: pointer" aria-hidden="true" onclick="minimize('+idWill+')"></span><h5>'+namaProvinsi[idWill]+' '+tahun[0]+'-'+tahun[tahun.length-1]+'</h5><div id="lineChart"></div><div id="zoomIn"></div>')
    .openOn(map);
+   cekData(idWill);
+   $('#minimize').css('display','none');
+//buat grafik dalam map
 chartpop(idWill);
+}
 
+function cekData(aWil){
+	
+	$.ajax({
+url: '?r=site/cekdata&wil='+aWil+'&var='+aVar+'&kat='+aKat,
+		type : 'POST',
+		dataType : 'json',
+success: function(data)   
+		{
+			if(data.data==1) $('#zoomIn').html('<button onclick="calldata('+aWil+')">Akses data level peta ini</button>');
+			else $('#zoomIn').html('')
+		}
+	});
 }
 
 function chartpop(idWill){
@@ -79,12 +95,16 @@ function chartpop(idWill){
 function maxzoom(idWill){
 	$('.leaflet-popup-content').css('width','700px');
 	$('#lineChart').css('width','700px');
+	$('#maxi').css('display','none');
+	$('#minimize').css('display','inline');
 chartpop(idWill);
 	}
 	
 function minimize(idWill){
 	$('.leaflet-popup-content').css('width','300px');
-	$('#lineChart').css('width','300px');
+	$('#lineChart').css('width','200px');
+	$('#minimize').css('display','none');
+	$('#maxi').css('display','inline');
 chartpop(idWill);
 	}
 
