@@ -46,7 +46,7 @@ warnab[7]=['#3288BD','#66C2A5','#ABDDA4','#E6F598','#FFFFBF','#FEE08B','#FDAE61'
 
 var layerprovinsi=0;
 var peta;
-
+var judul;//judul peta
 //array untuk menampung idprovinsi, tahun, bulan, satuan nama provinsi, dan nilai
 var dataTabel = new Array();
 var jumlah=new Array();
@@ -56,12 +56,22 @@ var namaProvinsi=new Array();
 var bulan=new Array();
 var satuan=new Array();
 
+
+
 var info = L.control();
 info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info');// create a div with a class "info"
+    this._div = L.DomUtil.create('div', 'info');
     this.update();
     return this._div;
 };
+// menampilkan info wilayah ketika di hover
+info.update = function (props) {
+    this._div.innerHTML =(props ?
+        '<b>' + namaProvinsi[props.ID] + '</b><br />' + dataTabel[vVal][props.ID]
+        : 'Hover over a state');
+};
+
+//membuat Lagenda
 var grades=new Array();
 function legenda(){
 	$('#legend').html('');
@@ -74,12 +84,7 @@ function legenda(){
 var vVal;
 
 
-// method that we will use to update the control based on feature properties passed
-info.update = function (props) {
-    this._div.innerHTML = '<h4>'+$('#variabel-nama option:selected').text()+'</h4>' +  (props ?
-        '<b>' + namaProvinsi[props.ID] + '</b><br />' + dataTabel[vVal][props.ID]
-        : 'Hover over a state');
-};
+
 
 
 //style untuk polygon

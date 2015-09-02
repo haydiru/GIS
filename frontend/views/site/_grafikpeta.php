@@ -32,18 +32,25 @@ function grafikPeta(namawilayah,isdata){
 }
 
 function grafikPetaline(e){
-	var isdata=new Array();
+	
 	var idWill= e.target.feature.properties.ID;
-	  layerPopup = L.popup({maxWidth:700})
+	
+	
+	layerPopup = L.popup({maxWidth:700})
    .setLatLng(e.latlng) 
-   .setContent('<button onclick="maxzoom('+idWill+')">Click me</button><div id="lineChart"></div>')
+   .setContent('<button onclick="maxzoom('+idWill+')">Max</button><button onclick="minimize('+idWill+')">Min</button><div id="lineChart"></div>')
    .openOn(map);
+chartpop(idWill);
 
+}
+
+function chartpop(idWill){
+	var isdata=new Array();
 	for(var i=0;i<tahun.length;i++)
 	{
 		isdata[i]=dataTabel[tahun[i]][idWill];
 	}
-	$('#lineChart').html('<canvas id="myChartline" style="width: 100% !important;height: 100% !important;"></canvas>');
+	
 	var barChartData = {
 		labels : tahun,
 		datasets : [
@@ -59,21 +66,26 @@ function grafikPetaline(e){
 		]
 
 	}
-	
+		$('#lineChart').html('<canvas id="myChartline" style="width: 100% !important;height: 100% !important;"></canvas>');
 	var ctx = document.getElementById("myChartline").getContext("2d");
-		myNewChart = new Chart(ctx).Line(barChartData, {
+	var	myNewChar = new Chart(ctx).Line(barChartData, {
 			//responsive : true,
 			 pointHitDetectionRadius : 3,
 			 pointDotRadius : 3,
 			 //animation: false,
 		});
-
 }
-function maxzoom(idWill){
 
+function maxzoom(idWill){
 	$('.leaflet-popup-content').css('width','700px');
 	$('#lineChart').css('width','700px');
-$('#lineChart').html('<canvas id="myChartline" style="width: 100% !important;height: 100% !important;"></canvas>');
-}
+chartpop(idWill);
+	}
+	
+function minimize(idWill){
+	$('.leaflet-popup-content').css('width','300px');
+	$('#lineChart').css('width','300px');
+chartpop(idWill);
+	}
 
 	</script>

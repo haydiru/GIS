@@ -122,7 +122,6 @@ a.desc:after {
     width: 300px;
     height: 300px;
     border: 1px solid #ccc; 
-    transition: width 2s;
 }
   
   #lineChart.clicked {

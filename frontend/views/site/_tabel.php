@@ -15,7 +15,7 @@
     <div class="modal-content">
       <div class="modal-header">
 	  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
 	  
@@ -36,7 +36,7 @@
 
 <script>
     function drawTable() {
-		$('#untukHome').html('<span class="glyphicon glyphicon-home" style="cursor: pointer" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Zoom Default" onclick="zoomdefault()"></span>');
+		$('#myModalLabel').html(judul);
 		$('#untukTabel').html('<span class="glyphicon glyphicon-list-alt" style="cursor: pointer" aria-hidden="true" data-toggle="modal" data-target="#myModalTabel" data-toggle="tooltip" data-placement="top" title="Tampilkan Data"></span>');
 			$('#tabel-dinamis').html('');
 			$('#tabel-dinamis').append('<thead id="tbhead"></thead>');
@@ -69,6 +69,7 @@ function calldata(aWil){
 	var idP = new Array();
 	var nP = new Array();
 	var bu= new Array();
+	
 	indexTahun=0;
 		
 	$.ajax({
@@ -81,12 +82,19 @@ idProvinsi.splice(0, idProvinsi.length);
 	tahun.splice(0, tahun.length);
 			var j = 0;
 			data.data.forEach(function(entry) {
-				
+				//tampung id willayah
 				idP[j]=entry.id_wilayah;
+				//tampung nama willayah
 				namaProvinsi[entry.id_wilayah]=entry.nama_wilayah;
+				//jika tidak ada bulan
 				if(entry.id_bulan==0) ta[j]=entry.tahun;
 				else ta[j]=entry.nama_bulan+" "+entry.tahun;
-				
+				//buat judul
+				if(j==0){
+				if(aKat==0) judul = entry.nama_variabel+' Se-'+data.namaparent;
+				else judul = entry.nama_variabel+' '+entry.nama_katergori+' Se-'+data.namaparent;
+				}
+				//tampung semua nilai data
 				if(dataTabel[ta[j]]==null){
 				dataTabel[ta[j]] = new Array();
 				}
@@ -103,6 +111,7 @@ idProvinsi.splice(0, idProvinsi.length);
 			$.each(ta, function(i, el){
 			if($.inArray(el, tahun) === -1) tahun.push(el);
 		});
+			$('#judul').html('<h4><b>'+judul+'</b></h4>');
 			$('#judulTahun').html('Tahun: ');
 			$('#tahunControl').html('<span class="glyphicon glyphicon-triangle-left" style="cursor: pointer" aria-hidden="true" onclick="tahunBack()" data-toggle="tooltip" data-placement="top" title="Tahun Sebelum"></span><span class="glyphicon glyphicon-triangle-right" style="cursor: pointer" aria-hidden="true" onclick="tahunNext()" data-toggle="tooltip" data-placement="top" title="Tahun Selanjutnya"></span><label for=tahun id="tahunnya" style="margin-bottom:0"></label>');
 			$('#tahunInput').html('<input type=range min=0 max='+(tahun.length-1)+' value=0 id=fader step=1 oninput="outputUpdate(value)">');
