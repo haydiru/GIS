@@ -9,6 +9,24 @@ use yii\grid\GridView;
 
 $this->title = 'Faktas';
 $this->params['breadcrumbs'][] = $this->title;
+
+$wilayah = \yii\helpers\ArrayHelper::map(
+\common\models\Wilayah::find()->all(),
+'id', 'nama');
+$bulan = \yii\helpers\ArrayHelper::map(
+\common\models\Bulan::find()->all(),
+'id', 'nama');
+$variabel = \yii\helpers\ArrayHelper::map(
+\common\models\Variabel::find()->all(),
+'id', 'nama');
+$kategori = \yii\helpers\ArrayHelper::map(
+\common\models\Kategori::find()->all(),
+'id', 'nama');
+$sumberData = \yii\helpers\ArrayHelper::map(
+\common\models\SumberData::find()->all(),
+'id', 'nama_cs');
+
+
 ?>
 <div class="fakta-index">
 
@@ -18,34 +36,52 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Fakta', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<?php 
-$wilayah = \yii\helpers\ArrayHelper::map(
-\common\models\Wilayah::find()->all(),
-'id', 'nama');
 
-
-?>
-
-    <?= GridView::widget([
+<?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             //'id',
             //'id_wilayah',
 			['attribute'=>'id_wilayah',
 	            'label'=>'Wilayah',
 	            'format'=>'text',//raw, html
+				'filter'=>$wilayah,
 	            'content'=>function($data){
-	                return $data->getParentName();}
+	                return $data->getParentNameWilayah();}
 					],
+					
             'tahun',
-            'id_bulan',
-            'id_variabel',
-            'id_item_kategori',
+            ['attribute'=>'id_bulan',
+	            'label'=>'Bulan',
+	            'format'=>'text',//raw, html
+				'filter'=>$bulan,
+	            'content'=>function($data){
+	                return $data->getParentNameBulan();}
+					],
+              ['attribute'=>'id_variabel',
+	            'label'=>'Variabel',
+	            'format'=>'text',//raw, html
+				'filter'=>$variabel,
+	            'content'=>function($data){
+	                return $data->getParentNameVariabel();}
+					],
+            ['attribute'=>'id_kategori',
+	            'label'=>'Kategori',
+	            'format'=>'text',//raw, html
+				'filter'=>$kategori,
+	            'content'=>function($data){
+	                return $data->getParentNameKategori();}
+					],
             'nilai',
-            'id_sumber_data',
+            ['attribute'=>'id_sumber_data',
+	            'label'=>'Sumber Data',
+	            'format'=>'text',//raw, html
+				'filter'=>$sumberData,
+	            'content'=>function($data){
+	                return $data->getParentNameSumberData();}
+					],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

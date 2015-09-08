@@ -23,7 +23,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_wilayah') ?>
 
-    <?= $form->field($model, 'id_variabel') ?>
+    <?= $form->field($model, 'kode_unik') ?>
+
+    <?php // echo $form->field($model, 'id_variabel') ?>
+
+    <?php // echo $form->field($model, 'id_kategori') ?>
 
     <?php // echo $form->field($model, 'id_item_kategori') ?>
 

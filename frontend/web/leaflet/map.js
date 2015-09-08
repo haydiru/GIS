@@ -115,9 +115,6 @@ function initializez()
 {	
 	//panggil base map
 	map = L.map('map').setView([-1.889306,114.697266], 4);
-	
-	
-	
 		var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	var osmAttrib='BPS RI';
 	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib }).addTo(map);
@@ -304,6 +301,5 @@ function zoomdefault(){
 		function petaNext(){
 			console.log(lokasi[(posisi+1)]);
 	calldata(lokasi[(posisi+1)]);
-	
 	
 	}

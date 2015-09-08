@@ -264,9 +264,6 @@ class SiteController extends Controller
 			->orderBy('variabel.nama')
 			->where('topik.id='.$idTop.' AND wilayah.id_parent='.$idWil);
 			$list = $query->all();
-			//$list = \common\models\Fakta::findBySql('SELECT DISTINCT id_variabel FROM fakta')->asArray()->all();
-			//SELECT DISTINCT topik.id, topik.nama FROM fakta
-//RIGHT JOIN topik ON fakta.id_variabel=topik.id
 			$selected  = null;
 			if ($id != null && count($list) > 0) {
 				$selected = '';

@@ -11,13 +11,16 @@ use Yii;
  * @property integer $tahun
  * @property integer $id_bulan
  * @property string $id_wilayah
+ * @property string $kode_unik
  * @property integer $id_variabel
+ * @property integer $id_kategori
  * @property integer $id_item_kategori
  * @property integer $id_sumber_data
  * @property double $nilai
  *
  * @property Bulan $idBulan
  * @property ItemKategori $idItemKategori
+ * @property Kategori $idKategori
  * @property SumberData $idSumberData
  * @property Variabel $idVariabel
  * @property Wilayah $idWilayah
@@ -38,10 +41,12 @@ class Fakta extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tahun', 'id_bulan', 'id_wilayah', 'id_variabel', 'id_item_kategori', 'id_sumber_data', 'nilai'], 'required'],
-            [['tahun', 'id_bulan', 'id_variabel', 'id_item_kategori', 'id_sumber_data'], 'integer'],
+            [['tahun', 'id_bulan', 'id_wilayah', 'kode_unik', 'id_variabel', 'id_kategori', 'id_item_kategori', 'id_sumber_data', 'nilai'], 'required'],
+            [['tahun', 'id_bulan', 'id_variabel', 'id_kategori', 'id_item_kategori', 'id_sumber_data'], 'integer'],
             [['nilai'], 'number'],
-            [['id_wilayah'], 'string', 'max' => 11]
+            [['id_wilayah'], 'string', 'max' => 11],
+            [['kode_unik'], 'string', 'max' => 50],
+            [['kode_unik'], 'unique']
         ];
     }
 
@@ -55,7 +60,9 @@ class Fakta extends \yii\db\ActiveRecord
             'tahun' => 'Tahun',
             'id_bulan' => 'Id Bulan',
             'id_wilayah' => 'Id Wilayah',
+            'kode_unik' => 'Kode Unik',
             'id_variabel' => 'Id Variabel',
+            'id_kategori' => 'Id Kategori',
             'id_item_kategori' => 'Id Item Kategori',
             'id_sumber_data' => 'Id Sumber Data',
             'nilai' => 'Nilai',
@@ -81,6 +88,14 @@ class Fakta extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getIdKategori()
+    {
+        return $this->hasOne(Kategori::className(), ['id' => 'id_kategori']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getIdSumberData()
     {
         return $this->hasOne(SumberData::className(), ['id' => 'id_sumber_data']);
@@ -101,8 +116,25 @@ class Fakta extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Wilayah::className(), ['id' => 'id_wilayah']);
     }
-	public function getParentName(){
+	
+	public function getParentNameWilayah(){
 		$model=$this->idWilayah;
 		return $model?$model->nama:'';
+	}
+		public function getParentNameBulan(){
+		$model=$this->idBulan;
+		return $model?$model->nama:'';
+	}
+		public function getParentNameVariabel(){
+		$model=$this->idVariabel;
+		return $model?$model->nama:'';
+	}
+			public function getParentNameKategori(){
+		$model=$this->idKategori;
+		return $model?$model->nama:'';
+	}			
+	public function getParentNameSumberData(){
+		$model=$this->idSumberData;
+		return $model?$model->nama_cs:'';
 	}
 }

@@ -3,47 +3,36 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Fakta;
-use backend\models\FaktaSearch;
+use common\models\Variabel;
+use backend\models\VariabelSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 
 /**
- * FaktaController implements the CRUD actions for Fakta model.
+ * VariabelController implements the CRUD actions for Variabel model.
  */
-class FaktaController extends Controller
+class VariabelController extends Controller
 {
-	public function behaviors()
-	{
-		return [
-		'access'=>[
-		'class'=>AccessControl::className(),
-		'rules'=>[
-		[
-		'actions'=>['view','index','create','update','delete'],
-		'allow'=>true,
-		'roles'=>['@'],
-		],
-		],
-		],
-		'verbs'=>[
-		'class'=>VerbFilter::className(),
-		'actions'=>[
-		'logout'=>['post'],
-		],
-		],
-		];
-	}
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                ],
+            ],
+        ];
+    }
 
     /**
-     * Lists all Fakta models.
+     * Lists all Variabel models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new FaktaSearch();
+        $searchModel = new VariabelSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -53,7 +42,7 @@ class FaktaController extends Controller
     }
 
     /**
-     * Displays a single Fakta model.
+     * Displays a single Variabel model.
      * @param integer $id
      * @return mixed
      */
@@ -65,13 +54,13 @@ class FaktaController extends Controller
     }
 
     /**
-     * Creates a new Fakta model.
+     * Creates a new Variabel model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Fakta();
+        $model = new Variabel();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -83,7 +72,7 @@ class FaktaController extends Controller
     }
 
     /**
-     * Updates an existing Fakta model.
+     * Updates an existing Variabel model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -102,7 +91,7 @@ class FaktaController extends Controller
     }
 
     /**
-     * Deletes an existing Fakta model.
+     * Deletes an existing Variabel model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -115,15 +104,15 @@ class FaktaController extends Controller
     }
 
     /**
-     * Finds the Fakta model based on its primary key value.
+     * Finds the Variabel model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Fakta the loaded model
+     * @return Variabel the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Fakta::findOne(['id'=>$id,'id_user'=>\Yii::$app->user->identity->id ])) !== null) {
+        if (($model = Variabel::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

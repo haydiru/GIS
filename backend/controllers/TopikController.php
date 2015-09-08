@@ -3,47 +3,36 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Fakta;
-use backend\models\FaktaSearch;
+use common\models\Topik;
+use backend\models\TopikSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 
 /**
- * FaktaController implements the CRUD actions for Fakta model.
+ * TopikController implements the CRUD actions for Topik model.
  */
-class FaktaController extends Controller
+class TopikController extends Controller
 {
-	public function behaviors()
-	{
-		return [
-		'access'=>[
-		'class'=>AccessControl::className(),
-		'rules'=>[
-		[
-		'actions'=>['view','index','create','update','delete'],
-		'allow'=>true,
-		'roles'=>['@'],
-		],
-		],
-		],
-		'verbs'=>[
-		'class'=>VerbFilter::className(),
-		'actions'=>[
-		'logout'=>['post'],
-		],
-		],
-		];
-	}
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                ],
+            ],
+        ];
+    }
 
     /**
-     * Lists all Fakta models.
+     * Lists all Topik models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new FaktaSearch();
+        $searchModel = new TopikSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -53,7 +42,7 @@ class FaktaController extends Controller
     }
 
     /**
-     * Displays a single Fakta model.
+     * Displays a single Topik model.
      * @param integer $id
      * @return mixed
      */
@@ -65,13 +54,13 @@ class FaktaController extends Controller
     }
 
     /**
-     * Creates a new Fakta model.
+     * Creates a new Topik model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Fakta();
+        $model = new Topik();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -83,7 +72,7 @@ class FaktaController extends Controller
     }
 
     /**
-     * Updates an existing Fakta model.
+     * Updates an existing Topik model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -102,7 +91,7 @@ class FaktaController extends Controller
     }
 
     /**
-     * Deletes an existing Fakta model.
+     * Deletes an existing Topik model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -115,15 +104,15 @@ class FaktaController extends Controller
     }
 
     /**
-     * Finds the Fakta model based on its primary key value.
+     * Finds the Topik model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Fakta the loaded model
+     * @return Topik the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Fakta::findOne(['id'=>$id,'id_user'=>\Yii::$app->user->identity->id ])) !== null) {
+        if (($model = Topik::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

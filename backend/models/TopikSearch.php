@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Fakta;
+use common\models\Topik;
 
 /**
- * FaktaSearch represents the model behind the search form about `common\models\Fakta`.
+ * TopikSearch represents the model behind the search form about `common\models\Topik`.
  */
-class FaktaSearch extends Fakta
+class TopikSearch extends Topik
 {
     /**
      * @inheritdoc
@@ -18,9 +18,8 @@ class FaktaSearch extends Fakta
     public function rules()
     {
         return [
-            [['id', 'tahun', 'id_bulan', 'id_variabel', 'id_kategori', 'id_item_kategori', 'id_sumber_data'], 'integer'],
-            [['id_wilayah', 'kode_unik'], 'safe'],
-            [['nilai'], 'number'],
+            [['id', 'id_parent'], 'integer'],
+            [['nama', 'keterangan'], 'safe'],
         ];
     }
 
@@ -42,7 +41,7 @@ class FaktaSearch extends Fakta
      */
     public function search($params)
     {
-        $query = Fakta::find();
+        $query = Topik::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -58,18 +57,11 @@ class FaktaSearch extends Fakta
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'tahun' => $this->tahun,
-            'id_user' => \Yii::$app->user->identity->id,
-            'id_bulan' => $this->id_bulan,
-            'id_variabel' => $this->id_variabel,
-            'id_kategori' => $this->id_kategori,
-            'id_item_kategori' => $this->id_item_kategori,
-            'id_sumber_data' => $this->id_sumber_data,
-            'nilai' => $this->nilai,
+            'id_parent' => $this->id_parent,
         ]);
 
-        $query->andFilterWhere(['like', 'id_wilayah', $this->id_wilayah])
-            ->andFilterWhere(['like', 'kode_unik', $this->kode_unik]);
+        $query->andFilterWhere(['like', 'nama', $this->nama])
+            ->andFilterWhere(['like', 'keterangan', $this->keterangan]);
 
         return $dataProvider;
     }

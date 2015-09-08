@@ -34,10 +34,7 @@ echo $form1->field($topik, 'nama')->widget(Select2::classname(), [
 // Child level 1
 $variabel= new \common\models\Wilayah();
 echo $form1->field($variabel, 'nama')->widget(DepDrop::classname(), [
-    'options' => ['placeholder' => 'Select ...'],
-	'pluginEvents'=> [
-"depdrop.change"=>"function(event, id, value) { console.log(value); }",
-],
+    'options' => ['placeholder' => 'Select Nama Wilayah...'],
     'type' => DepDrop::TYPE_SELECT2,
     'select2Options'=>['pluginOptions'=>['allowClear'=>true]],
     'pluginOptions'=>[
@@ -55,6 +52,8 @@ echo $form1->field($variabel, 'nama')->widget(DepDrop::classname(), [
 </button> Tamplate Excel 
 <div class="collapse" id="collapseExample">
   <div class="well" style="width:60%">
+  <?php // echo \Yii::$app->user->identity->id 
+  ?>
               <p>Silakan download tamplate untuk mengimport data ke database.</p>
           <input type="submit" value="Download" class="btn btn-danger"> 
   </div>

@@ -59,14 +59,11 @@
 
 
 function calldata(aWil){
-	
-	
 	loadingt(0);
 	var ta = new Array();
 	var idP = new Array();
 	var nP = new Array();
 	var bu= new Array();
-	
 	indexTahun=0;
 		
 	$.ajax({
@@ -121,7 +118,6 @@ idProvinsi.splice(0, idProvinsi.length);
 	});
 	if(aWil!=kodewilayah){
 	callProvMap(aWil);
-	
 	}
 	else {setVariableTahun(tahun[indexTahun]);
 	loadingt(100);

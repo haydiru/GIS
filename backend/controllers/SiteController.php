@@ -172,6 +172,7 @@ class SiteController extends Controller
 							'tahun'=>$tahun_,
 							'nilai'=>$objPHPExcel->getActiveSheet()->getCellByColumnAndRow($j,$i)->getValue(),
 							'id_bulan'=>$bulan_,
+							'id_user'=> \Yii::$app->user->identity->id ,
 							'id_wilayah'=>$idwilayah,
 							'id_variabel'=>$variabel_,
 							'id_kategori'=>$kategori_,
@@ -283,11 +284,4 @@ class SiteController extends Controller
 		}
 		return  (['output'=>'','selected'=>'']);
 	}
-	
-	public function beforeAction($action){
-		$this->enableCsrfValidation=false;// <-- here
-		return  parent::beforeAction($action);
-	}
-	
-
 }

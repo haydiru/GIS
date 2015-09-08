@@ -15,7 +15,7 @@ $this->title = 'My Yii Application';
 		<div class="panel-heading" style="padding:0 5px 0 5px;"><div class="row" >
 		<div class="col-md-2" style="padding-right:5px;">
 		<?php
-		$form=ActiveForm::begin();
+$form=ActiveForm::begin();
 $tipeWilayah= new \common\models\TipeWilayah();
 echo $form->field($tipeWilayah, 'nama')->widget(Select2::classname(), [
 'data' => ArrayHelper::map($tipeWilayah::find()->all(), 'id', 'nama'),

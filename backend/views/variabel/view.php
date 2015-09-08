@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Fakta */
+/* @var $model common\models\Variabel */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Faktas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Variabels', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="fakta-view">
+<div class="variabel-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,15 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'tahun',
-            'id_bulan',
-            'id_wilayah',
-            'kode_unik',
-            'id_variabel',
-            'id_kategori',
-            'id_item_kategori',
-            'id_sumber_data',
-            'nilai',
+            'id_topik',
+            'nama',
+            'keterangan:ntext',
+            'satuan',
         ],
     ]) ?>
 
