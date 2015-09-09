@@ -26,9 +26,13 @@ class AppAsset extends AssetBundle
 	'geostats-master/lib/geostats.js',
 	'leaflet/leaflet-src.js',
 	'leaflet/map.js',
+	'leaflet/grafiksapu.js',
 	'leaflet/minimap/src/Control.MiniMap.js',
 	'leaflet/provider/leaflet-providers.js',
 	'chartjs/Chart.min.js',
+	'highcharts/js/highcharts.js',
+	'highcharts/js/modules/exporting.js',
+	'highcharts/js/modules/drilldown.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

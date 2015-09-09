@@ -351,6 +351,55 @@ class SiteController extends Controller
 		}
 		return (['output' => '', 'selected'=>'']);
 	}
+	// controlller sapu
+	
+	public function actionDatasum($twil,$nwil,$namawil){
+		
+		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+		//Yii::$app->response->format = 'jsongis';
+		switch ($twil) {
+					case 1 :	{$query = new Query;
+								 $query->select("COUNT(DISTINCT `R102N`) AS jkota, COUNT(DISTINCT `R103N`)as jkec, COUNT(DISTINCT `R104N`) as jdesa")
+								 ->from('kepri')
+								 ->where('R101N='."'".$namawil."'");} break;
+					case 2 :	{$query = new Query;
+								 $query->select("COUNT(DISTINCT `R102N`) AS jkota, COUNT(DISTINCT `R103N`)as jkec, COUNT(DISTINCT `R104N`) as jdesa")
+								 ->from('kepri')
+								 ->where('R102N='."'".$namawil."'");} break;
+					case 3 :	{$query = new Query;
+								 $query->select("COUNT(DISTINCT `R102N`) AS jkota, COUNT(DISTINCT `R103N`)as jkec, COUNT(DISTINCT `R104N`) as jdesa")
+								 ->from('kepri')
+								 ->where('R103N='."'".$namawil."'");} break;
+						}		 
+		
+		$rows = $query->all();
+		$command = $query->createCommand();
+		$rows = $command->queryAll();
+		return (['data'=>$rows]);
+	}
+	
+	public function actionDatavis($nwil,$twil){
+		
+		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+		//Yii::$app->response->format = 'jsongis';
+		$query = new Query;
+			$query->select('LEVEL_WILA, ID_WIL, R101, R101N, R102N, R103N, R104N, R401, R404A, R501A1, R501A2, R501B,
+							R503, R507A,R701A_K2,R701A_K3,R701B_K2, R701B_K3, R701C_K2, R701C_K3, R701D_K2,
+							R701D_K3, R701E_K2, R701E_K3, R701F_K2, R701F_K3, R701G_K2, R701G_K3, R701H_K3,
+							R701I_K3, R704A_K3, R704B_K3, R704C_K3, R704D_K3, R704E_K3, R704F_K3, R704G_K3,
+							R704H_K3, R704I_K3, R704J_K3, R704K_K3, R704L_K3,R706A1, R706A2, R706B, R706C,
+							R706D,R1201A, R1201B, R1201C, R1201D, R1201E, R1201F, R1201G, R1201H, R1204A,
+							R1204B, R1205, R1206, R1209, R1210, R1211, R1215A_K3, R1215B_K3, R802, R803A,
+							R803B, R803C, R803D, R803E, R803F, R803G, R803H, R1305, R1303B, R601A_K2, R601B_K2,
+							R601C_K2, R601D_K2, R601E_K2, R601F_K2, R601G_K2, R601H_K2, R601I_K2, R601J_K2')
+			->from('kepri')
+			->where('ID_WIL='.$nwil); 
+		$rows = $query->all();
+		$command = $query->createCommand();
+		$rows = $command->queryAll();
+		return (['data'=>$rows]);
+	}
+	
 	
 	public function beforeAction($action) {
 		$this->enableCsrfValidation = false; // <-- here

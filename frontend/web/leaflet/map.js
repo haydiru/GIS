@@ -247,7 +247,7 @@ layer.on({
 mouseover: highlightFeature,
 mouseout: resetHighlight,  
 dblclick : zoomToFeature,
-contextmenu : grafikPetaline,     
+click : grafikPetaline,     
 	});
 //	layer.bindPopup('<div id="lineChart" style="width:300px; height:300px"></div>');
     });
@@ -271,6 +271,12 @@ function calldatabaru(){
 		aKat = $('#kategori-nama').val();
 	var aVarn = $('#variabel-nama').val();
 	aVar = aVarn.substring(10);
+	//sapu
+	var twil = $('#tipewilayah-nama').val();
+	var nwil = $('#wilayah-nama').val();
+	var namawil = $('#wilayah-nama option:selected').text();
+calldatasum(twil,nwil,namawil);calldatavis(twil,nwil);
+//sapu
 calldata(aWil);	
 }
 function getColor(indexWarna) {

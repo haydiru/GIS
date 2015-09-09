@@ -108,6 +108,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		<div class="panel-heading">Grafik</div>
 
   <div class="panel-body" >
+  <?= $this->render('side') ?> 
 </div>		
 		</div>
 </div>
