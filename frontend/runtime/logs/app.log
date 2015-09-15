@@ -51715,3 +51715,265 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1441955125.642
     'REQUEST_TIME' => 1441955125
 ]
+2015-09-14 01:44:54 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Maximum execution time of 30 seconds exceeded' in D:\xampp\htdocs\gisskripsi\frontend\controllers\GeoserverUrlController.php:27
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-14 01:44:24 [::1][-][-][info][application] $_GET = [
+    'r' => 'geoserver-url/load-peta'
+    'idWil' => '2100000000'
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'ipkgb6ti5gqjbnj5t4sqcvdsb3'
+    '_csrf' => '3fab0a1501b8cd31a3833b40c9cb9f42bfd8dfe1de983dc66fed064d76d5ef78a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IqnyqdgVWKLCDrp1Hc5dwykpG4p29TmI\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'dkZIOHJnR0w/NyZBAwMgGiENBHs2FTd9PiV9XAUeLDwxcjgKSzMqBQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=ipkgb6ti5gqjbnj5t4sqcvdsb3; _csrf=3fab0a1501b8cd31a3833b40c9cb9f42bfd8dfe1de983dc66fed064d76d5ef78a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IqnyqdgVWKLCDrp1Hc5dwykpG4p29TmI%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '55334'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=geoserver-url/load-peta&idWil=2100000000'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=geoserver-url/load-peta&idWil=2100000000'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1442187864.297
+    'REQUEST_TIME' => 1442187864
+]
+2015-09-14 01:45:32 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function all() on a non-object' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:375
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-14 01:45:31 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/datasum'
+    'twil' => '0'
+    'nwil' => '0000000000'
+    'namawil' => 'Indonesia'
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'ipkgb6ti5gqjbnj5t4sqcvdsb3'
+    '_csrf' => '3fab0a1501b8cd31a3833b40c9cb9f42bfd8dfe1de983dc66fed064d76d5ef78a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IqnyqdgVWKLCDrp1Hc5dwykpG4p29TmI\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'dkZIOHJnR0w/NyZBAwMgGiENBHs2FTd9PiV9XAUeLDwxcjgKSzMqBQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=ipkgb6ti5gqjbnj5t4sqcvdsb3; _csrf=3fab0a1501b8cd31a3833b40c9cb9f42bfd8dfe1de983dc66fed064d76d5ef78a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IqnyqdgVWKLCDrp1Hc5dwykpG4p29TmI%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '55345'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/datasum&twil=0&nwil=0000000000&namawil=Indonesia'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site/datasum&twil=0&nwil=0000000000&namawil=Indonesia'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1442187931.941
+    'REQUEST_TIME' => 1442187931
+]
+2015-09-14 01:50:25 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function all() on a non-object' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:375
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-14 01:50:24 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/datasum'
+    'twil' => '0'
+    'nwil' => '0000000000'
+    'namawil' => 'Indonesia'
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'ipkgb6ti5gqjbnj5t4sqcvdsb3'
+    '_csrf' => '3fab0a1501b8cd31a3833b40c9cb9f42bfd8dfe1de983dc66fed064d76d5ef78a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IqnyqdgVWKLCDrp1Hc5dwykpG4p29TmI\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'MVFaWGhXWW54IDQhGTM.OGYaFhssJSlfeTJvPB8uMh52ZSpqUQM0Jw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=ipkgb6ti5gqjbnj5t4sqcvdsb3; _csrf=3fab0a1501b8cd31a3833b40c9cb9f42bfd8dfe1de983dc66fed064d76d5ef78a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IqnyqdgVWKLCDrp1Hc5dwykpG4p29TmI%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '55398'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/datasum&twil=0&nwil=0000000000&namawil=Indonesia'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site/datasum&twil=0&nwil=0000000000&namawil=Indonesia'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1442188224.971
+    'REQUEST_TIME' => 1442188224
+]
+2015-09-15 11:53:17 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function all() on a non-object' in D:\xampp\htdocs\gisskripsi\frontend\controllers\SiteController.php:375
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-15 11:53:16 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/datasum'
+    'twil' => '0'
+    'nwil' => '0000000000'
+    'namawil' => 'Indonesia'
+]
+
+$_COOKIE = [
+    '_identity' => '883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO\",2592000]\";}'
+    'PHPSESSID' => 'cd8gdhh49cgsvn78k61410rmu3'
+    '_csrf' => 'c36e45d4e78aa1af6388499d907f865c93c82767d3665e6610cfdfa293e4a4efa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"m30vGGCwEdKSJxlRkaH70SZUEnkIwdWc\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:81'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'Rjg3d3VaS28rCwcBMh0IGANcfCQ/Iic9LVl/QEUJEToDVlw.Aj4cDA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost:81/gisskripsi/frontend/web/index.php'
+    'HTTP_COOKIE' => '_identity=883ceac733d776c416b834f99328f7fd6532f0ad5918862ba06903ebdb455ae3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22nIsoXEGLDy3CH2ot2vhb7n5gbugRdWHO%22%2C2592000%5D%22%3B%7D; PHPSESSID=cd8gdhh49cgsvn78k61410rmu3; _csrf=c36e45d4e78aa1af6388499d907f865c93c82767d3665e6610cfdfa293e4a4efa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22m30vGGCwEdKSJxlRkaH70SZUEnkIwdWc%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Reallusion\\CamSuite;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\SysWOW64;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\bin;C:\\Users\\Haidir Magribi\\Documents\\R\\win-library\\share;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\B1 Free Archiver'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22 Server at localhost Port 81</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/0.9.8y PHP/5.4.22'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '81'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/gisskripsi/frontend/web/index.php'
+    'REMOTE_PORT' => '56577'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/datasum&twil=0&nwil=0000000000&namawil=Indonesia'
+    'REQUEST_URI' => '/gisskripsi/frontend/web/index.php?r=site/datasum&twil=0&nwil=0000000000&namawil=Indonesia'
+    'SCRIPT_NAME' => '/gisskripsi/frontend/web/index.php'
+    'PHP_SELF' => '/gisskripsi/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1442310796.97
+    'REQUEST_TIME' => 1442310796
+]

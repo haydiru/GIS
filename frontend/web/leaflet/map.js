@@ -45,6 +45,7 @@ warnab[7]=['#3288BD','#66C2A5','#ABDDA4','#E6F598','#FFFFBF','#FEE08B','#FDAE61'
 
 var aVar; //tampung kode variabel
 var aKat; //tampung kode Kategori
+var tipeWil=new Array();
 var layerprovinsi=0;
 var peta;
 var judul;//judul peta

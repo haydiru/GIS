@@ -80,13 +80,15 @@ idProvinsi.splice(0, idProvinsi.length);
 				idP[j]=entry.id_wilayah;
 				//tampung nama willayah
 				namaProvinsi[entry.id_wilayah]=entry.nama_wilayah;
+				//tampung tipe wilayah
+				tipeWil[entry.id_wilayah]=entry.tipe;
 				//jika tidak ada bulan
 				if(entry.id_bulan==0) ta[j]=entry.tahun;
 				else ta[j]=entry.nama_bulan+" "+entry.tahun;
 				//buat judul
 				if(j==0){
-				if(aKat==0) judul = entry.nama_variabel+' Se-'+data.namaparent;
-				else judul = entry.nama_variabel+' '+entry.nama_katergori+' Se-'+data.namaparent;
+				if(aKat==0) judul = entry.nama_variabel+' '+data.namaparent;
+				else judul = entry.nama_variabel+' '+entry.nama_katergori+' '+data.namaparent;
 				}
 				//tampung semua nilai data
 				if(dataTabel[ta[j]]==null){

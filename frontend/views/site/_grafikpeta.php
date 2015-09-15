@@ -32,9 +32,8 @@ function grafikPeta(namawilayah,isdata){
 }
 
 function grafikPetaline(e){
-	
 	var idWill= e.target.feature.properties.ID;
-	calldatasum('2',idWill,namaProvinsi[idWill]);calldatavis('2',idWill);
+	calldatasum(tipeWil[idWill],idWill,namaProvinsi[idWill]);calldatavis(tipeWil[idWill],idWill);
 	layerPopup = L.popup({maxWidth:700})
    .setLatLng(e.latlng) 
    .setContent('<span id="maxi" class="glyphicon glyphicon-resize-full"  style="cursor: pointer" aria-hidden="true" onclick="maxzoom('+idWill+')"></span><span id="minimize" class="glyphicon glyphicon-resize-small"  style="cursor: pointer" aria-hidden="true" onclick="minimize('+idWill+')"></span><h5>'+namaProvinsi[idWill]+' '+tahun[0]+'-'+tahun[tahun.length-1]+'</h5><div id="lineChart"></div><div id="zoomIn"></div>')

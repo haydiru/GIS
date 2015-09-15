@@ -178,7 +178,7 @@ class SiteController extends Controller
 		$namaWilparent = \common\models\Wilayah::findOne(['id' => $wil,]);
 		
 		$query = new Query;
-			$query->select('fakta.id_wilayah, wilayah.nama as nama_wilayah, fakta.nilai, fakta.tahun, variabel.satuan, variabel.nama as nama_variabel, kategori.nama as nama_kategori, fakta.id_bulan, bulan.nama as nama_bulan')
+			$query->select('fakta.id_wilayah, wilayah.nama as nama_wilayah, wilayah.tipe , fakta.nilai, fakta.tahun, variabel.satuan, variabel.nama as nama_variabel, kategori.nama as nama_kategori, fakta.id_bulan, bulan.nama as nama_bulan')
 			->from('fakta')
 			->distinct('wilayah.id ,fakta.nilai,fakta.tahun,variabel.satuan,fakta.id_bulan,bulan.nama')
 			->join('INNER JOIN', 'wilayah','fakta.id_wilayah=wilayah.id')
