@@ -318,4 +318,22 @@ return array (
       '@miloschuman/highcharts' => $vendorDir . '/miloschuman/yii2-highcharts-widget/src',
     ),
   ),
+  'open-ecommerce/yii2-backuprestore' => 
+  array (
+    'name' => 'open-ecommerce/yii2-backuprestore',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@oe/modules/backuprestore' => $vendorDir . '/open-ecommerce/yii2-backuprestore',
+    ),
+  ),
+  'kartik-v/yii2-grid' => 
+  array (
+    'name' => 'kartik-v/yii2-grid',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid',
+    ),
+  ),
 );

@@ -9,7 +9,7 @@
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <div class="row">
-		<div class="col-md-4">		
+		<div class="col-md-6">		
 		<div class="panel panel-success text-center">
 <div class="panel-body panel-body-success panel-body-top-br">
 <div class="stat">
@@ -32,9 +32,7 @@
 </div>
 </div>	
 		</div>
-		<div class="col-md-4" ><div id="tahunInput"></div>
-		</div>
-		<div class="col-md-4" >
+		<div class="col-md-6" >
 		<div class="panel panel-success text-center">
 <div class="panel-body panel-body-success panel-body-top-br">
 <div class="stat">

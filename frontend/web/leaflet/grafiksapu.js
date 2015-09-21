@@ -1,9 +1,9 @@
 var daerah = new Array();
 var agregat = new Array();
-var tipewil;
+var tw;
 
 function calldatavis(twil,nwil){
-	tipewil=twil;
+	tw=twil;
 
 	$.ajax({
 url: '?r=site/datavis&twil='+twil+'&nwil='+nwil,
@@ -25,7 +25,7 @@ success: function(data)
 
 		 for(i=6; i<= 83; i++){daerah[i]=parseInt(daerah[i]);}
 		
-		 });	podes();wilayah(twil);grafik();	
+		 });	wilayah(twil);
 		}
 	});
 }
@@ -47,7 +47,6 @@ success: function(data)
 		}
 	});
 }
-
 
 function spu(spu){
 		switch (spu) {
@@ -144,13 +143,15 @@ function bat(bat){var x,y=0; var z="";
 		}
 
 function wilayah(kode){
-	switch(kode)	{case "1" : {$('#upper').html('<h2>'+daerah[2]+'</h2><table class="Tinfo" align="center"><tr><td id="tdinfo">Jumlah Kota / Kabupaten : '+agregat[0]+'</td><tr><td id="tdinfo">Jumlah Kecamatan : '+agregat[1]+'</span></td><tr><td id="tdinfo">Jumlah Desa / Kelurahan :	'+agregat[2]+'</td></tr></table>');}
+	switch(kode)	{case "0" : {$('#upper').html(''); $('#vis').html(''); $('#lower').html(''); $('#slider').html('');}
 						break;
-					 case "2" : {$('#upper').html('<h2>'+daerah[3]+'</h2><table class="Tinfo" align="center"><tr><td id="tdinfo">Provinsi : '+daerah[2]+'</td><tr><td id="tdinfo">Jumlah Kecamatan : '+agregat[1]+'</span></td><tr><td id="tdinfo">Jumlah Desa / Kelurahan :	'+agregat[2]+'</td></tr></table>');}
+					 case "1" : {$('#upper').html('<h2>'+daerah[2]+'</h2><table class="Tinfo" align="center"><tr><td id="tdinfo">Jumlah Kota / Kabupaten : '+agregat[0]+'</td><tr><td id="tdinfo">Jumlah Kecamatan : '+agregat[1]+'</span></td><tr><td id="tdinfo">Jumlah Desa / Kelurahan :	'+agregat[2]+'</td></tr></table>'); klh();}
 						break;
-					 case "3" : {$('#upper').html('<h2>'+daerah[4]+'</h2><table class="Tinfo" align="center"><tr><td id="tdinfo">Provinsi : '+daerah[2]+'</td><tr><td id="tdinfo">Kota/Kabupaten : '+daerah[3]+'</span></td><tr><td id="tdinfo">Jumlah Desa / Kelurahan :	'+agregat[2]+'</td></tr></table>');}
+					 case "2" : {$('#upper').html('<h2>'+daerah[3]+'</h2><table class="Tinfo" align="center"><tr><td id="tdinfo">Provinsi : '+daerah[2]+'</td><tr><td id="tdinfo">Jumlah Kecamatan : '+agregat[1]+'</span></td><tr><td id="tdinfo">Jumlah Desa / Kelurahan :	'+agregat[2]+'</td></tr></table>'); klh();}
 						break;
-					 case "4" : {$('#upper').html('<h2>'+daerah[5]+'</h2><table class="Tinfo" align="center"><tr><td id="tdinfo">Provinsi : '+daerah[2]+'</td><tr><td id="tdinfo">Kota/Kabupaten : '+daerah[3]+'</span></td><tr><td id="tdinfo">Kecamatan :	'+daerah[4]+'</td></tr></table>');}
+					 case "3" : {$('#upper').html('<h2>'+daerah[4]+'</h2><table class="Tinfo" align="center"><tr><td id="tdinfo">Provinsi : '+daerah[2]+'</td><tr><td id="tdinfo">Kota/Kabupaten : '+daerah[3]+'</span></td><tr><td id="tdinfo">Jumlah Desa / Kelurahan :	'+agregat[2]+'</td></tr></table>'); klh();}
+						break;
+					 case "4" : {$('#upper').html('<h2>'+daerah[5]+'</h2><table class="Tinfo" align="center"><tr><td id="tdinfo">Provinsi : '+daerah[2]+'</td><tr><td id="tdinfo">Kota/Kabupaten : '+daerah[3]+'</span></td><tr><td id="tdinfo">Kecamatan :	'+daerah[4]+'</td></tr></table>'); klh();}
 						break;
 					}}
 
@@ -249,21 +250,22 @@ function podes(){
 				 
 }
 
-function klh(){$('#vis').html('<div class="item active" id="gklhlistrik"></div><div class="item" id="dklhlistrik"></div>');grafik();}
+function klh(){$('#vis').html('<div class="item active" id="gklhlistrik"></div><div class="item" id="dklhlistrik"></div>');grafik(); podes();}
 
-function pk(){$('#vis').html('<div class="item active" id="gpkpendidikan"></div><div class="item" id="dpkpendidikan"></div><div class="item" id="gpkkesehatan"></div><div class="item" id="dpkkesehatan"></div><div class="item" id="gpktenaga"></div><div class="item" id="dpktenaga"></div>');grafik();}
+function pk(){$('#vis').html('<div class="item active" id="gpkpendidikan"></div><div class="item" id="dpkpendidikan"></div><div class="item" id="gpkkesehatan"></div><div class="item" id="dpkkesehatan"></div><div class="item" id="gpktenaga"></div><div class="item" id="dpktenaga"></div>');grafik(); podes();}
 
-function e(){$('#vis').html('<div class="item active" id="gekonomi"></div><div class="item" id="dekonomi"><div class="item" id="ebank"></div>');grafik();}
+function e(){$('#vis').html('<div class="item active" id="gekonomi"></div><div class="item" id="dekonomi"></div><div class="item" id="ebank"></div>');grafik(); podes();}
 
-function sbk(){$('#vis').html('<div class="item active" id="gsbk"></div><div class="item" id="dsbk">');grafik();}
+function sbk(){$('#vis').html('<div class="item active" id="gsbk"></div><div class="item" id="dsbk"></div>');grafik(); podes();}
  
 function grafik() {
+	$('#slider').html('<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="false"></span><span class="sr-only">Next</span></a>');
 	
     $('#gklhpenduduk').highcharts({
         chart: {type: 'column', height:220},
 		credits: {enabled: false},
         title: {text: 'Jumlah Penduduk'},
-        subtitle: {text: subgraf(tipewil)+' 2014'},
+        subtitle: {text: subgraf(tw)+' 2014'},
 		legend : {enabled :false},
 		xAxis: { categories: ['Laki-laki', 'Perempuan']},
 		series: [{
@@ -288,7 +290,7 @@ function grafik() {
     //             drillup: function(e) {chart.setTitle({ text: 'Jumlah Keluarga menurut<br> penggunaan listrik' });}},
 		credits: {enabled: false},
         title: {text: 'Jumlah Keluarga menurut<br> penggunaan listrik'},
-        subtitle: {text: subgraf(tipewil)+' 2014'},
+        subtitle: {text: subgraf(tw)+' 2014'},
 		legend : {enabled :false},
 		xAxis: { type: 'category'},
 		series: [{
@@ -317,7 +319,7 @@ function grafik() {
         chart: {type: 'column', height:220},
 		credits: {enabled: false},
         title: {text: 'Lembaga Pendidikan'},
-        subtitle: {text: subgraf(tipewil)+' 2014'},
+        subtitle: {text: subgraf(tw)+' 2014'},
 		legend : {enabled :false},
 		xAxis: { type: 'category'},
 		series: [{	
@@ -392,7 +394,7 @@ function grafik() {
         chart: {type: 'column', height:220},
 		credits: {enabled: false},
         title: {text: 'Sarana kesehatan'},
-        subtitle: {text: subgraf(tipewil)+' 2014'},
+        subtitle: {text: subgraf(tw)+' 2014'},
 		legend : {enabled :false},
 		xAxis: { type: 'category'},
 		series: [{	
@@ -445,7 +447,7 @@ function grafik() {
         chart: {type: 'column', height:220},
 		credits: {enabled: false},
         title: {text: 'Tenaga Kesehatan'},
-        subtitle: {text: subgraf(tipewil)+' 2014'},
+        subtitle: {text: subgraf(tw)+' 2014'},
 		legend : {enabled :false},
 		xAxis: { type: 'category'},
 		series: [{
@@ -481,7 +483,7 @@ function grafik() {
         chart: {type: 'column', height:220},
 		credits: {enabled: false},
         title: {text: 'Sektor Ekonomi'},
-        subtitle: {text: subgraf(tipewil)+' 2014'},
+        subtitle: {text: subgraf(tw)+' 2014'},
 		legend : {enabled :false},
 		xAxis: { type: 'category'},
 		series: [{
@@ -534,7 +536,7 @@ function grafik() {
         chart: {type: 'column', height:220},
 		credits: {enabled: false},
         title: {text: 'Tempat Ibadah'},
-        subtitle: {text: subgraf(tipewil)+' 2014'},
+        subtitle: {text: subgraf(tw)+' 2014'},
 		legend : {enabled :false},
 		xAxis: { type: 'category'},
 		series: [{ 
@@ -584,7 +586,7 @@ function grafik() {
 					type: 'pie'},
 			credits: {enabled: false},
             title: {text: 'Proporsi Penduduk'},
-			subtitle: {text: subgraf(tipewil)+' 2014'},
+			subtitle: {text: subgraf(tw)+' 2014'},
             tooltip: {pointFormat: 'Jumlah: <b>{point.percentage:.1f}%</b>'},
             plotOptions: {pie:{	allowPointSelect: true,
 								cursor: 'pointer',
@@ -610,7 +612,7 @@ function grafik() {
 					type: 'pie', height:220},
             credits: {enabled: false},
 			title: {text: 'Proporsi Keluarga menurut Penggunaan Listrik'},
-			subtitle: {text: subgraf(tipewil)+' 2014'},
+			subtitle: {text: subgraf(tw)+' 2014'},
             tooltip: {pointFormat: 'Jumlah: <b>{point.percentage:.1f}%</b>'},
             plotOptions: {pie:{	allowPointSelect: true,
 								cursor: 'pointer',
@@ -643,7 +645,7 @@ function grafik() {
 					type: 'pie', height:220},
             credits: {enabled: false},
 			title: {text: 'Proporsi Lembaga Pendidikan'},
-			subtitle: {text: subgraf(tipewil)+' 2014'},
+			subtitle: {text: subgraf(tw)+' 2014'},
             tooltip: {pointFormat: 'Jumlah: <b>{point.percentage:.1f}%</b>'},
             plotOptions: {pie:{	allowPointSelect: true,
 								cursor: 'pointer',
@@ -729,7 +731,7 @@ function grafik() {
 					type: 'pie', height:220},
             credits: {enabled: false},
 			title: {text: 'Proporsi Sarana Kesehatan'},
-			subtitle: {text: subgraf(tipewil)+' 2014'},
+			subtitle: {text: subgraf(tw)+' 2014'},
             tooltip: {pointFormat: 'Jumlah: <b>{point.percentage:.1f}%</b>'},
             plotOptions: {pie:{	allowPointSelect: true,
 								cursor: 'pointer',
@@ -787,7 +789,7 @@ function grafik() {
 					type: 'pie', height:220},
             credits: {enabled: false},
 			title: {text: 'Proporsi Tenaga Kesehatan'},
-			subtitle: {text: subgraf(tipewil)+' 2014'},
+			subtitle: {text: subgraf(tw)+' 2014'},
             tooltip: {pointFormat: 'Jumlah: <b>{point.percentage:.1f}%</b>'},
             plotOptions: {pie:{	allowPointSelect: true,
 								cursor: 'pointer',
@@ -827,7 +829,7 @@ function grafik() {
 					type: 'pie', height:220},
             credits: {enabled: false},
 			title: {text: 'Proporsi Sektor ekonomi'},
-			subtitle: {text: subgraf(tipewil)+' 2014'},
+			subtitle: {text: subgraf(tw)+' 2014'},
             tooltip: {pointFormat: 'Jumlah: <b>{point.percentage:.1f}%</b>'},
             plotOptions: {pie:{	allowPointSelect: true,
 								cursor: 'pointer',
@@ -879,7 +881,7 @@ function grafik() {
 					type: 'pie', height:220},
             credits: {enabled: false},
 			title: {text: 'Bank Umum'},
-			subtitle: {text: subgraf(tipewil)+' 2014'},
+			subtitle: {text: subgraf(tw)+' 2014'},
             tooltip: {pointFormat: 'Jumlah: <b>{point.percentage:.1f}%</b>'},
             plotOptions: {pie:{	allowPointSelect: true,
 								cursor: 'pointer',
@@ -908,7 +910,7 @@ function grafik() {
 					type: 'pie', height:220},
             credits: {enabled: false},
 			title: {text: 'Proporsi Tempat Ibadah'},
-			subtitle: {text: subgraf(tipewil)+' 2014'},
+			subtitle: {text: subgraf(tw)+' 2014'},
             tooltip: {pointFormat: 'Jumlah: <b>{point.percentage:.1f}%</b>'},
             plotOptions: {pie:{	allowPointSelect: true,
 								cursor: 'pointer',

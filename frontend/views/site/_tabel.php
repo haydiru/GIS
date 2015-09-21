@@ -88,7 +88,7 @@ idProvinsi.splice(0, idProvinsi.length);
 				//buat judul
 				if(j==0){
 				if(aKat==0) judul = entry.nama_variabel+' '+data.namaparent;
-				else judul = entry.nama_variabel+' '+entry.nama_katergori+' '+data.namaparent;
+				else judul = entry.nama_variabel+' '+entry.nama_kategori+' '+data.namaparent;
 				}
 				//tampung semua nilai data
 				if(dataTabel[ta[j]]==null){
