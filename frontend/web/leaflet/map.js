@@ -1,3 +1,4 @@
+window.L_PREFER_CANVAS = true;
 var layerPopup; //popup
 var map; //variabel untuk menampung peta
 var kodewilayah;
@@ -44,7 +45,7 @@ warnab[7]=['#3288BD','#66C2A5','#ABDDA4','#E6F598','#FFFFBF','#FEE08B','#FDAE61'
 
 
 var aVar; //tampung kode variabel
-var aKat; //tampung kode Kategori
+var aKat=0; //tampung kode Kategori
 var tipeWil=new Array();
 var layerprovinsi=0;
 var peta;
@@ -141,6 +142,9 @@ function initializez()
 compas.addTo(map);
 info.addTo(map);
 warnalegenda();
+		L.easyPrint({
+        	title: 'My awesome print button'
+		}).addTo(map);
 
 }
 
@@ -276,7 +280,7 @@ function calldatabaru(){
 	var twil = $('#tipewilayah-nama').val();
 	var nwil = $('#wilayah-nama').val();
 	var namawil = $('#wilayah-nama option:selected').text();
-calldatasum(twil,nwil,namawil);calldatavis(twil,nwil);
+//calldatasum(twil,nwil,namawil);calldatavis(twil,nwil);
 //sapu
 calldata(aWil);	
 }
@@ -310,3 +314,26 @@ function zoomdefault(){
 	calldata(lokasi[(posisi+1)]);
 	
 	}
+	
+function doImage(err, canvas) {
+    var img = document.createElement('img');
+    var dimensions = map.getSize();
+    img.width = dimensions.x;
+    img.height = dimensions.y;
+    img.src = canvas.toDataURL();
+    document.getElementById('images').innerHTML = '';
+    document.getElementById('images').appendChild(img);
+	//sample3.innerHTML = '';
+   // sample3.appendChild(img);
+}
+function printPeta() {
+	console.log('sada');
+leafletImage(map, doImage);
+}
+window.setTimeout(function() {
+    map.panBy([100, 100]);
+    // map.setView([0, 0], 2);
+    window.setTimeout(function() {
+        leafletImage(map, doImage);
+    }, 1000);
+}, 1000);

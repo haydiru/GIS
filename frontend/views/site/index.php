@@ -12,7 +12,8 @@ $this->title = 'My Yii Application';
 ?>
 <div style="padding: 55px 5px 0 5px">
 				<div class="panel panel-success" style="margin-bottom:5px;">
-		<div class="panel-heading" style="padding:0 5px 0 5px;"><div class="row" >
+		<div class="panel-heading" style="padding:0 5px 0 5px;">
+		<div class="row" >
 		<div class="col-md-2" style="padding-right:5px;">
 		<?php
 $form=ActiveForm::begin();
@@ -99,10 +100,12 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		</div>
 		
 		</div>
-		</div></div>
+		</div>
+		</div>
 
 				<div class="row">
-		<div class="col-md-4" style="padding-right:5px;">
+		<?php
+		/* <div class="col-md-4" style="padding-right:5px;">
 		
 		<div class="panel panel-success" >
 		<div class="panel-heading">Grafik</div>
@@ -111,8 +114,9 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
   <?= $this->render('side') ?> 
 </div>		
 		</div>
-</div>
-<div class="col-md-8" style="padding-left:0;">
+</div> */
+?>
+<div class="col-md-12" >
 
 <div class="panel panel-success" style="margin-bottom: 5px;">
 <div class="panel-heading">
@@ -136,7 +140,9 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		<div class="col-md-2" style="padding-right:5px;" id="untukTabel">
 <span class="glyphicon glyphicon-list-alt" style="color: #d9d9d9;" aria-hidden="true"></span>
 		</div>
-		<div class="col-md-2" style="padding-right:5px;" id="untukTabel"> </div>
+		<div class="col-md-2" style="padding-right:5px;" id="untukPrint"> 
+		<span class="glyphicon glyphicon-print" style="cursor: pointer" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Print Peta" onclick="printPeta()"></span>
+		</div>
 		<div class="col-md-2" style="padding-right:5px;" id="untukTabel"> </div>
 		</div>
 		</div>
@@ -155,6 +161,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		<?= $this->render('_statistik') ?>
 		</div>
         </div>
+		<div id="images">jkn,h,lhkjhnlkhklhkj</div>
         </div>
 		<?= $this->render('_tabel') ?> 
 

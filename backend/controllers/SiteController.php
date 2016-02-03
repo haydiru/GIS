@@ -26,6 +26,7 @@ class SiteController extends Controller
 		[
 		'actions'=>['login','error'],
 		'allow'=>true,
+		'ips' => ['::1'],
 		],
 		[
 		'actions'=>['logout','index','download','upload','child'],

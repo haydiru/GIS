@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 
 $this->title = 'SIG BPS';
+echo \Yii::$app->getRequest()->getUserIP();
 ?>
 <div class="site-index">
 

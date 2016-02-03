@@ -20,12 +20,14 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
 		'leaflet/leaflet.css',
+		'leaflet/easyPrint.css',
 		'leaflet/minimap/src/Control.MiniMap.css',
     ];
     public $js = [
 	'geostats-master/lib/geostats.js',
 	'leaflet/leaflet-src.js',
 	'leaflet/map.js',
+	'leaflet/leaflet.easyPrint.js',
 	'leaflet/grafiksapu.js',
 	'leaflet/minimap/src/Control.MiniMap.js',
 	'leaflet/provider/leaflet-providers.js',
