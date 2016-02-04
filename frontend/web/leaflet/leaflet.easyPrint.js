@@ -7,7 +7,7 @@ L.Control.EasyPrint = L.Control.extend({
 	onAdd: function () {
 		var container = L.DomUtil.create('div', 'leaflet-control-easyPrint leaflet-bar leaflet-control');
 
-		this.link = L.DomUtil.create('a', 'leaflet-control-easyPrint-button leaflet-bar-part', container);
+		this.link = L.DomUtil.create('a', 'leaflet-control-easyPrint-button leaflet-bar-part glyphicon glyphicon-print', container);
 		this.link.id = "leafletEasyPrint";
 		this.link.title = this.options.title;
 

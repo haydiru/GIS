@@ -143,7 +143,8 @@ compas.addTo(map);
 info.addTo(map);
 warnalegenda();
 		L.easyPrint({
-        	title: 'My awesome print button'
+        	title: 'My awesome print button',
+        	elementsToHide: 'p, h2, .gitButton'
 		}).addTo(map);
 
 }
@@ -327,13 +328,20 @@ function doImage(err, canvas) {
    // sample3.appendChild(img);
 }
 function printPeta() {
-	console.log('sada');
-leafletImage(map, doImage);
+var canvas = document.createElement('canvas');
+var ctx = canvas.getContext('2d');
+var svgDoc = null;
+var svgmap = document.getElementById('map');
+try {
+    svgDoc = document.querySelector('svg');
+  }
+  catch(exception) {
+    console.log(svgDoc);
+  }
+
+var svg = new Blob([svgDoc.lastChild.outerHTML], {type: 'image/svg+xml;charset=utf-8'});
+var img = new Image(); 
+img.onload = function(){ ctx.drawImage(img,0,0); };
+img.src = canvas.toDataURL();
+console.log(img.src);
 }
-window.setTimeout(function() {
-    map.panBy([100, 100]);
-    // map.setView([0, 0], 2);
-    window.setTimeout(function() {
-        leafletImage(map, doImage);
-    }, 1000);
-}, 1000);
