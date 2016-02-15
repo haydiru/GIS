@@ -26,8 +26,9 @@ class AppAsset extends AssetBundle
     public $js = [
 	'geostats-master/lib/geostats.js',
 	'leaflet/leaflet-src.js',
-	'leaflet/jquery.svg.js',
-	'leaflet/leaflet-image.js',
+	'leaflet/saveSvgAsPng.js',
+	'leaflet/canvg.js',
+	'leaflet/rgbcolor.js',
 	'leaflet/map.js',
 	'leaflet/leaflet.easyPrint.js',
 	'leaflet/grafiksapu.js',

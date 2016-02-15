@@ -161,7 +161,7 @@ echo $form->field($kategori, 'nama')->widget(DepDrop::classname(), [
 		<?= $this->render('_statistik') ?>
 		</div>
         </div>
-		<div id="images">jkn,h,lhkjhnlkhklhkj</div>
+		<div id="images"><canvas id="canvas"></canvas></div>
         </div>
 		<?= $this->render('_tabel') ?> 
 

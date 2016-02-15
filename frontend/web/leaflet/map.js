@@ -316,32 +316,37 @@ function zoomdefault(){
 	
 	}
 	
-function doImage(err, canvas) {
-    var img = document.createElement('img');
-    var dimensions = map.getSize();
-    img.width = dimensions.x;
-    img.height = dimensions.y;
-    img.src = canvas.toDataURL();
-    document.getElementById('images').innerHTML = '';
-    document.getElementById('images').appendChild(img);
-	//sample3.innerHTML = '';
-   // sample3.appendChild(img);
-}
-function printPeta() {
-var canvas = document.createElement('canvas');
-var ctx = canvas.getContext('2d');
+function render(svg, width, height) {
+
+			canvg('canvas', svg, {
+				ignoreMouse: true,
+				ignoreAnimation: true,
+				renderCallback: function() { alert('done rendering!'); },
+				forceRedraw: function() { var update = redraw; redraw = false; return update; }
+			});
+		}
+function printPeta() {	
+var context;
 var svgDoc = null;
 var svgmap = document.getElementById('map');
+svgDoc = document.querySelector('svg').outerHTML;
+var b_atas = svgDoc.indexOf('style');
+var b_bawah = svgDoc.indexOf('>');
+svgDoc = svgDoc.replace(svgDoc.substring(b_atas, b_bawah),'');
+console.log(svgDoc); 
+canvg('canvas', svgDoc, {
+				ignoreMouse: true,
+				ignoreAnimation: true,
+				renderCallback: function() { alert('done rendering!'); },
+				//forceRedraw: function() { var update = redraw; redraw = false; return update;}
+			});
 try {
-    svgDoc = document.querySelector('svg');
+  
+ //  svgDoc.style.transform = 'none';
+//saveSvgAsPng(svgDoc, "diagram.png");
+
   }
   catch(exception) {
-    console.log(svgDoc);
+    console.log(exception);
   }
-
-var svg = new Blob([svgDoc.lastChild.outerHTML], {type: 'image/svg+xml;charset=utf-8'});
-var img = new Image(); 
-img.onload = function(){ ctx.drawImage(img,0,0); };
-img.src = canvas.toDataURL();
-console.log(img.src);
 }
